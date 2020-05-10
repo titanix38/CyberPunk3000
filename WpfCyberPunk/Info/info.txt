@@ -1,0 +1,28 @@
+Sur la première ligne 
+(EMILIO GRANDERS par exemple est requis) 
+le champ entre parenthèse est optionnel mais respecter les infos indiquès. 
+(o minuscule pour cercle, accent circonflex pour triangle et * étoile puis suivi d'un nom) entre parenthèses.
+
+Les textes requis :
+- Caractéristiques (carac) 
+- Capacités spéciales (capac)
+- Compétences (comp)
+- Ressources (res)
+- Cyber & brevets (cyber)
+
+En rouge gras tous les champs sont requis '?' correspond à un chiffre
+(EMP ? | CON ? | BT ? | INT ? | SF ? | MVT ? | REF ? | TEK(TECH) ? )
+
+Si votre personnage n'a aucune capacitè spéciale, ne rien mettre en dessous sinon elles peuvent être indiqués comme la ligne en dessous.
+SENS DU COMBAT(SDC) | FURTIVITE (FURT) | SYSTEME D | INTERFACE | AUTORITE | CHARISME(CHAR) | FIXER | MEDTECH(MEDTEK) | MEDIA | TECHI
+
+En vert gras : il faut minimum 2 indications (Indications des abrégés)
+Les compétences dépendent d'une caractéristique mettre entre crochet la dépendance puis la compétence en dessous. (Cf. le fichier exmeple)
+(Baratin & Persuasion)		-> Baratin
+(Perception humaine) 		-> Perc. Hum.
+(Perception)				-> Perc.
+(Evaluation du risque)		-> Eval.
+(Connaissance de la merde)	-> Conn. merde
+(Commandement)				-> cmdt
+
+Pour res et cyber (si votre personnage n'en contient pas laisser vide en dessous)
