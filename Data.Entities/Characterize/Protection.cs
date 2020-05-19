@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Data.Entities.Characterize
 {
     [Table("Protections")]
-    public class Protection : ICharacteristic<Protection>
+    public class Protection : IModel<Protection>
     {
         /// <summary>
         /// Columns

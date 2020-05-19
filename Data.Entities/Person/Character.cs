@@ -27,11 +27,13 @@ namespace Data.Entities.Person
         public string LastName { get; set; }
         public string Pseudo { get; set; }
 
-        public EnumGender Gender { get; set; }
+        public int IdGender { get; set; }
 
         public int Chance { get; set; }
 
         public bool Alive { get; set; }
+
+
 
         public int? IdCorporation { get; set; }
 
@@ -43,6 +45,7 @@ namespace Data.Entities.Person
 
 
         public virtual Ethnic Ethnic { get; set; }
+        public virtual Gender Gender { get; set; }
         public virtual Corporation Corporation { get; set; }
         public virtual Grade Grade { get; set; }
         public virtual Area Area { get; set; }

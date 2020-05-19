@@ -1,4 +1,5 @@
-﻿using Data.Entities.Person;
+﻿using Data.Entities.Characterize;
+using Data.Entities.Person;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,12 +11,12 @@ using System.Threading.Tasks;
 namespace Data.Entities.Enterprise
 {
     [Table("Corporations")]
-    public class Corporation : ICorporation
+    public class Corporation : IModel<Corporation>
     {
         [Key]
         public int Id { get; set; }
 
-        public Grade Grade { get; set; }
+        public IGrade Grade { get; set; }
 
         public string Name { get; set; }
 

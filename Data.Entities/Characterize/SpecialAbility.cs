@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Data.Entities.Characterize
 {
     [Table("SpecialAbilities")]
-    public class SpecialAbility : ICharacteristic<SpecialAbility>
+    public class SpecialAbility : IModel<SpecialAbility>
     {
         /// <summary>
         /// Columns
@@ -23,6 +23,7 @@ namespace Data.Entities.Characterize
         /// Relationships
         /// </summary>
         //public ICollection<AttributeSpecialAbility> AttributeSpecialAbility { get; set; }
+        public ICollection<Skill> Skills { get; set; }
 
     }
 }

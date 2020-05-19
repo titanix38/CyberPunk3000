@@ -56,13 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyberContext.cs" />
-    <Compile Include="Migrations\202005040946315_First.cs" />
-    <Compile Include="Migrations\202005040946315_First.designer.cs">
-      <DependentUpon>202005040946315_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005070933347_Second.cs" />
-    <Compile Include="Migrations\202005070933347_Second.designer.cs">
-      <DependentUpon>202005070933347_Second.cs</DependentUpon>
+    <Compile Include="Migrations\202005101535042_First.cs" />
+    <Compile Include="Migrations\202005101535042_First.designer.cs">
+      <DependentUpon>202005101535042_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,11 +74,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005040946315_First.resx">
-      <DependentUpon>202005040946315_First.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005070933347_Second.resx">
-      <DependentUpon>202005070933347_Second.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005101535042_First.resx">
+      <DependentUpon>202005101535042_First.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

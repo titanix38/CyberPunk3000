@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Entities.Person
 {
-    [Table("Ethnics")]
-    public class Ethnic : IModel<Ethnic>
-    {
+    [Table("Genders")]
+    public class Gender : IModel<Gender>
+    {  
         /// <summary>
         /// Columns
         /// </summary>
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         public string Name { get; set; }
 
-        public string Description { get; set; }
         /// <summary>
         /// Relationships
         /// </summary>

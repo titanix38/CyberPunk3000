@@ -25,7 +25,6 @@ namespace WpfCyberPunk
         {
             InitializeComponent();
             this.SourceInitialized += WpfImportTools_SourceInitialized;
-            Factory.SetJsonToDb();
 
         }
         private IntPtr _windowHandle;

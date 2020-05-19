@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Data.Entities.Characterize
 {
     [Table("Skills")]
-    public class Skill : ICharacteristic<Skill>
+    public class Skill : IModel<Skill>
     {
         /// <summary>
         /// Columns
@@ -19,9 +19,10 @@ namespace Data.Entities.Characterize
         public int Id { get; set; }
         public string Name { get; set; }
         public int Factor { get; set; }
+        //[ForeignKey("Feature")]
         public int IdFeature { get; set; }
+        //[ForeignKey("SpecialAbility")]
         public int? IdSpecialAbility { get; set; }
-
         /// <summary>
         /// Relationships
         /// </summary>

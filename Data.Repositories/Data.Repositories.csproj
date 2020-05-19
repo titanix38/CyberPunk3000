@@ -54,8 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbCharacterizeRepository.cs" />
-    <Compile Include="IDbCharacterizeRepository.cs" />
+    <Compile Include="DbGradeRepository.cs" />
+    <Compile Include="DbModelRepository.cs" />
+    <Compile Include="IDbGradeRepository.cs" />
+    <Compile Include="IDbModelRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

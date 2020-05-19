@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Data.Entities;
 using Data.Entities.Characterize;
 using Data.Entities.Enterprise;
 using Data.Entities.Person;
@@ -99,12 +100,12 @@ namespace ExportToDataBase
 
             builder.RegisterType<Character>().As<ICharacter>();
 
-            builder.RegisterType<Skill>().As<ICharacteristic<Skill>>();
-            builder.RegisterType<Feature>().As<ICharacteristic<Feature>>();
-            builder.RegisterType<SpecialAbility>().As<ICharacteristic<SpecialAbility>>();
+            builder.RegisterType<Skill>().As<IModel<Skill>>();
+            builder.RegisterType<Feature>().As<IModel<Feature>>();
+            builder.RegisterType<SpecialAbility>().As<IModel<SpecialAbility>>();
             //builder.RegisterType<Protection>().As<ICharacteristic<Protection>>();
 
-            builder.RegisterType<Corporation>().As<ICorporation>();
+            builder.RegisterType<Corporation>().As< IModel<Corporation>>();
             builder.RegisterType<Grade>().As<IGrade>();
 
             //builder.RegisterType<Patent>().As<IPatent>();
@@ -344,7 +345,7 @@ namespace ExportToDataBase
 
             using (ILifetimeScope scope = _container.BeginLifetimeScope())
             {
-                ICorporation corpo = scope.Resolve<ICorporation>();
+                IModel<Corporation> corpo = scope.Resolve<IModel<Corporation>>();
                 IGrade grade = scope.Resolve<IGrade>();
 
                 //grade.Category = category;
@@ -446,7 +447,7 @@ namespace ExportToDataBase
 
             return names.ToArray();
         }
-        private void SetCharacterize<TEntity>(TEntity entity) where TEntity : class, ICharacteristic<TEntity>
+        private void SetCharacterize<TEntity>(TEntity entity) where TEntity : class, IModel<TEntity>
         {
             _dicCharacValue = new Dictionary<string, int>();
             Dictionary<string, string> dicSkillFeature = new Dictionary<string, string>();
@@ -770,7 +771,9 @@ namespace ExportToDataBase
         {
             CreateCharacter(GetFormat(content), gender);
 
-            _fileName = _factory.FirstName + "_" + _factory.LastName;
+            //_factory = new Factory();
+
+            //_fileName = _factory.FirstName + "_" + _factory.LastName;
             //_json = JsonConvert.SerializeObject(_factory, Formatting.Indented);
             //File.WriteAllText(string.Format(@".\Output\{0}.json", _fileName), _json);
 

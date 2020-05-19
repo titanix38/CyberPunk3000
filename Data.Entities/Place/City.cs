@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Data.Entities.Place
 {
     [Table("Cities")]
-    public class City : IPlace
+    public class City : IModel<City>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

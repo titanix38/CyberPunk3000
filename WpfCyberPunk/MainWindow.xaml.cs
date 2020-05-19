@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Factory;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +26,7 @@ namespace WpfCyberPunk
         {
             InitializeComponent();
             this.SourceInitialized += MainWindow_SourceInitialized;
+            //Factory.SetJsonToDb();
         }
 
         private IntPtr _windowHandle;

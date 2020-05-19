@@ -43,23 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Characterize\Feature.cs" />
-    <Compile Include="Characterize\ICharacteristic.cs" />
     <Compile Include="Characterize\Protection.cs" />
     <Compile Include="Characterize\Skill.cs" />
     <Compile Include="Characterize\SpecialAbility.cs" />
     <Compile Include="Enterprise\Corporation.cs" />
     <Compile Include="Enterprise\Grade.cs" />
-    <Compile Include="Enterprise\ICorporation.cs" />
     <Compile Include="Enterprise\IGrade.cs" />
-    <Compile Include="Patent\IPatent.cs" />
-    <Compile Include="Patent\Patent.cs" />
+    <Compile Include="IModel.cs" />
+    <Compile Include="Cyber\Patent.cs" />
     <Compile Include="Person\Character.cs" />
     <Compile Include="Person\Ethnic.cs" />
+    <Compile Include="Person\Gender.cs" />
     <Compile Include="Person\ICharacter.cs" />
-    <Compile Include="Person\IEthnic.cs" />
     <Compile Include="Place\Area.cs" />
     <Compile Include="Place\City.cs" />
-    <Compile Include="Place\IPlace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

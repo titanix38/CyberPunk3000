@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Entities.Place
 {
     [Table("Areas")]
-    public class Area : IPlace
+    public class Area : IModel<Area>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

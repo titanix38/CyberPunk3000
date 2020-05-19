@@ -1,6 +1,6 @@
 ﻿using Data.Entities.Characterize;
 using Data.Entities.Enterprise;
-using Data.Entities.Patent;
+using Data.Entities.Cyber;
 using System;
 using System.Collections.Generic;
 using System.IO;

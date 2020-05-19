@@ -1,7 +1,8 @@
 ﻿using Autofac;
+using Data.Entities;
 using Data.Entities.Characterize;
 using Data.Entities.Enterprise;
-using Data.Entities.Patent;
+using Data.Entities.Cyber;
 using Data.Entities.Person;
 using Data.Repositories;
 using Newtonsoft.Json;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Data.Entities.Place;
 
 namespace Data.Factory
 {
@@ -25,9 +27,9 @@ namespace Data.Factory
     public class Factory : IFactory
     {
         #region Attributs
-        private int _idCharactere;
-        private int _idCorporation;
-        private int _idGrade;
+        //private int _idCharactere;
+        //private int _idCorporation;
+        //private int _idGrade;
 
         private IContainer _container;
         private List<string> _features;
@@ -41,8 +43,7 @@ namespace Data.Factory
         #region Properties
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string Pseudo { get; set; }
-        public string Noun { get; set; }
+        public string Pseudo { get; set; }        
         //public IDictionary<string, int> Features { get; set; }
         //public Feature[] Features { get; set; }
         //public List<Skill> Skills { get; set; }
@@ -57,6 +58,8 @@ namespace Data.Factory
         {
             Init();
             BuildDependency();
+            SetJsonToDb();
+            _features = SetCheckFeature();
             //Mapping();
         }
         #endregion
@@ -86,7 +89,7 @@ namespace Data.Factory
             return list;
         }
 
-        public static void SetJsonToDb()
+        public void SetJsonToDb()
         {
             string json = File.ReadAllText(@".\Input\CyberPunkInit.json");
 
@@ -99,14 +102,19 @@ namespace Data.Factory
                 dynamic datas = JsonConvert.DeserializeObject(json, typeof(object));
                 //dynamic featureTest = JsonConvert.DeserializeObject(json, typeof(Feature));
 
+                SetToCharacteristic(new Feature(),datas.Features);
+                SetToCharacteristic(new SpecialAbility(), datas.SpecialAbilities);
+                SetToCharacteristic(new Skill(), datas.Skills);
+                SetToCharacteristic(new Protection(), datas.Protections);
+                SetToCharacteristic(new Gender(), datas.Genders);
+                SetToCharacteristic(new Ethnic(), datas.Ethnics);
 
-                dynamic features = datas.Features;
-                dynamic skills = datas.Skills;
+                SetToCharacteristic(new Corporation(), datas.Corporations);
+                SetToCharacteristic(new City(), datas.Cities);
+                SetToCharacteristic(new Area(), datas.Areas);
+                SetGrade(datas.Grades);
 
-
-                SetToRepository(new Feature(), datas.Features);
-                SetToRepository(new SpecialAbility(), datas.SpecialAbilities);
-                SetToRepository(new Skill(), datas.Skills);
+                //SetToRepository(new Skill(), datas.Skills);
 
                 //foreach (var f in toto)
                 //{
@@ -124,27 +132,67 @@ namespace Data.Factory
             }
         }
 
-        private static void SetToRepository<TEntity>(TEntity entity, dynamic dynamic) where TEntity : class, ICharacteristic<TEntity>
+        private void SetToCharacteristic<TEntity>(TEntity entity, dynamic dynamic) where TEntity : class, IModel<TEntity>
         {
-            using (DbCharacterizeRepository<TEntity> repository = new DbCharacterizeRepository<TEntity>(entity))
+            using (DbModelRepository<TEntity> repository = new DbModelRepository<TEntity>(entity))
             {
-                
-
-
                 foreach (var d in dynamic)
                 {
-                    string toto = d.Id;
-                    int id = int.Parse(toto);
-                    
+                    int id = int.Parse(d.Id.ToString());
+
                     if (repository.GetEntity<TEntity>(id) == null)
                     {
-                        repository.Add<TEntity>(entity);
-                        repository.Save();
+                        switch (entity)
+                        {
+                            case Skill s:
+                                int idFeat = int.Parse(d.IdFeature.ToString());
+                                int? idSpecial = string.IsNullOrEmpty(d.IdSpecialAbility.ToString()) ? null : int.Parse(d.IdSpecialAbility.ToString());
+                                repository.Create<TEntity>(entity, entity, d.Name.ToString(), idFeat, idSpecial);
+                                break;
+
+                            case Area a:
+                                int idCity = int.Parse(d.IdCity.ToString());
+                                repository.Create<TEntity>(entity, entity, d.Name.ToString(), idCity);
+                                break;
+
+                            case Corporation c:
+                                bool isGang = bool.Parse(d.Gang.ToString());
+                                repository.CreateCorporation<TEntity>(entity, entity, d.Name.ToString(),isGang);
+                                break;
+
+                            case Grade g:
+                                // TODO : Faire architecture
+                                break;
+                            default:
+                                repository.Create<TEntity>(entity, entity, d.Name.ToString());
+                                break;
+                        }
                     }
 
                 }
             }
         }
+
+
+        private void SetGrade(dynamic dynamic)
+        {
+
+        }
+        private List<string> SetCheckFeature()
+        {
+            List<string> output = new List<string>();
+            using (DbModelRepository<Feature> repository = new DbModelRepository<Feature>(new Feature()))
+            {
+                IQueryable<Feature> features = repository.GetAll<Feature>();
+
+                foreach (var item in features)
+                {
+                    output.Add(item.Name);
+                }
+                return output;
+            }
+        }
+
 
         //private void SetToRepository(dynamic dynamic,)
 
@@ -157,12 +205,12 @@ namespace Data.Factory
 
             builder.RegisterType<Character>().As<ICharacter>();
 
-            builder.RegisterType<Skill>().As<ICharacteristic<Skill>>();
-            builder.RegisterType<Feature>().As<ICharacteristic<Feature>>();
-            builder.RegisterType<SpecialAbility>().As<ICharacteristic<SpecialAbility>>();
-            builder.RegisterType<Protection>().As<ICharacteristic<Protection>>();
+            builder.RegisterType<Skill>().As<IModel<Skill>>();
+            builder.RegisterType<Feature>().As<IModel<Feature>>();
+            builder.RegisterType<SpecialAbility>().As<IModel<SpecialAbility>>();
+            builder.RegisterType<Protection>().As<IModel<Protection>>();
 
-            builder.RegisterType<Corporation>().As<ICorporation>();
+            builder.RegisterType<Corporation>().As<IModel<Corporation>>();
             builder.RegisterType<Grade>().As<IGrade>();
 
             //builder.RegisterType<Patent>().As<IPatent>();
@@ -296,7 +344,7 @@ namespace Data.Factory
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         /// <param name="dico"></param>
-        private void SetCharacterize<TEntity>(TEntity entity) where TEntity : class, ICharacteristic<TEntity>
+        private void SetCharacterize<TEntity>(TEntity entity) where TEntity : class, IModel<TEntity>
         {
             Dictionary<string, int> dicCharacValue = new Dictionary<string, int>();
             Dictionary<string, string> dicSkillFeature = new Dictionary<string, string>();
@@ -920,7 +968,7 @@ namespace Data.Factory
 
             using (ILifetimeScope scope = _container.BeginLifetimeScope())
             {
-                ICorporation corpo = scope.Resolve<ICorporation>();
+                IModel<Corporation> corpo = scope.Resolve<IModel<Corporation>>();
                 IGrade grade = scope.Resolve<IGrade>();
 
                 //grade.Category = category;

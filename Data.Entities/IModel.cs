@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Entities.Person
+namespace Data.Entities
 {
-    public interface IEthnic
+    public interface IModel<TEntity> where TEntity : class
     {
-        int IdEthnic { get; set; }
+        int Id { get; set; }
 
         string Name { get; set; }
-
-
-        ICollection<Character> Characters { get; set; }
     }
 }
