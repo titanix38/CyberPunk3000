@@ -1,0 +1,1257 @@
+{
+    "Features": [
+        {
+            "Id": "1",
+            "Name": "BT"
+        },
+        {
+            "Id": "2",
+            "Name": "CON"
+        },
+        {
+            "Id": "3",
+            "Name": "EMP"
+        },
+        {
+            "Id": "4",
+            "Name": "MVT"
+        },
+        {
+            "Id": "5",
+            "Name": "SF"
+        },
+        {
+            "Id": "6",
+            "Name": "TECH"
+        },
+        {
+            "Id": "7",
+            "Name": "INT"
+        },
+        {
+            "Id": "8",
+            "Name": "REF"
+        }
+    ],
+    "Skills": [
+        {
+            "Id": "1",
+            "Name": "LOOK",
+            "IdFeature": "1",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "2",
+            "Name": "ENDURANCE",
+            "IdFeature": "2",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "3",
+            "Name": "FORCE",
+            "IdFeature": "2",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "4",
+            "Name": "PERCEPTION HUMAINE",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "5",
+            "Name": "BARATIN&PERSUASION",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "6",
+            "Name": "PERFORMANCE",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "7",
+            "Name": "SOCIAL",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "8",
+            "Name": "MEDITATION",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "9",
+            "Name": "COMMANDEMENT",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "10",
+            "Name": "INTERVIEW",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "11",
+            "Name": "NEGOCIATION",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "2"
+        },
+        {
+            "Id": "12",
+            "Name": "SEDUCTION",
+            "IdFeature": "3",
+            "IdSpecialAbility": "11",
+            "Factor": "1"
+        },
+        {
+            "Id": "13",
+            "Name": "ATHLETISME",
+            "IdFeature": "4",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "14",
+            "Name": "NATATION",
+            "IdFeature": "4",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "15",
+            "Name": "ESCALADE",
+            "IdFeature": "4",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "16",
+            "Name": "INTIMIDATION",
+            "IdFeature": "5",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "17",
+            "Name": "CONNAISSANCE DE LA RUE",
+            "IdFeature": "5",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "18",
+            "Name": "INTERROGATOIRE",
+            "IdFeature": "5",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "19",
+            "Name": "RESISTER T&D",
+            "IdFeature": "5",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "20",
+            "Name": "SF AU COMBAT",
+            "IdFeature": "5",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "21",
+            "Name": "ELOQUENCE",
+            "IdFeature": "5",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "22",
+            "Name": "DEGUISEMENT",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "1"
+        },
+        {
+            "Id": "23",
+            "Name": "CONTREFACON",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "1"
+        },
+        {
+            "Id": "24",
+            "Name": "CROCHETAGE",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "1"
+        },
+        {
+            "Id": "25",
+            "Name": "SECURITE ELECTRONIQUE",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "2"
+        },
+        {
+            "Id": "26",
+            "Name": "ARMURERIE",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "1"
+        },
+        {
+            "Id": "27",
+            "Name": "PHOTO&FILMS",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "1"
+        },
+        {
+            "Id": "28",
+            "Name": "EXPLOSIFS",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "1"
+        },
+        {
+            "Id": "29",
+            "Name": "1er SOINS",
+            "IdFeature": "6",
+            "IdSpecialAbility": "8",
+            "Factor": "1"
+        },
+        {
+            "Id": "30",
+            "Name": "PHARMACOLOGIE",
+            "IdFeature": "6",
+            "IdSpecialAbility": "8",
+            "Factor": "1"
+        },
+        {
+            "Id": "31",
+            "Name": "ELECTRONIQUE  ",
+            "IdFeature": "6",
+            "IdSpecialAbility": "10",
+            "Factor": "1"
+        },
+        {
+            "Id": "32",
+            "Name": "GENTECH",
+            "IdFeature": "6",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "33",
+            "Name": "PERCEPTION",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "34",
+            "Name": "SE CACHER/SEMER",
+            "IdFeature": "7",
+            "IdSpecialAbility": "2",
+            "Factor": "1"
+        },
+        {
+            "Id": "35",
+            "Name": "SUIVRE PISTER",
+            "IdFeature": "7",
+            "IdSpecialAbility": "2",
+            "Factor": "1"
+        },
+        {
+            "Id": "36",
+            "Name": "SURVIE MILIEU HOSTILE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "37",
+            "Name": "TACTIQUE MILITAIRE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "38",
+            "Name": "EVALUATION DU RISQUE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "39",
+            "Name": "GESTION",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "40",
+            "Name": "BIBLIOTHEQUE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "41",
+            "Name": "EDUCATION",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "42",
+            "Name": "BIOLOGIE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "43",
+            "Name": "MATHS",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "44",
+            "Name": "PENAL",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "45",
+            "Name": "ENSEIGNEMENT",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "46",
+            "Name": "JEU",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "47",
+            "Name": "ANATOMIE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "48",
+            "Name": "DIAGNOSTIQUE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "49",
+            "Name": "CHIMIE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "50",
+            "Name": "INVESTISSEMENT",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "51",
+            "Name": "ZOOLOGIE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "52",
+            "Name": "BOTANIQUE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "53",
+            "Name": "CONNAISSANCE DE LA MERDE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "54",
+            "Name": "CONNAISSANCE DES SYSTEMES",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "55",
+            "Name": "CONNAISSANCE DU SYSTEME",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "3"
+        },
+        {
+            "Id": "56",
+            "Name": "ARMES AUTO",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "57",
+            "Name": "PISTOLET",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "58",
+            "Name": "ARMES LOURDES",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "59",
+            "Name": "FUSIL",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "60",
+            "Name": "GRENADE",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "61",
+            "Name": "MELEE",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "62",
+            "Name": "ESQUIVE",
+            "IdFeature": "8",
+            "IdSpecialAbility": "2",
+            "Factor": "1"
+        },
+        {
+            "Id": "63",
+            "Name": "DISCRETION",
+            "IdFeature": "8",
+            "IdSpecialAbility": "2",
+            "Factor": "2"
+        },
+        {
+            "Id": "64",
+            "Name": "PICKPOCKET",
+            "IdFeature": "8",
+            "IdSpecialAbility": "2",
+            "Factor": "1"
+        },
+        {
+            "Id": "65",
+            "Name": "DANSE",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "66",
+            "Name": "AUTOMOBILE",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "67",
+            "Name": "MOTO",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "68",
+            "Name": "AV",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "69",
+            "Name": "ENGIN LOURDS",
+            "IdFeature": "8",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "70",
+            "Name": "AIKIDO",
+            "IdFeature": "8",
+            "IdSpecialAbility": "1",
+            "Factor": "3"
+        },
+        {
+            "Id": "71",
+            "Name": "JUDO",
+            "IdFeature": "8",
+            "IdSpecialAbility": "1",
+            "Factor": "1"
+        },
+        {
+            "Id": "72",
+            "Name": "KARATE",
+            "IdFeature": "8",
+            "IdSpecialAbility": "1",
+            "Factor": "1"
+        },
+        {
+            "Id": "73",
+            "Name": "CONTORSIONNISTE",
+            "IdFeature": "8",
+            "IdSpecialAbility": "1",
+            "Factor": "1"
+        },
+        {
+            "Id": "74",
+            "Name": "CAPOIERA",
+            "IdFeature": "8",
+            "IdSpecialAbility": "1",
+            "Factor": "1"
+        },
+        {
+            "Id": "75",
+            "Name": "LUTTE",
+            "IdFeature": "8",
+            "IdSpecialAbility": "1",
+            "Factor": "1"
+        },
+        {
+            "Id": "76",
+            "Name": "CUISINE",
+            "IdFeature": "7",
+            "IdSpecialAbility": null,
+            "Factor": "1"
+        },
+        {
+            "Id": "77",
+            "Name": "PROGRAMMATION",
+            "IdFeature": "7",
+            "IdSpecialAbility": "12",
+            "Factor": "1"
+        }
+    ],
+    "SpecialAbilities": [
+        {
+            "Id": "1",
+            "Name": "SENS DU COMBAT"
+        },
+        {
+            "Id": "2",
+            "Name": "FURTIVITE"
+        },
+        {
+            "Id": "3",
+            "Name": "SYSTEME D"
+        },
+        {
+            "Id": "4",
+            "Name": "INTERFACE"
+        },
+        {
+            "Id": "5",
+            "Name": "AUTHORITE"
+        },
+        {
+            "Id": "6",
+            "Name": "CHARISME"
+        },
+        {
+            "Id": "7",
+            "Name": "FIXER"
+        },
+        {
+            "Id": "8",
+            "Name": "MEDTECH"
+        },
+        {
+            "Id": "9",
+            "Name": "MEDIA"
+        },
+        {
+            "Id": "10",
+            "Name": "TECHI"
+        },
+        {
+            "Id": "11",
+            "Name": "PERSUADER"
+        },
+        {
+            "Id": "12",
+            "Name": "HACKER"
+        }
+    ],
+    "Corporations": [
+        {
+            "Id": "1",
+            "Name": "IMF",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "2",
+            "Name": "SECURITY_FIRST",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "3",
+            "Name": "ARASAKA",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "4",
+            "Name": "ECTASING_IMAGE ",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "5",
+            "Name": "TECHNOTRONIC",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "6",
+            "Name": "GALAXY_500",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "7",
+            "Name": "SENTINELS",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "8",
+            "Name": "REMEDIAL",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "9",
+            "Name": "STATE_IN_STATE",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "10",
+            "Name": "MAYFAIR",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "11",
+            "Name": "L.E.S.T",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "12",
+            "Name": "AGENT_ORANGE",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "13",
+            "Name": "ELITE_TEAM",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "14",
+            "Name": "SELTRIDGE",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "15",
+            "Name": "PIMLICO",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "16",
+            "Name": "D-ALPHA",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "17",
+            "Name": "DMI",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "18",
+            "Name": "SINS",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "19",
+            "Name": "SKYLAX",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "20",
+            "Name": "WHITESHADOW",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "21",
+            "Name": "PARACOHN",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "22",
+            "Name": "MAJESTIC_12",
+            "Gang": "true",
+            "Color": null
+        },
+        {
+            "Id": "23",
+            "Name": "RIVERS",
+            "Gang": "true",
+            "Color": null
+        },
+        {
+            "Id": "24",
+            "Name": "PALAIS_CONF",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "25",
+            "Name": "EMPIRE_CALYPSO",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "26",
+            "Name": "INT-FALLS",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "27",
+            "Name": "INFINITY",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "28",
+            "Name": "KORSADOR",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "29",
+            "Name": "PLASMATICS",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "30",
+            "Name": "Rushwell",
+            "Gang": "false",
+            "Color": null
+        },
+        {
+            "Id": "31",
+            "Name": "Dayladay",
+            "Gang": "false",
+            "Color": null
+        }
+    ],
+    "Grades": [
+        {
+            "Id": "1",
+            "Category": "\\u25CF",
+            "Quantity": "1",
+            "Resource": "1",
+            "Salary": "7000"
+        },
+        {
+            "Id": "2",
+            "Category": "\\u25CF",
+            "Quantity": "2",
+            "Resource": "1",
+            "Salary": "8000"
+        },
+        {
+            "Id": "3",
+            "Category": "\\u25CF",
+            "Quantity": "3",
+            "Resource": "2",
+            "Salary": "9000"
+        },
+        {
+            "Id": "4",
+            "Category": "\\u25CF",
+            "Quantity": "4",
+            "Resource": "2",
+            "Salary": "10000"
+        },
+        {
+            "Id": "5",
+            "Category": "\\u25CF",
+            "Quantity": "5",
+            "Resource": "3",
+            "Salary": "11000"
+        },
+        {
+            "Id": "6",
+            "Category": "\\u25BC",
+            "Quantity": "1",
+            "Resource": "4",
+            "Salary": "20000"
+        },
+        {
+            "Id": "7",
+            "Category": "\\u25BC",
+            "Quantity": "2",
+            "Resource": "4",
+            "Salary": "22000"
+        },
+        {
+            "Id": "8",
+            "Category": "\\u25BC",
+            "Quantity": "3",
+            "Resource": "5",
+            "Salary": "24000"
+        },
+        {
+            "Id": "9",
+            "Category": "\\u25BC",
+            "Quantity": "4",
+            "Resource": "6",
+            "Salary": "26000"
+        },
+        {
+            "Id": "10",
+            "Category": "\\u25BC",
+            "Quantity": "5",
+            "Resource": "6",
+            "Salary": "28000"
+        },
+        {
+            "Id": "11",
+            "Category": "\\u2605",
+            "Quantity": "1",
+            "Resource": "7",
+            "Salary": "50000"
+        },
+        {
+            "Id": "12",
+            "Category": "\\u2606",
+            "Quantity": "2",
+            "Resource": "7",
+            "Salary": "54000"
+        },
+        {
+            "Id": "13",
+            "Category": "\\u2607",
+            "Quantity": "3",
+            "Resource": "8",
+            "Salary": "56000"
+        },
+        {
+            "Id": "14",
+            "Category": "\\u2608",
+            "Quantity": "4",
+            "Resource": "8",
+            "Salary": "58000"
+        },
+        {
+            "Id": "15",
+            "Category": "\\u2609",
+            "Quantity": "5",
+            "Resource": "8",
+            "Salary": "60000"
+        }
+    ],
+    "Cities": [
+        {
+            "Id": "1",
+            "Name": "Aphton City"
+        },
+        {
+            "Id": "2",
+            "Name": "Belmare"
+        },
+        {
+            "Id": "3",
+            "Name": "Camp Famagusta"
+        },
+        {
+            "Id": "4",
+            "Name": "Diamond City"
+        },
+        {
+            "Id": "5",
+            "Name": "Interlakes"
+        },
+        {
+            "Id": "6",
+            "Name": "Paris"
+        },
+        {
+            "Id": "7",
+            "Name": "Saint James"
+        },
+        {
+            "Id": "8",
+            "Name": "Villa Auror"
+        },
+        {
+            "Id": "9",
+            "Name": "Zurich"
+        },
+      {
+        "Id": "10",
+        "Name": "100_CIRCLES"
+      },
+        {
+            "Id": "11",
+            "Name": "CAMP_FAMAGUSTA"
+        }
+    ],
+    "Areas": [
+        {
+            "Id": "1",
+            "Name": "ZONE 1",
+            "IdCity": "4"
+        },
+        {
+            "Id": "2",
+            "Name": "ZONE 2",
+            "IdCity": "4"
+        },
+        {
+            "Id": "3",
+            "Name": "ZONE 3",
+            "IdCity": "4"
+        },
+        {
+            "Id": "4",
+            "Name": "ZONE 4",
+            "IdCity": "4"
+        },
+        {
+            "Id": "5",
+            "Name": "ZONE 5",
+            "IdCity": "4"
+        },
+        {
+            "Id": "6",
+            "Name": "ZONE 6",
+            "IdCity": "4"
+        },
+        {
+            "Id": "7",
+            "Name": "ZONE 7",
+            "IdCity": "4"
+        },
+        {
+            "Id": "8",
+            "Name": "ZONE 8",
+            "IdCity": "4"
+        },
+        {
+            "Id": "9",
+            "Name": "A1",
+            "IdCity": "7"
+        },
+        {
+            "Id": "10",
+            "Name": "A2",
+            "IdCity": "7"
+        },
+        {
+            "Id": "11",
+            "Name": "A3",
+            "IdCity": "7"
+        },
+        {
+            "Id": "12",
+            "Name": "A4",
+            "IdCity": "7"
+        },
+        {
+            "Id": "13",
+            "Name": "A5",
+            "IdCity": "7"
+        },
+        {
+            "Id": "14",
+            "Name": "A6",
+            "IdCity": "7"
+        },
+        {
+            "Id": "15",
+            "Name": "A7",
+            "IdCity": "7"
+        },
+        {
+            "Id": "16",
+            "Name": "A8",
+            "IdCity": "7"
+        },
+        {
+            "Id": "17",
+            "Name": "A9",
+            "IdCity": "7"
+        },
+        {
+            "Id": "18",
+            "Name": "A10",
+            "IdCity": "7"
+        },
+        {
+            "Id": "19",
+            "Name": "A11",
+            "IdCity": "7"
+        },
+        {
+            "Id": "20",
+            "Name": "A12",
+            "IdCity": "7"
+        },
+        {
+            "Id": "21",
+            "Name": "A13",
+            "IdCity": "7"
+        },
+        {
+            "Id": "22",
+            "Name": "Osiris",
+            "IdCity": "2"
+        },
+        {
+            "Id": "23",
+            "Name": "Géo-Center",
+            "IdCity": "2"
+        },
+        {
+            "Id": "24",
+            "Name": "Ring nord",
+            "IdCity": "2"
+        },
+        {
+            "Id": "25",
+            "Name": "Alpha -Genzler Zone",
+            "IdCity": "2"
+        },
+        {
+            "Id": "26",
+            "Name": "Diva’s",
+            "IdCity": "2"
+        },
+        {
+            "Id": "27",
+            "Name": "Ruben’s",
+            "IdCity": "2"
+        },
+        {
+            "Id": "28",
+            "Name": "Road Méritt",
+            "IdCity": "2"
+        },
+        {
+            "Id": "29",
+            "Name": "Gouvernance",
+            "IdCity": "11"
+        },
+        {
+            "Id": "30",
+            "Name": "Isolante",
+            "IdCity": "11"
+        },
+        {
+            "Id": "31",
+            "Name": "Trials",
+            "IdCity": "11"
+        },
+        {
+            "Id": "32",
+            "Name": "block zero",
+            "IdCity": "11"
+        },
+        {
+            "Id": "33",
+            "Name": "Orange-Field",
+            "IdCity": "6"
+        },
+        {
+            "Id": "34",
+            "Name": "Millfield",
+            "IdCity": "6"
+        },
+        {
+            "Id": "35",
+            "Name": "Ross-Bambou",
+            "IdCity": "6"
+        },
+        {
+            "Id": "36",
+            "Name": "Botanie",
+            "IdCity": "6"
+        },
+        {
+            "Id": "37",
+            "Name": "Alamo",
+            "IdCity": "6"
+        },
+        {
+            "Id": "38",
+            "Name": "Les Cabanes",
+            "IdCity": "6"
+        },
+        {
+            "Id": "39",
+            "Name": "Valfleury",
+            "IdCity": "6"
+        },
+        {
+            "Id": "40",
+            "Name": "Voltigeurs",
+            "IdCity": "6"
+        },
+        {
+            "Id": "41",
+            "Name": "Raven’s",
+            "IdCity": "6"
+        },
+        {
+            "Id": "42",
+            "Name": "La Source",
+            "IdCity": "6"
+        },
+        {
+            "Id": "43",
+            "Name": "HauteVille",
+            "IdCity": "6"
+        },
+        {
+            "Id": "44",
+            "Name": "Les Toiny’s",
+            "IdCity": "6"
+        },
+        {
+            "Id": "45",
+            "Name": "INTERCONTINENTALE",
+            "IdCity": "9"
+        },
+        {
+            "Id": "46",
+            "Name": "MALTRITZ",
+            "IdCity": "9"
+        },
+        {
+            "Id": "47",
+            "Name": "PARK-Avenue KATY",
+            "IdCity": "9"
+        },
+        {
+            "Id": "48",
+            "Name": "SCIROCCO",
+            "IdCity": "9"
+        },
+        {
+            "Id": "49",
+            "Name": "Metallist",
+            "IdCity": "9"
+        }
+    ],
+    "Ethnics": [
+        {
+            "Id": "1",
+            "Name": "American_English"
+        },
+        {
+            "Id": "2",
+            "Name": "African"
+        },
+        {
+            "Id": "3",
+            "Name": "Japanese_Korean"
+        },
+        {
+            "Id": "4",
+            "Name": "Central_European"
+        },
+        {
+            "Id": "5",
+            "Name": "Pacific_Island"
+        },
+        {
+            "Id": "6",
+            "Name": "Chinese"
+        },
+        {
+            "Id": "7",
+            "Name": "Black_American"
+        },
+        {
+            "Id": "8",
+            "Name": "Spanish_American"
+        },
+        {
+            "Id": "9",
+            "Name": "South_American"
+        },
+        {
+            "Id": "10",
+            "Name": "European"
+        }
+    ]
+}
