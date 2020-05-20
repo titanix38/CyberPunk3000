@@ -24,7 +24,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Repositories", "Data.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportFromDataBase", "ImportFromDataBase\ImportFromDataBase.csproj", "{79EC01D1-D84D-47FD-BDDA-9766FA51224E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Factory", "Data.Factory\Data.Factory.csproj", "{EC97B372-7E71-4729-AEC4-0FDD800D80D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Factory", "Data.Factory\Data.Factory.csproj", "{EC97B372-7E71-4729-AEC4-0FDD800D80D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84B0BDDD-5975-414B-BC8F-81754BC6E352}"
+	ProjectSection(SolutionItems) = preProject
+		License.txt = License.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
