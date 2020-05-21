@@ -63,11 +63,11 @@
                 "dbo.Ethnics",
                 c => new
                     {
-                        IdEthnic = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
                     })
-                .PrimaryKey(t => t.IdEthnic);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Genders",
@@ -109,6 +109,24 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.Patents",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Price = c.Int(nullable: false),
+                        Empathy = c.Int(nullable: false),
+                        Description = c.String(),
+                        SecondEffect = c.String(),
+                        ChanceToDie = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        ChanceToBeMad = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        IdFeature = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Features", t => t.IdFeature)
+                .Index(t => t.IdFeature);
+            
+            CreateTable(
                 "dbo.Skills",
                 c => new
                     {
@@ -148,6 +166,7 @@
         {
             DropForeignKey("dbo.Skills", "IdSpecialAbility", "dbo.SpecialAbilities");
             DropForeignKey("dbo.Skills", "IdFeature", "dbo.Features");
+            DropForeignKey("dbo.Patents", "IdFeature", "dbo.Features");
             DropForeignKey("dbo.Areas", "IdCity", "dbo.Cities");
             DropForeignKey("dbo.Characters", "IdGrade", "dbo.Grades");
             DropForeignKey("dbo.Characters", "IdGender", "dbo.Genders");
@@ -156,6 +175,7 @@
             DropForeignKey("dbo.Characters", "IdArea", "dbo.Areas");
             DropIndex("dbo.Skills", new[] { "IdSpecialAbility" });
             DropIndex("dbo.Skills", new[] { "IdFeature" });
+            DropIndex("dbo.Patents", new[] { "IdFeature" });
             DropIndex("dbo.Characters", new[] { "IdArea" });
             DropIndex("dbo.Characters", new[] { "IdEthnic" });
             DropIndex("dbo.Characters", new[] { "IdGrade" });
@@ -165,6 +185,7 @@
             DropTable("dbo.Protections");
             DropTable("dbo.SpecialAbilities");
             DropTable("dbo.Skills");
+            DropTable("dbo.Patents");
             DropTable("dbo.Features");
             DropTable("dbo.Cities");
             DropTable("dbo.Grades");

@@ -11,6 +11,8 @@ namespace Data.Repositories
     public class DbGradeRepository : IDbGradeRepository
     {
         protected CyberContext _context;
+        public int Id { get; private set; }
+
 
         public DbGradeRepository()
         {
@@ -21,6 +23,27 @@ namespace Data.Repositories
         public Grade Add(Grade grade)
         {
             return _context.Set<Grade>().Add(grade);
+
+        }
+
+        private int GetId(string category, int quantity)
+        {
+            try
+            {
+                int id = GetAll().FirstOrDefault(g => g.Category == category && g.Quantity == quantity).Id;
+                return id;
+            }
+            catch (NullReferenceException)
+            {
+                return 0;
+            }
+        }
+
+        private IQueryable<Grade> GetAll(bool noTracking = true)
+        {
+            DbSet<Grade> entityDbSet = _context.Set<Grade>();
+
+            return entityDbSet;
 
         }
 
@@ -54,17 +77,28 @@ namespace Data.Repositories
             throw new NotImplementedException();
         }
 
-        public IQueryable<Grade> GetAll(bool noTracking = true)
+        public void Create(string category, int quantity, int resource, int salary)
         {
-            DbSet<Grade> entityDbSet = _context.Set<Grade>();
-            return entityDbSet;
-        }
+            int idGrade = GetId(category, quantity);
 
-        public int GetId(string category, int quatity)
+            if (idGrade == 0)
+            {
+                Grade grade = new Grade()
+                {
+                    Category = category,
+                    Quantity = quantity,
+                    Resource = resource,
+                    Salary = salary
+                };
+                Add(grade);
+                Save();
+                Id = GetId(category, quantity);
+            }
+        }
+        private void Save()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
-
         #region IDisposable Support
         private bool disposedValue = false; // Pour détecter les appels redondants
 
@@ -97,6 +131,16 @@ namespace Data.Repositories
             Dispose(true);
             // TODO: supprimer les marques de commentaire pour la ligne suivante si le finaliseur est remplacé ci-dessus.
             // GC.SuppressFinalize(this);
+        }
+
+        IQueryable<Grade> IDbGradeRepository.GetAll(bool noTracking)
+        {
+            throw new NotImplementedException();
+        }
+
+        int IDbGradeRepository.GetId(string category, int quatity)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

@@ -1,9 +1,10 @@
 ﻿using Autofac;
 using Data.Entities;
 using Data.Entities.Characterize;
-using Data.Entities.Enterprise;
 using Data.Entities.Cyber;
+using Data.Entities.Enterprise;
 using Data.Entities.Person;
+using Data.Entities.Place;
 using Data.Repositories;
 using Newtonsoft.Json;
 using System;
@@ -11,7 +12,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Data.Entities.Place;
 
 namespace Data.Factory
 {
@@ -43,7 +43,7 @@ namespace Data.Factory
         #region Properties
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string Pseudo { get; set; }        
+        public string Pseudo { get; set; }
         //public IDictionary<string, int> Features { get; set; }
         //public Feature[] Features { get; set; }
         //public List<Skill> Skills { get; set; }
@@ -58,7 +58,6 @@ namespace Data.Factory
         {
             Init();
             BuildDependency();
-            SetJsonToDb();
             _features = SetCheckFeature();
             //Mapping();
         }
@@ -102,7 +101,7 @@ namespace Data.Factory
                 dynamic datas = JsonConvert.DeserializeObject(json, typeof(object));
                 //dynamic featureTest = JsonConvert.DeserializeObject(json, typeof(Feature));
 
-                SetToCharacteristic(new Feature(),datas.Features);
+                SetToCharacteristic(new Feature(), datas.Features);
                 SetToCharacteristic(new SpecialAbility(), datas.SpecialAbilities);
                 SetToCharacteristic(new Skill(), datas.Skills);
                 SetToCharacteristic(new Protection(), datas.Protections);
@@ -157,12 +156,9 @@ namespace Data.Factory
 
                             case Corporation c:
                                 bool isGang = bool.Parse(d.Gang.ToString());
-                                repository.CreateCorporation<TEntity>(entity, entity, d.Name.ToString(),isGang);
+                                repository.CreateCorporation<TEntity>(entity, entity, d.Name.ToString(), isGang);
                                 break;
-
-                            case Grade g:
-                                // TODO : Faire architecture
-                                break;
+                           
                             default:
                                 repository.Create<TEntity>(entity, entity, d.Name.ToString());
                                 break;
@@ -176,7 +172,16 @@ namespace Data.Factory
 
         private void SetGrade(dynamic dynamic)
         {
-
+            using (DbGradeRepository repository = new DbGradeRepository())
+            {
+                foreach (var d in dynamic)
+                {
+                    int resource = int.Parse(d.Resource.ToString());
+                    int quantity = int.Parse(d.Quantity.ToString());
+                    int salary = int.Parse(d.Salary.ToString());
+                    repository.Create(d.Category.ToString(), quantity, resource, salary);
+                }
+            }
         }
         private List<string> SetCheckFeature()
         {

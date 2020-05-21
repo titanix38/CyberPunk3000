@@ -92,6 +92,8 @@ namespace Data.Repositories
             return entityDbSet;
         }
 
+       
+
         public int GetId<TEntity>(TEntity entity, string name) where TEntity : class, IModel<TEntity>
         {
             try
@@ -118,6 +120,7 @@ namespace Data.Repositories
             }
         }
 
+       
         private string GetIdFeature(int idSkill)
         {
             //int idFeature = GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Name;
@@ -222,6 +225,8 @@ namespace Data.Repositories
             }
         }
 
+        
+
         public string GetFeature(string skillName)
         {
             int idSkill = GetId<Skill>(new Skill(), skillName);
@@ -233,13 +238,6 @@ namespace Data.Repositories
             }
             return GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Name;
         }
-
-
-        public void CreateGrade(string category, int quantity, int resource, int salary)
-        {
-
-        }
-
 
         //private void Mapper<TEntity>(TEntity entity, int value) where TEntity : class, ICharacteristic<TEntity>
         //{
@@ -364,7 +362,7 @@ namespace Data.Repositories
         //    return entity;
         //}
 
-        public void Save()
+        private void Save()
         {
             _context.SaveChanges();
         }

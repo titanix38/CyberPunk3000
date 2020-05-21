@@ -56,9 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyberContext.cs" />
-    <Compile Include="Migrations\202005101535042_First.cs" />
-    <Compile Include="Migrations\202005101535042_First.designer.cs">
-      <DependentUpon>202005101535042_First.cs</DependentUpon>
+    <Compile Include="Migrations\202005210916451_First.cs" />
+    <Compile Include="Migrations\202005210916451_First.designer.cs">
+      <DependentUpon>202005210916451_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,8 +74,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005101535042_First.resx">
-      <DependentUpon>202005101535042_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005210916451_First.resx">
+      <DependentUpon>202005210916451_First.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
