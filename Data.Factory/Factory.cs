@@ -101,17 +101,17 @@ namespace Data.Factory
                 dynamic datas = JsonConvert.DeserializeObject(json, typeof(object));
                 //dynamic featureTest = JsonConvert.DeserializeObject(json, typeof(Feature));
 
-                SetToCharacteristic(new Feature(), datas.Features);
-                SetToCharacteristic(new SpecialAbility(), datas.SpecialAbilities);
-                SetToCharacteristic(new Skill(), datas.Skills);
-                SetToCharacteristic(new Protection(), datas.Protections);
-                SetToCharacteristic(new Gender(), datas.Genders);
-                SetToCharacteristic(new Ethnic(), datas.Ethnics);
+                SetDatasToCharacteristic(new Feature(), datas.Features);
+                SetDatasToCharacteristic(new SpecialAbility(), datas.SpecialAbilities);
+                SetDatasToCharacteristic(new Skill(), datas.Skills);
+                SetDatasToCharacteristic(new Protection(), datas.Protections);
+                SetDatasToCharacteristic(new Gender(), datas.Genders);
+                SetDatasToCharacteristic(new Ethnic(), datas.Ethnics);
 
-                SetToCharacteristic(new Corporation(), datas.Corporations);
-                SetToCharacteristic(new City(), datas.Cities);
-                SetToCharacteristic(new Area(), datas.Areas);
-                SetGrade(datas.Grades);
+                SetDatasToCharacteristic(new Corporation(), datas.Corporations);
+                SetDatasToCharacteristic(new City(), datas.Cities);
+                SetDatasToCharacteristic(new Area(), datas.Areas);
+                SetDatasToGrade(datas.Grades);
 
                 //SetToRepository(new Skill(), datas.Skills);
 
@@ -131,7 +131,7 @@ namespace Data.Factory
             }
         }
 
-        private void SetToCharacteristic<TEntity>(TEntity entity, dynamic dynamic) where TEntity : class, IModel<TEntity>
+        private void SetDatasToCharacteristic<TEntity>(TEntity entity, dynamic dynamic) where TEntity : class, IModel<TEntity>
         {
             using (DbModelRepository<TEntity> repository = new DbModelRepository<TEntity>(entity))
             {
@@ -170,7 +170,7 @@ namespace Data.Factory
         }
 
 
-        private void SetGrade(dynamic dynamic)
+        private void SetDatasToGrade(dynamic dynamic)
         {
             using (DbGradeRepository repository = new DbGradeRepository())
             {

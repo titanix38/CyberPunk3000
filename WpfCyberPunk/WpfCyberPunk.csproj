@@ -58,6 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ITab.cs" />
+    <Compile Include="Tab.cs" />
     <Compile Include="WpfCharacterSheet.xaml.cs">
       <DependentUpon>WpfCharacterSheet.xaml</DependentUpon>
     </Compile>

@@ -20,9 +20,6 @@ namespace WpfCyberPunk
     /// </summary>
     public partial class WpfChooseGender : Page
     {
-        public WpfChooseGender()
-        {
-            InitializeComponent();
-        }
+        public WpfChooseGender() => InitializeComponent();
     }
 }

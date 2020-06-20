@@ -7,31 +7,59 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Background="Black"
-        Title="Cyperpunk 3000" Height="450" Width="800">
+        Title="Cyperpunk 3000" Height="1080" Width="1920">
     <Grid>
-        <Button Name="BtnCreate" ToolTip="" ToolTipOpening="BtnCreate_MouseOver" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Height="100" Width="100">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Pictures/Ajout_Personnage.png" Width="60" Height="60"/>
-                <TextBlock Text="" VerticalAlignment="Center" />
-            </StackPanel>
-        </Button>
-        <Button x:Name="BtnImport" ToolTip="" ToolTipOpening="BtnImport_MouseOver" Click="BtnImport_Click" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top" Height="100" Width="100">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Pictures/Import_Personnage.png" Width="60" Height="60"/>
-                <TextBlock Text="" VerticalAlignment="Center" />
-            </StackPanel>
-        </Button>
-        <Button Name="BtnOpen" ToolTip="" ToolTipOpening="BtnOpen_MouseOver" HorizontalAlignment="Left" Margin="350,50,0,0" VerticalAlignment="Top" Width="100">            
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Pictures/Feuille_Personnage.png" Width="60" Height="60"/>
-                <TextBlock Text="" VerticalAlignment="Center" />
-            </StackPanel>
-        </Button>
-        <Button Name="BtnClose" Click="BtnClose_Click" HorizontalAlignment="Left" Margin="660,50,0,0" VerticalAlignment="Top" Height="100" Width="100">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Pictures/Fermer.png" Width="60" Height="60"/>
-                <TextBlock Text="" VerticalAlignment="Center" />
-            </StackPanel>
-        </Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="940"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1920" SharedSizeGroup="Page"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Button Name="BtnCreate" ToolTip="" ToolTipOpening="BtnCreate_MouseOver" Click="BtnCreate_Click" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Pictures/Ajout_Personnage.png" Width="60" Height="60"/>
+                    <TextBlock Text="" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="BtnImport" ToolTip="" ToolTipOpening="BtnImport_MouseOver" Click="BtnImport_Click" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Pictures/Import_Personnage.png" Width="60" Height="60"/>
+                    <TextBlock Text="" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Name="BtnOpen" ToolTip="" ToolTipOpening="BtnOpen_MouseOver" Click="BtnOpen_Click" HorizontalAlignment="Left" Margin="350,20,0,0" VerticalAlignment="Top" Width="100">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Pictures/Feuille_Personnage.png" Width="60" Height="60"/>
+                    <TextBlock Text="" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Name="BtnClose" Click="BtnClose_Click" HorizontalAlignment="Left" Margin="1800,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Pictures/Fermer.png" Width="60" Height="60"/>
+                    <TextBlock Text="" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <!--<Frame Source="WpfCharacterSheet.xaml"></Frame>-->
+
+            <TabControl Margin="10" BorderThickness="0" Background="LightGray">
+                <TabItem Header="Nouveau Personnage">
+                    <Frame Source="WpfCharacterSheet.xaml"/>
+                </TabItem>
+                <TabItem Header="Security" />
+                <TabItem Header="Details" />
+            </TabControl>
+
+            <!--<TabControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type x:ITab}">
+                        <
+                    </DataTemplate>
+                </TabControl.ItemTemplate>-->
+            <!--<Frame Source="WpfCharacterSheet.xaml"></Frame>-->
+
+        </Grid>
     </Grid>
 </Window>

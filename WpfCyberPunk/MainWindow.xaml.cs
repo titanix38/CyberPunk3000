@@ -1,9 +1,13 @@
 ﻿using Data.Factory;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Interop;
+
 
 namespace WpfCyberPunk
 {
@@ -17,6 +21,10 @@ namespace WpfCyberPunk
         [DllImport("user32.dll")]
         private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
+
+        public ICommand NewTabCommand { get; }
+        public ICollection<ITab> Tabs{ get; }
+
         private const int GWL_STYLE = -16;
 
         private const int WS_MAXIMIZEBOX = 0x10000; //maximize button
@@ -28,6 +36,8 @@ namespace WpfCyberPunk
             this.SourceInitialized += MainWindow_SourceInitialized;
             Factory factory = new Factory();
             factory.SetJsonToDb();
+
+            //Tabs = new ObservableCollection<ITab>();
         }
 
         private IntPtr _windowHandle;
@@ -42,7 +52,9 @@ namespace WpfCyberPunk
         protected void DisableMaximizeButton()
         {
             if (_windowHandle == null)
+            {
                 throw new InvalidOperationException("The window has not yet been completely initialized");
+            }
 
             SetWindowLong(_windowHandle, GWL_STYLE, GetWindowLong(_windowHandle, GWL_STYLE) & ~WS_MAXIMIZEBOX);
         }
@@ -91,9 +103,21 @@ namespace WpfCyberPunk
             import.ToolTip = tool;
         }
 
+        private void BtnOpen_Click(object sender, EventArgs e)
+        {   
+            //WpfCharacterSheet sheet = new WpfCharacterSheet();
+            //this.Content = sheet;
+        }
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
+            // TODO : Create new Tab
+            //WpfCharacterSheet sheet = new WpfCharacterSheet();
+            //this.Content = sheet;
         }
     }
 }
