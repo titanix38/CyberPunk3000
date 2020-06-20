@@ -136,8 +136,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="430"/>
@@ -157,16 +155,10 @@
                 </Grid.ColumnDefinitions>
                 <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="5" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent" />
                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Width="430" Content="Capacités spéciales" HorizontalAlignment="Left"/>
-                <StackPanel Orientation="Horizontal" Grid.Row="1" Width="430">                    
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Width="430">                    
                     <Label FontSize="6" Margin="150,0,0,0" Content="Valeur" HorizontalAlignment="Center" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="20"/>
                     <Label FontSize="6" Margin="100,0,0,0" Content="Point acquis" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20"></Label>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" Width="430">
-                    <Label Margin="10,0,0,0" Content="Furtif" Width="70" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
-                    <!--<Label Grid.Row="2" Grid.Column="3" Content="|" Width="Auto" Margin="0,0,0,0" HorizontalContentAlignment="Left" HorizontalAlignment="Center"/>-->
-                    <TextBox Margin="40,0,0,0"  Name="txtAbilities1" Width="130" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="10" VerticalAlignment="Center" Height="18"/>
-                    <TextBox Margin="25,0,0,0" Name="txtAbilAcquired1" Width="130" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="99" VerticalAlignment="Center" Height="18"/>
-                </StackPanel>
+                </StackPanel>                
                 <!--<Grid Grid.Row="0" Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>

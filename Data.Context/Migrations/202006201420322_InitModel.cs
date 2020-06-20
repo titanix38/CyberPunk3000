@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class InitModel : DbMigration
     {
         public override void Up()
         {
@@ -13,6 +13,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                         IdCity = c.Int(nullable: false),
                         Safety = c.Int(nullable: false),
                     })
@@ -54,6 +55,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                         IsGang = c.Boolean(nullable: false),
                         Color = c.String(),
                     })
@@ -65,6 +67,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -75,6 +78,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -96,6 +100,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -105,6 +110,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -114,6 +120,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                         Price = c.Int(nullable: false),
                         Empathy = c.Int(nullable: false),
                         Description = c.String(),
@@ -132,6 +139,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                         Factor = c.Int(nullable: false),
                         IdFeature = c.Int(nullable: false),
                         IdSpecialAbility = c.Int(),
@@ -148,6 +156,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -157,6 +166,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        Alias = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             

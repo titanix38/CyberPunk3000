@@ -12,7 +12,8 @@ namespace WpfCyberPunk
     {
         private const double WIDTH_LABEL = 70;
         private const double WIDTH_TEXTBOX = 130;
-
+        private const string STACKPANELPREFIXE = "StPa_";
+        private const string SPECIALPREFIXE = "Sp_";
 
         public WpfCharacterSheet()
         {
@@ -24,35 +25,49 @@ namespace WpfCyberPunk
 
         private void SetGridAbilities()
         {
-            SpecialAbilitiesGrid.RowDefinitions.Add(new RowDefinition());
-
+            //SpecialAbilitiesGrid.RowDefinitions.Add(new RowDefinition());
+            int i = 2;
             using (DbModelRepository<SpecialAbility> dbModel = new DbModelRepository<SpecialAbility>(new SpecialAbility()))
             {
                 IQueryable<SpecialAbility> entities = dbModel.GetAll<SpecialAbility>();
 
+                //RowDefinition newRow = new RowDefinition()
+                //{
+                //    Height = new GridLength(10),                    
+                //};
+
                 foreach (SpecialAbility item in entities)
                 {
-                    item.Name = item.Name.Replace(" ", "_");
+                    SpecialAbilitiesGrid.RowDefinitions.Add(new RowDefinition()
+                    {
+                        Height = new GridLength(16),
+                    });
 
+                    item.Alias = item.Alias.Replace(" ", "_");
 
                     StackPanel stack = new StackPanel()
                     {
-                        Name = string.Concat("Ab_",item.Alias, "_StPa"),
+                        Name = string.Concat(STACKPANELPREFIXE, SPECIALPREFIXE, item.Alias),
                         Orientation = Orientation.Horizontal
                     };
+                    
+                    SubItem(stack, item.Name, null, null,i);
+
                     SpecialAbilitiesGrid.Children.Add(stack);
+
+                    Grid.SetRow(stack, i);
                     Grid.SetColumn(stack, 0);
 
-                    SubItem(stack, item.Name, null, null);
+                    i++;
                 }
 
             }
         }
 
-        private void SubItem(StackPanel stack, string name, int? score, int? point)
+        private void SubItem(StackPanel stack, string name, int? score, int? point, int pos)
         {
 
-            string itemName = stack.Name.Replace("_stack", string.Empty);
+            string itemName = stack.Name.Replace(STACKPANELPREFIXE, string.Empty);
             //StackPanel stack = new StackPanel()
             //{
             //    Name = "NewStack",
@@ -64,11 +79,13 @@ namespace WpfCyberPunk
             //Grid.SetRow(ucAcquired, SpecialAbilitiesGrid.RowDefinitions.Count - 1);
             Label label = new Label()
             {
-                Name = string.Concat("label-", itemName),
+                Name = string.Concat("lb_", itemName),
                 Content = name,
                 Margin = new Thickness(10, 0, 0, 0),
                 Width = WIDTH_LABEL,
-                VerticalAlignment = VerticalAlignment.Top
+                FontSize = 8,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch
                 //    Margin.Left = 0xA,
             };
             TextBox tbScore = new TextBox()
@@ -85,7 +102,8 @@ namespace WpfCyberPunk
             TextBox tbPoint = new TextBox()
             {
                 Name = string.Concat("tbPoint_", itemName),
-                Text = point == null ? string.Empty : point.ToString(),
+                //Text = point == null ? string.Empty : point.ToString(),
+                Text = pos.ToString(),
                 Height = 18,
                 Width = WIDTH_TEXTBOX,
                 Margin = new Thickness(25, 0, 0, 0),

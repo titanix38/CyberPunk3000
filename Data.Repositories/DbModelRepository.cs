@@ -129,14 +129,17 @@ namespace Data.Repositories
         }
 
 
-        public void Create<IModel>(T entity, IModel<T> charac, string name)
+        public void Create<IModel>(T entity, IModel<T> characr, string name, string alias)
         {
             int id = GetId(entity, name);
 
             // Not found so add it
             if (id == 0)
             {
-                entity.Name = name.ToUpper();
+                entity.Name = name;
+                entity.Alias = alias;
+                
+                
                 Add<T>(entity);
                 Save();
                 id = GetId(entity, name);
@@ -156,14 +159,11 @@ namespace Data.Repositories
         /// <param name="name"></param>
         /// <param name="idFeature">Feature dependance</param>
         /// <param name="idSpecialAbility">Special Ability dependance</param>
-        public void Create<IModel>(T entity, IModel<T> charac, string name, int idFeature, int? idSpecialAbility)
+        public void Create<IModel>(T entity, IModel<T> charac, string name, string alias, int factor,int idFeature, int? idSpecialAbility)
         {
             int id = GetId(entity, name);
 
-            //DbCharacterRepository dbCharacter = new DbCharacterRepository();
-            //Mapper(entity);
-            //DbAttributeRepository<AttributeSkill> dbAttribute = new DbAttributeRepository<AttributeSkill>();
-            // Not found so add it
+            // Not found so add entity
             if (id == 0)
             {
                 if (entity is Skill)
@@ -171,6 +171,8 @@ namespace Data.Repositories
                     Skill skill = new Skill
                     {
                         Name = name,
+                        Alias = alias,
+                        Factor = factor,
                         IdFeature = idFeature,
                         IdSpecialAbility = idSpecialAbility
                     };
@@ -179,11 +181,9 @@ namespace Data.Repositories
                     Id = GetId(skill, name);
                 }
             }
-
-            //Mapper<T>(entity, value);
         }
 
-        public void Create<IModel>(T entity, IModel<T> charac, string name, int idCity)
+        public void Create<IModel>(T entity, IModel<T> charac, string name, string alias,int idCity)
         {
             int id = GetId(entity, name);
 
@@ -194,6 +194,7 @@ namespace Data.Repositories
                     Area area = new Area
                     {
                         Name = name,
+                        Alias = alias,
                         IdCity = idCity
                     };
                     Add(area);
@@ -203,7 +204,7 @@ namespace Data.Repositories
             }
         }
 
-        public void CreateCorporation<IModel>(T entity, IModel<T> charac, string name, bool isGang, string color = null)
+        public void CreateCorporation<IModel>(T entity, IModel<T> charac, string name, string alias,bool isGang = false, string color = null)
         {
 
 
@@ -216,6 +217,7 @@ namespace Data.Repositories
                     Corporation area = new Corporation
                     {
                         Name = name,
+                        Alias = alias,
                         IsGang = isGang
                     };
                     Add(area);

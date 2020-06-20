@@ -146,21 +146,22 @@ namespace Data.Factory
                             case Skill s:
                                 int idFeat = int.Parse(d.IdFeature.ToString());
                                 int? idSpecial = string.IsNullOrEmpty(d.IdSpecialAbility.ToString()) ? null : int.Parse(d.IdSpecialAbility.ToString());
-                                repository.Create<TEntity>(entity, entity, d.Name.ToString(), idFeat, idSpecial);
+                                int factor = int.Parse(d.Factor.ToString());
+                                repository.Create<TEntity>(entity, entity, d.Name.ToString(),d.Alias.ToString(),factor,idFeat, idSpecial);
                                 break;
 
                             case Area a:
                                 int idCity = int.Parse(d.IdCity.ToString());
-                                repository.Create<TEntity>(entity, entity, d.Name.ToString(), idCity);
+                                repository.Create<TEntity>(entity, entity, d.Name.ToString(),d.Alias.ToString(), idCity);
                                 break;
 
                             case Corporation c:
                                 bool isGang = bool.Parse(d.Gang.ToString());
-                                repository.CreateCorporation<TEntity>(entity, entity, d.Name.ToString(), isGang);
+                                repository.CreateCorporation<TEntity>(entity, entity, d.Name.ToString(),d.Alias.ToString(), isGang);
                                 break;
                            
                             default:
-                                repository.Create<TEntity>(entity, entity, d.Name.ToString());
+                                repository.Create<TEntity>(entity, entity, d.Name.ToString(),d.Alias.ToString());
                                 break;
                         }
                     }
