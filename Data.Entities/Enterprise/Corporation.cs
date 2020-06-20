@@ -20,6 +20,7 @@ namespace Data.Entities.Enterprise
 
         public string Name { get; set; }
 
+        public string Alias { get; set; }
 
         public ICollection<Character> Characters { get; set; }
         //public ICollection<AttributeResource> AttributeResources { get; set; }

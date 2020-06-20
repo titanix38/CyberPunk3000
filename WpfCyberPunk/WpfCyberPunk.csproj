@@ -166,9 +166,17 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data.Entities\Data.Entities.csproj">
+      <Project>{45D91792-D789-4199-ADA0-73A2D8426253}</Project>
+      <Name>Data.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data.Factory\Data.Factory.csproj">
       <Project>{EC97B372-7E71-4729-AEC4-0FDD800D80D0}</Project>
       <Name>Data.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Repositories\Data.Repositories.csproj">
+      <Project>{59C3A57A-3B5F-4314-8D7C-8A55888BAE29}</Project>
+      <Name>Data.Repositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\ExportToDataBase\ExportToDataBase.csproj">
       <Project>{CBEF5A97-FE6F-4072-A654-5DD7688BC936}</Project>

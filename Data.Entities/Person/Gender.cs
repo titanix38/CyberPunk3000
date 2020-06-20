@@ -14,6 +14,7 @@ namespace Data.Entities.Person
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Alias { get; set; }
 
         /// <summary>
         /// Relationships

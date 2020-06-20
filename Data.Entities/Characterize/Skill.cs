@@ -18,6 +18,7 @@ namespace Data.Entities.Characterize
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Alias { get; set; }
         public int Factor { get; set; }
         //[ForeignKey("Feature")]
         public int IdFeature { get; set; }

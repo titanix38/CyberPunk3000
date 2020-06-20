@@ -18,6 +18,7 @@ namespace Data.Entities.Characterize
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Alias { get; set; }
 
         /// <summary>
         /// Relationships

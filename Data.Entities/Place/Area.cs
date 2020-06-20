@@ -12,6 +12,7 @@ namespace Data.Entities.Place
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Alias { get; set; }
 
         public int IdCity { get; set; }
 
@@ -19,6 +20,6 @@ namespace Data.Entities.Place
 
         public virtual City City { get; set; }
         public ICollection<Character> Characters { get; set; }
-
+        
     }
 }

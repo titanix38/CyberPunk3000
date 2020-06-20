@@ -18,12 +18,11 @@ namespace Data.Entities.Characterize
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public string Alias { get; set; }
         /// <summary>
         /// Relationships
         /// </summary>
         //public ICollection<AttributeSpecialAbility> AttributeSpecialAbility { get; set; }
         public ICollection<Skill> Skills { get; set; }
-
     }
 }

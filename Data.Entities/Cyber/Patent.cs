@@ -15,6 +15,7 @@ namespace Data.Entities.Cyber
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Alias { get; set; }
         public int Price { get; set; }
         public int Empathy { get; set; }
         public string Description { get; set; }      
