@@ -7,13 +7,13 @@ namespace Data.Context.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class InitModel : IMigrationMetadata
+    public sealed partial class Characterize : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Characterize));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006201420322_InitModel"; }
+            get { return "202007131752073_Characterize"; }
         }
         
         string IMigrationMetadata.Source

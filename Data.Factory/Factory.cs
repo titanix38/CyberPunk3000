@@ -1,10 +1,4 @@
 ﻿using Autofac;
-using Data.Entities;
-using Data.Entities.Characterize;
-using Data.Entities.Cyber;
-using Data.Entities.Enterprise;
-using Data.Entities.Person;
-using Data.Entities.Place;
 using Data.Repositories;
 using Newtonsoft.Json;
 using System;
@@ -12,6 +6,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Data.Entities;
+using Data.Entities.Person;
+using Data.Entities.Characterize;
+using Data.Entities.Enterprise;
+using Data.Entities.Place;
+using Data.Entities.Cyber;
 
 namespace Data.Factory
 {

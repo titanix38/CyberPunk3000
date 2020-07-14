@@ -120,15 +120,19 @@ namespace WpfCyberPunk
         {
             Grid grid = new Grid();
 
-            TextBox txtNumber = new TextBox();
-            txtNumber.Name = "txtNumber";
-            txtNumber.Text = "1776";
+            TextBox txtNumber = new TextBox
+            {
+                Name = "txtNumber",
+                Text = "1776"
+            };
 
 
 
-            Button btnClickMe = new Button();
-            btnClickMe.Content = "Click Me";
-            btnClickMe.Name = "btnClickMe";
+            Button btnClickMe = new Button
+            {
+                Content = "Click Me",
+                Name = "btnClickMe"
+            };
             //grid.RegisterName(txtNumber.Name, txtNumber);
             grid.Children.Add(btnClickMe);
 
