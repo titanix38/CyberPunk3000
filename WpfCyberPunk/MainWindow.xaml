@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCyberPunk"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen"        
+        WindowState="Maximized"        
         Background="Black"
-        Title="Cyperpunk 3000" Height="1080" Width="1920">
+        Title="Cyperpunk 3000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>

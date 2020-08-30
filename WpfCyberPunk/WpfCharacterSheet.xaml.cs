@@ -21,7 +21,7 @@ namespace WpfCyberPunk
         {
             InitializeComponent();
             //GenerateControls();
-            SetGridAbilities();
+            //SetGridAbilities();
         }
 
         private void SetPicture() 

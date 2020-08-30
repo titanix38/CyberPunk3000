@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfCyberPunk"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="450" d:DesignWidth="1080"
+      d:DesignHeight="450" d:DesignWidth="1000"
       xmlns:uc="clr-namespace:WpfCyberPunk.UserControls"
       Title="WpfCharacterSheet">
     <Grid Name="MainGrid">
@@ -36,7 +36,7 @@
                 <ColumnDefinition Width="325"/>
                 <ColumnDefinition Width="325"/>
                 <ColumnDefinition Width="325"/>
-                <ColumnDefinition Width="840"/>
+                <!--<ColumnDefinition Width="840"/>-->
             </Grid.ColumnDefinitions>
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
@@ -44,11 +44,13 @@
             <Border Grid.Row="0" Grid.Column="3" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <!--Pic-->
             <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture">               
-                <uc:UserControlPicture Height="120" Width="105" x:Name="MainTab"/>                
+                <uc:UserControlPicture Height="120" Width="105" x:Name="PicTab"/>                
             </Grid>
             <!--Name-->
             <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName">
-                <Grid>
+                <uc:UserControlDescription Height="120" Width="325" x:Name="NameTab"/>
+
+                <!--<Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -78,11 +80,14 @@
                             <TextBlock Text="Homme" Foreground="Gray" />
                         </StackPanel>
                     </RadioButton>
-                </Grid>
+                </Grid>-->
             </Grid>
             <!--Job-->
+            
             <Grid Grid.Row="0" Grid.Column="2" Name="GridJob">
-                <Grid.RowDefinitions>
+                <uc:UserControlJob Height="120" Width="325" x:Name="JobTab"/>
+
+                <!--<Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -100,7 +105,7 @@
                 <Label Grid.Column="0" Grid.Row="3" Content="" Margin="5,5,0,0" Height="26" Width="Auto" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtCity}"/>
                 <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Name="txtCorpo" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Corporation" VerticalAlignment="Center"/>
                 <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Name="txtGrade" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Grade" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Name="txtCity" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Grade" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Name="txtCity" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Grade" VerticalAlignment="Center"/>-->
             </Grid>
             <!--Space-time-->
             <Grid Grid.Row="0" Grid.Column="3" Name="GridSpaceTime">
@@ -126,7 +131,9 @@
             </Grid>
             <!--Special Abilities-->
             <Grid Grid.Row="0" Grid.Column="4" Name="SpecialAbilitiesGrid">
-                <Grid.RowDefinitions>
+                <uc:UserControlSpaceTime Height="120" Width="325" x:Name="SpaceTimeTab"/>
+
+                <!--<Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
@@ -152,7 +159,7 @@
                         <Label FontSize="6" Margin="150,0,0,0" Content="Valeur" HorizontalAlignment="Center" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="20"/>
                         <Label FontSize="6" Margin="100,0,0,0" Content="Point acquis" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20"></Label>
                     </StackPanel>
-                    <!--<Grid Grid.Row="0" Grid.Column="0">
+                    --><!--<Grid Grid.Row="0" Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="16"/>
@@ -177,7 +184,7 @@
                     <!--
                     <TextBox Grid.Row="2" Grid.Column="2" Name="txtAbilities1" Width="130" Margin="0,0,0,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="10" VerticalAlignment="Center" Height="18"/>
                     <TextBox Grid.Row="2" Grid.Column="4" Name="txtAbilAcquired1" Width="130" Margin="0,0,0,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="99" VerticalAlignment="Center" Height="18"/>
-                </Grid>-->
+                </Grid>--><!--
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -215,7 +222,7 @@
                     <Label Grid.Row="1" Grid.Column="2" FontSize="6" Content="Point" Margin="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
                     <TextBox Grid.Row="2" Grid.Column="1" Name="txtPatentName1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="I.M.F." VerticalAlignment="Center" Height="18"/>
                     <TextBox Grid.Row="2" Grid.Column="2" Name="txtPatentDesc1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="4" VerticalAlignment="Center" Height="18"/>
-                </Grid>
+                </Grid>-->
                 <!--<Grid Grid.Row="0" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

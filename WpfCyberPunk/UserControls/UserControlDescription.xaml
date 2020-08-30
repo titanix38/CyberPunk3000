@@ -27,13 +27,13 @@
             <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Name="txtPseudo" HorizontalAlignment="Left"  Margin="5,5,0,0" Height="18"  Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Pseudo" VerticalAlignment="Center"/>
             <RadioButton Grid.Column="1" Grid.Row="3" Margin="0,5,0,0" Background="Transparent" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Genre_Femme.png" Width="20" Height="20" />
+                    <Image Source="../Pictures/Genre_Femme.png" Width="20" Height="20" />
                     <TextBlock Text="Femme" Foreground="Gray" />
                 </StackPanel>
             </RadioButton>
             <RadioButton Grid.Column="2" Grid.Row="3" Margin="0,5,0,0" IsChecked="True" Background="Transparent" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Genre_Homme.png" Width="20" Height="20" />
+                    <Image Source="../Pictures/Genre_Homme.png" Width="20" Height="20" />
                     <TextBlock Text="Homme" Foreground="Gray" />
                 </StackPanel>
             </RadioButton>
