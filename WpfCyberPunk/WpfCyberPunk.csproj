@@ -38,6 +38,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icone.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=5.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.5.2.0\lib\net461\Autofac.dll</HintPath>
@@ -84,6 +87,12 @@
     </ApplicationDefinition>
     <Compile Include="ITab.cs" />
     <Compile Include="Tab.cs" />
+    <Compile Include="UserControls\UserControl.Picture.xaml.cs">
+      <DependentUpon>UserControl.Picture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlDescription.xaml.cs">
+      <DependentUpon>UserControlDescription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WpfCharacterSheet.xaml.cs">
       <DependentUpon>WpfCharacterSheet.xaml</DependentUpon>
     </Compile>
@@ -108,6 +117,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\UserControl.Picture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlDescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WpfCharacterSheet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -237,6 +254,10 @@
     <Resource Include="Pictures\Genre_Homme.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icone.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

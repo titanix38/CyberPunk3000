@@ -7,6 +7,7 @@
       mc:Ignorable="d" 
       Background="White"
       d:DesignHeight="450" d:DesignWidth="1080"
+      xmlns:uc="clr-namespace:WpfCyberPunk.UserControls"
       Title="WpfCharacterSheet">
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
@@ -15,11 +16,12 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1080" SharedSizeGroup="Page"/>
+            <ColumnDefinition Width="1920" SharedSizeGroup="Page"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent"/>
         <Border Grid.Row="1" Grid.Column="0" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent"/>
         <Border Grid.Row="2" Grid.Column="0" BorderBrush="DarkSalmon" BorderThickness="3" Background="Transparent"/>
+        <Border Grid.Row="3" Grid.Column="0" BorderBrush="DarkGoldenrod" BorderThickness="3" Background="Transparent"/>
         <Border Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent"/>
         <!--Character-->
         <Grid Grid.Row="0">
@@ -34,28 +36,18 @@
                 <ColumnDefinition Width="325"/>
                 <ColumnDefinition Width="325"/>
                 <ColumnDefinition Width="325"/>
+                <ColumnDefinition Width="840"/>
             </Grid.ColumnDefinitions>
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <Border Grid.Row="0" Grid.Column="3" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <!--Pic-->
-            <Grid Grid.Row="0" Grid.Column="0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="105"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" HorizontalAlignment="Center" Source="Pictures/Personnage.png" Height="100" Margin="2,10,2,2" VerticalAlignment="Center" Width="100"/>
-                </Grid>
+            <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture">               
+                <uc:UserControlPicture Height="120" Width="105" x:Name="MainTab"/>                
             </Grid>
             <!--Name-->
-            <Grid Grid.Row="0" Grid.Column="1">
+            <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -89,7 +81,7 @@
                 </Grid>
             </Grid>
             <!--Job-->
-            <Grid Grid.Row="0" Grid.Column="2">
+            <Grid Grid.Row="0" Grid.Column="2" Name="GridJob">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -111,7 +103,7 @@
                 <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Name="txtCity" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Grade" VerticalAlignment="Center"/>
             </Grid>
             <!--Space-time-->
-            <Grid Grid.Row="0" Grid.Column="3">
+            <Grid Grid.Row="0" Grid.Column="3" Name="GridSpaceTime">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -126,40 +118,41 @@
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Grid.Row="0" Content="Lieu : " Margin="5,5,0,0" Height="26" Width="41" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtCorpo}"/>
                     <Label Grid.Column="0" Grid.Row="1" Content="Date : " Margin="5,5,0,0" Height="26" Width="44" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtGrade}"/>
+                    <Label Grid.Column="0" Grid.Row="2" Content="Heure : " Margin="5,5,0,0" Height="26" Width="44" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtGrade}"/>
                     <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Name="txtPlace" Margin="5,5,0,0"  HorizontalAlignment="Left" Height="18" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="à" VerticalAlignment="Center"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Name="txtTime" Margin="5,5,0,0"  HorizontalAlignment="Left" Height="18" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Le" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Name="txtDate" Margin="5,5,0,0"  HorizontalAlignment="Left" Height="18" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Le" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Name="txtTime" Margin="5,5,0,0"  HorizontalAlignment="Left" Height="18" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Le" VerticalAlignment="Center"/>
                 </Grid>
             </Grid>
-        </Grid>
-        <!--Special Abilities-->
-        <Grid Grid.Row="1" Name="SpecialAbilitiesGrid">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="430"/>
-                <ColumnDefinition Width="325"/>
-                <ColumnDefinition Width="325"/>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent" />
-            <Grid Grid.Row="0" Grid.Column="0">
+            <!--Special Abilities-->
+            <Grid Grid.Row="0" Grid.Column="4" Name="SpecialAbilitiesGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="16"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" Name="GrpSpecialAbilities"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="320"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="5" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent" />
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Width="430" Content="Capacités spéciales" HorizontalAlignment="Left"/>
-                <StackPanel Orientation="Horizontal" Grid.Row="0" Width="430">                    
-                    <Label FontSize="6" Margin="150,0,0,0" Content="Valeur" HorizontalAlignment="Center" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="20"/>
-                    <Label FontSize="6" Margin="100,0,0,0" Content="Point acquis" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20"></Label>
-                </StackPanel>                
-                <!--<Grid Grid.Row="0" Grid.Column="0">
+                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent" />
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="16"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" Name="GrpSpecialAbilities"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="4" Grid.RowSpan="3" Grid.ColumnSpan="5" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent" />
+                    <Label Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="5" Width="430" Content="Capacités spéciales" HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Width="430">
+                        <Label FontSize="6" Margin="150,0,0,0" Content="Valeur" HorizontalAlignment="Center" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="20"/>
+                        <Label FontSize="6" Margin="100,0,0,0" Content="Point acquis" HorizontalAlignment="Left" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20"></Label>
+                    </StackPanel>
+                    <!--<Grid Grid.Row="0" Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="16"/>
@@ -170,8 +163,8 @@
                         <ColumnDefinition Width="Auto" MinWidth="70"/>
                         <ColumnDefinition Width="Auto" />
                         -->
-                <!--<ColumnDefinition Width="Auto" MinWidth="5"/>-->
-                <!--
+                    <!--<ColumnDefinition Width="Auto" MinWidth="5"/>-->
+                    <!--
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="5" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent" />
@@ -180,51 +173,50 @@
                     <Label Grid.Row="1" Grid.Column="4" FontSize="6" Content="Point acquis" Margin="0,0,5,0" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
                     <Label Grid.Row="2" Grid.Column="1" Content="Furtif" Width="70" Margin="0,0,0,0" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
                     -->
-                <!--<Label Grid.Row="2" Grid.Column="3" Content="|" Width="Auto" Margin="0,0,0,0" HorizontalContentAlignment="Left" HorizontalAlignment="Center"/>-->
-                <!--
+                    <!--<Label Grid.Row="2" Grid.Column="3" Content="|" Width="Auto" Margin="0,0,0,0" HorizontalContentAlignment="Left" HorizontalAlignment="Center"/>-->
+                    <!--
                     <TextBox Grid.Row="2" Grid.Column="2" Name="txtAbilities1" Width="130" Margin="0,0,0,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="10" VerticalAlignment="Center" Height="18"/>
                     <TextBox Grid.Row="2" Grid.Column="4" Name="txtAbilAcquired1" Width="130" Margin="0,0,0,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="99" VerticalAlignment="Center" Height="18"/>
                 </Grid>-->
-            </Grid>
-            <Grid Grid.Row="0" Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="16"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" Name="GrpResources"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" BorderBrush="DarkRed" BorderThickness="3" Background="Transparent" />
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="16"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" Name="GridResources"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" BorderBrush="DarkRed" BorderThickness="3" Background="Transparent" />
 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Width="325" Content="Ressources"/>
-                <Label Grid.Row="1" Grid.Column="1" FontSize="6" Content="Corporation" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
-                <Label Grid.Row="1" Grid.Column="2" FontSize="6" Content="Point" Margin="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
-                <TextBox Grid.Row="2" Grid.Column="1" Name="txtCorpoName1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="I.M.F." VerticalAlignment="Center" Height="18"/>
-                <TextBox Grid.Row="2" Grid.Column="2" Name="txtCorpoPoint1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="4" VerticalAlignment="Center" Height="18"/>
-            </Grid>
-            <Grid Grid.Row="0" Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="16"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" Name="GrpClothes"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" BorderBrush="DimGray" BorderThickness="3" Background="Transparent" />
-
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Width="325" Content="Habits"/>
-                <Label Grid.Row="1" Grid.Column="1" FontSize="6" Content="Nom" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
-                <Label Grid.Row="1" Grid.Column="2" FontSize="6" Content="Point" Margin="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
-                <TextBox Grid.Row="2" Grid.Column="1" Name="txtPatentName1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="I.M.F." VerticalAlignment="Center" Height="18"/>
-                <TextBox Grid.Row="2" Grid.Column="2" Name="txtPatentDesc1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="4" VerticalAlignment="Center" Height="18"/>
-            </Grid>
-            <!--<Grid Grid.Row="0" Grid.Column="1">
+                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Width="325" Content="Ressources"/>
+                    <Label Grid.Row="1" Grid.Column="1" FontSize="6" Content="Corporation" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
+                    <Label Grid.Row="1" Grid.Column="2" FontSize="6" Content="Point" Margin="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="txtCorpoName1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="I.M.F." VerticalAlignment="Center" Height="18"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" Name="txtCorpoPoint1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="4" VerticalAlignment="Center" Height="18"/>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="16"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" Name="GridClothes"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" BorderBrush="DimGray" BorderThickness="3" Background="Transparent" />
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Width="325" Content="Habits"/>
+                    <Label Grid.Row="1" Grid.Column="1" FontSize="6" Content="Nom" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
+                    <Label Grid.Row="1" Grid.Column="2" FontSize="6" Content="Point" Margin="0,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="txtPatentName1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="I.M.F." VerticalAlignment="Center" Height="18"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" Name="txtPatentDesc1" Width="125" Margin="0,0,0,5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="4" VerticalAlignment="Center" Height="18"/>
+                </Grid>
+                <!--<Grid Grid.Row="0" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="16"/>
@@ -235,8 +227,8 @@
                     <ColumnDefinition Width="Auto" MinWidth="70"/>
                     <ColumnDefinition Width="Auto" />
                     -->
-            <!--<ColumnDefinition Width="Auto" MinWidth="5"/>-->
-            <!--
+                <!--<ColumnDefinition Width="Auto" MinWidth="5"/>-->
+                <!--
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="5" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent" />
@@ -245,13 +237,13 @@
                 <Label Grid.Row="1" Grid.Column="4" FontSize="6" Content="Point acquis" Margin="0,0,5,0" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Width="Auto" Height="20"></Label>
                 <Label Grid.Row="2" Grid.Column="1" Content="Furtif" Width="70" Margin="0,0,0,0" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
                 -->
-            <!--<Label Grid.Row="2" Grid.Column="3" Content="|" Width="Auto" Margin="0,0,0,0" HorizontalContentAlignment="Left" HorizontalAlignment="Center"/>-->
-            <!--
+                <!--<Label Grid.Row="2" Grid.Column="3" Content="|" Width="Auto" Margin="0,0,0,0" HorizontalContentAlignment="Left" HorizontalAlignment="Center"/>-->
+                <!--
                 <TextBox Grid.Row="2" Grid.Column="2" Name="txtAbilities1" Width="130" Margin="0,0,0,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="10" VerticalAlignment="Center" Height="18"/>
                 <TextBox Grid.Row="2" Grid.Column="4" Name="txtAbilAcquired1" Width="130" Margin="0,0,0,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" TextWrapping="Wrap" Text="99" VerticalAlignment="Center" Height="18"/>
             </Grid>-->
 
-            <!--<ColumnDefinition Width="Auto" MinWidth="70" Name="GrpResource"/>
+                <!--<ColumnDefinition Width="Auto" MinWidth="70" Name="GrpResource"/>
                     <ColumnDefinition Width="Auto" MinWidth="50"/>
                     <ColumnDefinition Width="Auto" MinWidth="50"/>
                     <ColumnDefinition Width="Auto" MinWidth="50" Name="GrpCyber"/>
@@ -259,13 +251,16 @@
                     <ColumnDefinition Width="Auto" MinWidth="50" Name="GrpClothes"/>
                     <ColumnDefinition Width="Auto" MinWidth="50"/>
                 </Grid.ColumnDefinitions>-->
-            <!--<Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="4" Background="Transparent" BorderBrush="DarkGreen" BorderThickness="2" />
+                <!--<Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="4" Background="Transparent" BorderBrush="DarkGreen" BorderThickness="2" />
             <Border Grid.Row="0" Grid.Column="4" Grid.RowSpan="3" Grid.ColumnSpan="3" Background="Transparent" BorderBrush="DarkRed" BorderThickness="2" />-->
 
-            <!--Capacités spéciales-->
+                <!--Capacités spéciales-->
 
 
+            </Grid>
         </Grid>
+        <!--Special Abilities-->
+        
     </Grid>
 
     <!--Ressources-->

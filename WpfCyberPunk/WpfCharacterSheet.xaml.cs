@@ -3,6 +3,8 @@ using Data.Repositories;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using WpfCyberPunk.UserControls;
+
 namespace WpfCyberPunk
 {
     /// <summary>
@@ -22,7 +24,12 @@ namespace WpfCyberPunk
             SetGridAbilities();
         }
 
-
+        private void SetPicture() 
+        {
+            //MainTab.Items.Clear(); //Clear previous Items in the user controls which is my tabItems    
+            var userControls = new UserControlPicture();
+            TabItem _tabUserPage = new TabItem { Content = userControls };
+        }
         private void SetGridAbilities()
         {
             //SpecialAbilitiesGrid.RowDefinitions.Add(new RowDefinition());
