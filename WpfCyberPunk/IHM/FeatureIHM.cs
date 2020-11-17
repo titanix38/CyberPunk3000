@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+using WpfCyberPunk.Properties;
 
 namespace WpfCyberPunk.IHM
 {
@@ -17,10 +20,15 @@ namespace WpfCyberPunk.IHM
 
         public void SetStackPanel()
         {
-            Label lblName = new Label()
+            Stack = new StackPanel()
+            {
+                Name = "StkPan_Features",
+                Orientation = Orientation.Horizontal,
+            };
+            TextBlock lblName = new TextBlock()
             {
                 Name = string.Concat("lb_", Alias),
-                Content = Name,
+                Text = Name,
                 FontSize = 10,
                 Width = 100
             };
@@ -30,11 +38,15 @@ namespace WpfCyberPunk.IHM
                 FontSize = 10,
                 Height = 14,
                 Width = 25,
+                Text = "9",
                 Margin = new Thickness(0, 0, 5, 0),
                 HorizontalAlignment = HorizontalAlignment.Right,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
-                VerticalContentAlignment = VerticalAlignment.Center
+                VerticalContentAlignment = VerticalAlignment.Center,
             };
+            
+            txtScore.Style = (Style)Application.Current.Resources["TextBoxFeature"];
+
             TextBox txtPoint = new TextBox()
             {
                 Name = string.Concat("tbPoint_", Alias),
@@ -45,6 +57,8 @@ namespace WpfCyberPunk.IHM
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center
             };
+            txtPoint.Style = (Style)Application.Current.Resources["TextBoxFeature"];
+
             CheckBox chkBox = new CheckBox()
             {
                 VerticalAlignment = VerticalAlignment.Center,

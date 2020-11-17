@@ -10,6 +10,11 @@ namespace WpfCyberPunk.IHM
 {
     public class SkillIHM
     {
+        private Thickness _thicknessTxtBox = new Thickness(0, 2, 2, 5);
+        private Thickness _thicknessTxtBlk = new Thickness(5, 0, 5, 5);
+        private Thickness _thicknessChkBox = new Thickness(10, 2, 10, 5);
+
+
         private int _itemCount;
         private int _column;
         private int _posRow;
@@ -65,12 +70,14 @@ namespace WpfCyberPunk.IHM
                 //Height = 20
                 //Width = 200
             };
-            Label lblName = new Label()
+            TextBlock txtBlkName = new TextBlock()
             {
                 Name = string.Concat("lb_", Alias),
-                Content = Name,
+                Text = Name,
                 FontSize = 10,
-                Width = 100
+                Width = 100,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = _thicknessTxtBlk,
             };
             TextBox txtScore = new TextBox()
             {
@@ -78,7 +85,7 @@ namespace WpfCyberPunk.IHM
                 FontSize = 10,
                 Height = 14,
                 Width = 25,
-                Margin = new Thickness(0, 0, 5, 0),
+                Margin = _thicknessTxtBox,
                 HorizontalAlignment = HorizontalAlignment.Right,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
                 VerticalContentAlignment = VerticalAlignment.Center
@@ -89,6 +96,7 @@ namespace WpfCyberPunk.IHM
                 FontSize = 10,
                 Height = 14,
                 Width = 25,
+                Margin = _thicknessTxtBox,
                 HorizontalContentAlignment = HorizontalAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center
@@ -97,11 +105,10 @@ namespace WpfCyberPunk.IHM
             {
                 VerticalAlignment = VerticalAlignment.Center,
                 Height = 14,
-                //Width = 14,
-                Margin = new Thickness(10, 0, 10, 0),
+                Margin = _thicknessChkBox,
             };
 
-            subStack.Children.Add(lblName);
+            subStack.Children.Add(txtBlkName);
             subStack.Children.Add(txtScore);
             subStack.Children.Add(txtPoint);
             subStack.Children.Add(chkBox);

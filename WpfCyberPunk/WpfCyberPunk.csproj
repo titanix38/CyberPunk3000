@@ -111,6 +111,9 @@
     <Compile Include="UserControls\UserControlJob.xaml.cs">
       <DependentUpon>UserControlJob.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlSkills.xaml.cs">
+      <DependentUpon>UserControlSkills.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlSpaceTime.xaml.cs">
       <DependentUpon>UserControlSpaceTime.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UserControlJob.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlSkills.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
