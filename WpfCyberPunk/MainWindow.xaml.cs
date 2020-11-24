@@ -103,6 +103,24 @@ namespace WpfCyberPunk
             import.ToolTip = tool;
         }
 
+        private void BtnPlay_MouseOver(object sender, RoutedEventArgs e)
+        {
+            Button import = sender as Button;
+
+            //ToolTip tool = new ToolTip() { Content = contains };
+            ToolTip tool = new ToolTip() { Content = "Commencer une nouvelle partie", IsOpen = true, StaysOpen = true };
+            import.ToolTip = tool;
+        }
+
+        private void BtnStop_MouseOver(object sender, RoutedEventArgs e)
+        {
+            Button import = sender as Button;
+
+            //ToolTip tool = new ToolTip() { Content = contains };
+            ToolTip tool = new ToolTip() { Content = "Finir la partie", IsOpen = true, StaysOpen = true };
+            import.ToolTip = tool;
+        }
+
         private void BtnOpen_Click(object sender, EventArgs e)
         {   
             //WpfCharacterSheet sheet = new WpfCharacterSheet();
@@ -116,6 +134,18 @@ namespace WpfCyberPunk
         private void BtnCreate_Click(object sender, EventArgs e)
         {
             // TODO : Create new Tab
+            //WpfCharacterSheet sheet = new WpfCharacterSheet();
+            //this.Content = sheet;
+        }
+        private void BtnPlay_Click(object sender, EventArgs e)
+        {
+            // TODO : Start new game
+            //WpfCharacterSheet sheet = new WpfCharacterSheet();
+            //this.Content = sheet;
+        }
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            // TODO : Stop gaming
             //WpfCharacterSheet sheet = new WpfCharacterSheet();
             //this.Content = sheet;
         }

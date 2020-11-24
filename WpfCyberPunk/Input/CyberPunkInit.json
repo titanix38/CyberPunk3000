@@ -942,7 +942,7 @@
     },
     {
       "Id": "17",
-      "Name": "Connaissance de la rue",
+      "Name": "Conn. de la rue",
       "Alias": "ConnaiRue",
       "IdFeature": "5",
       "IdSpecialAbility": null,
@@ -1230,7 +1230,7 @@
     },
     {
       "Id": "53",
-      "Name": "Connaissance de la merde",
+      "Name": "Conn. de la merde",
       "Alias": "ConnMerde",
       "IdFeature": "7",
       "IdSpecialAbility": null,
@@ -1238,7 +1238,7 @@
     },
     {
       "Id": "54",
-      "Name": "Connaissance des systemes",
+      "Name": "Conn. des systemes",
       "Alias": "ConnDesSyst",
       "IdFeature": "7",
       "IdSpecialAbility": null,
@@ -1246,7 +1246,7 @@
     },
     {
       "Id": "55",
-      "Name": "Connaissance du systeme",
+      "Name": "Conn. du systeme",
       "Alias": "ConnDuSyst",
       "IdFeature": "7",
       "IdSpecialAbility": null,

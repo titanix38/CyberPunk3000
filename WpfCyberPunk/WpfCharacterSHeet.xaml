@@ -42,8 +42,8 @@
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <Border Grid.Row="0" Grid.Column="3" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <!--Pic-->
-            <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture">               
-                <uc:UserControlPicture Height="120" Width="105" x:Name="PicTab"/>                
+            <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture">
+                <uc:UserControlPicture Height="120" Width="105" x:Name="PicTab"/>
             </Grid>
             <!--Name-->
             <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName">
@@ -60,12 +60,16 @@
                 </Grid>
             </Grid>
             <!--Special Abilities-->
-            <Grid Grid.Row="1" Grid.Column="0" Name="SpecialAbilitiesGrid" Grid.ColumnSpan="3">
+            <Grid Grid.Row="1" Grid.Column="0" Name="SpecialAbilitiesGrid" Grid.ColumnSpan="4">
+                <Border BorderBrush="Brown" BorderThickness="3" Background="Transparent" />
                 <uc:UserControlSpecialAbilities x:Name="SpecialAbilitiesTab"/>
             </Grid>
-            <!--Special Abilities-->
-            <Grid Grid.Row="2" Grid.Column="0" Name="FeaturesGrid" Grid.ColumnSpan="3">
+            <!--Skills-->
+            <!--<Grid Grid.Row="2" Grid.Column="0" Name="FeaturesGrid" Grid.ColumnSpan="3">-->
+            <Grid Name="FeaturesGrid" Grid.ColumnSpan="4">
                 <uc:UserControlSkills x:Name="FeaturesTab"/>
+                <!--<Border BorderBrush="DarkGreen" BorderThickness="3" Background="Green" Opacity="0.25"/>-->
+
             </Grid>
         </Grid>
     </Grid>

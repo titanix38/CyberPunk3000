@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>8.0</LangVersion>
     <UserSecretsId>2701a7b7-9e17-4e6a-907a-da23f0ba6241</UserSecretsId>
   </PropertyGroup>
 

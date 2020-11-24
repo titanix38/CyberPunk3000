@@ -36,6 +36,18 @@
                     <TextBlock Text="" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
+            <Button Name="BtnPlay" ToolTip="" ToolTipOpening="BtnPlay_MouseOver" Click="BtnPlay_Click" HorizontalAlignment="Left" Margin="530,20,0,0" VerticalAlignment="Top" Width="100">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Pictures/Dice20Sides.png" Width="60" Height="60"/>
+                    <TextBlock Text="" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Name="BtnStop" ToolTip="" ToolTipOpening="BtnStop_MouseOver" Click="BtnStop_Click" HorizontalAlignment="Left" Margin="680,20,0,0" VerticalAlignment="Top" Width="100">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Pictures/Stop.png" Width="60" Height="60"/>
+                    <TextBlock Text="" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
             <Button Name="BtnClose" Click="BtnClose_Click" HorizontalAlignment="Left" Margin="1800,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Pictures/Fermer.png" Width="60" Height="60"/>

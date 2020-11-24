@@ -88,6 +88,48 @@ namespace Data.Factory
             return list;
         }
 
+        public List<SpecialAbility> GetSpecial()
+        {
+            using (DbModelRepository<SpecialAbility> dbModel =
+                new DbModelRepository<SpecialAbility>(new SpecialAbility()))
+            {
+                IQueryable<SpecialAbility> specials = dbModel.GetAll<SpecialAbility>();
+                
+                return specials.ToList();
+            }
+        }
+
+        public Feature GetFeature(string alias)
+        {
+            using (DbModelRepository<Feature> dbModel =
+                new DbModelRepository<Feature>(new Feature()))
+            {
+                IQueryable<Feature> features = dbModel.GetAll<Feature>();
+                return features.FirstOrDefault(f => string.Compare(f.Alias,alias,true)==0);
+            }
+        }
+
+        public List<Feature> GetFeatures()
+        {
+            using (DbModelRepository<Feature> dbModel =
+                new DbModelRepository<Feature>(new Feature()))
+            {
+                IQueryable<Feature> features = dbModel.GetAll<Feature>();
+                return features.ToList();
+            }
+        }
+
+        public List<Skill> GetSkills(Feature feature)
+        {
+            using (DbModelRepository<Skill> dbModel = new DbModelRepository<Skill>(new Skill()))
+            {
+                IQueryable<Skill> skills = dbModel.GetAll<Skill>().Where(s => s.IdFeature == feature.Id);
+
+
+                return skills.ToList();
+            }
+        }
+
         public void SetJsonToDb()
         {
             string json = File.ReadAllText(@".\Input\CyberPunkInit.json");
@@ -446,7 +488,7 @@ namespace Data.Factory
             {
                 string skillValue = c.Remove(c.IndexOf("§"));
                 string skill = Regex.Replace(skillValue, @"\d+", string.Empty).ToUpper().Trim();
-                string feature = !string.IsNullOrWhiteSpace(c.Substring(c.IndexOf("§") + 1).ToUpper().Trim()) ? c.Substring(c.IndexOf("§") + 1).ToUpper().Trim() : GetFeature(skill);
+                string feature = !string.IsNullOrWhiteSpace(c.Substring(c.IndexOf("§") + 1).ToUpper().Trim()) ? c.Substring(c.IndexOf("§") + 1).ToUpper().Trim() : GetFeatureName(skill);
 
                 vs.Add(skillValue);
                 dicSkillFeature.Add(skill, feature);
@@ -456,7 +498,7 @@ namespace Data.Factory
 
         }
 
-        private string GetFeature(string skill)
+        private string GetFeatureName(string skill)
         {
             ////DbCharacterizeRepository<Skill> repository = new DbCharacterizeRepository<Skill>(new Skill(), _idCharactere);
             //string feature = repository.GetFeature(skill);

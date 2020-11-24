@@ -3,6 +3,7 @@ using Data.Repositories;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Data.Factory;
 using WpfCyberPunk.UserControls;
 
 namespace WpfCyberPunk
@@ -20,9 +21,37 @@ namespace WpfCyberPunk
         public WpfCharacterSheet()
         {
             InitializeComponent();
+            SetSkills();
             //GenerateControls();
             //SetGridAbilities();
         }
+
+        private void SetSkills()
+        {
+            //_factory = new Factory();
+            //UserControlSkills uc = new UserControlSkills();
+            //uc.Feature = _factory.GetFeature("INT");
+            //uc.GetIHM();
+            //MainGrid.Children.Add(FeaturesGrid);
+
+            //Grid.SetRow(FeaturesGrid,2);
+            //Grid.SetColumn(FeaturesGrid,0);
+
+            //FeaturesGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            //FeaturesGrid.ColumnDefinitions.Add(new ColumnDefinition());
+
+
+            Grid.SetRow(FeaturesGrid, 2);
+            Grid.SetColumn(FeaturesGrid, 0);
+
+            //uc.Feature = _factory.GetFeature("REF");
+            //uc.GetIHM();
+            //Grid.SetRow(FeaturesGrid, 2);
+            //Grid.SetColumn(FeaturesGrid, 1);
+
+
+        }
+
 
         private void SetPicture() 
         {
