@@ -48,7 +48,7 @@
                     <TextBlock Text="" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button Name="BtnClose" Click="BtnClose_Click" HorizontalAlignment="Left" Margin="1800,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
+            <Button Name="BtnClose" ToolTip="" ToolTipOpening="BtnClose_MouseOver" Click="BtnClose_Click" HorizontalAlignment="Left" Margin="1800,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Pictures/Fermer.png" Width="60" Height="60"/>
                     <TextBlock Text="" VerticalAlignment="Center" />

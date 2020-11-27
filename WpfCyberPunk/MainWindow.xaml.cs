@@ -149,5 +149,14 @@ namespace WpfCyberPunk
             //WpfCharacterSheet sheet = new WpfCharacterSheet();
             //this.Content = sheet;
         }
+
+        private void BtnClose_MouseOver(object sender, ToolTipEventArgs e)
+        {
+            Button close = sender as Button;
+
+            //ToolTip tool = new ToolTip() { Content = contains };
+            ToolTip tool = new ToolTip() { Content = "Au revoir !!!", IsOpen = true, StaysOpen = true };
+            close.ToolTip = tool;
+        }
     }
 }

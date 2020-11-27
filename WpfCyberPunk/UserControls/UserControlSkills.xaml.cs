@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,11 @@ namespace WpfCyberPunk.UserControls
     {
         private const int BOTTOM = 5;
 
-        private Factory _factory;
+        private string _featureName;
+        private List<CheckBox> _featCheckBoxes;
+
+        private readonly Factory _factory;
+        
 
         public Feature Feature { get; set; }
 
@@ -33,23 +38,14 @@ namespace WpfCyberPunk.UserControls
         public UserControlSkills()
         {
             _factory = new Factory();
+            _featCheckBoxes = new List<CheckBox>();
             InitializeComponent();
             Construct();
             //SetHeader();
         }
 
-
         private void Construct()
-        {   
-            //foreach (Feature feature in _factory.GetFeatures())
-            //{
-            //    GetIHM(feature,column);
-            //    column++;
-            //}
-            //_factory.GetFeature("INT");
-            //GetIHM(_factory.GetFeature("INT"));
-            //GetIHM(_factory.GetFeature("REF"));
-
+        {
             Grid mGrid = new Grid()
             {
                 VerticalAlignment = VerticalAlignment.Center,
@@ -98,7 +94,6 @@ namespace WpfCyberPunk.UserControls
             return item;
         }
 
-
         private StackPanel GetIHM(Feature feature)
         {
             StackPanel panel = new StackPanel()
@@ -108,10 +103,7 @@ namespace WpfCyberPunk.UserControls
                 Orientation = Orientation.Vertical,
             };
 
-            //if (string.IsNullOrWhiteSpace(this.Name)) return;
-            //StackPanel stkPanFeature = GetStkPanFeature(Feature.Alias);
             StackPanel stkPanFeature = GetStkPanFeature(feature.Alias);
-
             StackPanel stkPanSkill = GetStkPanSkill();
 
             panel.Children.Add(stkPanFeature);
@@ -126,36 +118,6 @@ namespace WpfCyberPunk.UserControls
             //Grid.SetColumn(stkPanFeature, 0);
         }
 
-        //private Grid GetGrid()
-        //{
-        //    StackPanel[] stacks =
-        //    {
-        //        GetStkPanFeature(),
-        //        GetStkPanSkill()
-        //    };
-
-        //    StackPanel mainPanel = new StackPanel()
-        //    {
-        //        Orientation = Orientation.Vertical
-        //    };
-
-        //    Grid gridFeatureAndSkill = new Grid
-        //    {
-        //        Name = "Grd_" + Alias,
-
-        //    };
-        //    gridFeatureAndSkill.RowDefinitions.Add(new RowDefinition());
-        //    gridFeatureAndSkill.RowDefinitions.Add(new RowDefinition());
-
-        //    foreach (var stack in stacks)
-        //    {
-        //        gridFeatureAndSkill.Children.Add(stack);
-        //        Grid.SetRow(stack, Array.IndexOf(stacks, stack));
-        //    }
-        //    return gridFeatureAndSkill;
-        //}
-
-
         private StackPanel GetStkPanFeature(string alias)
         {
             StackPanel stackFeature = new StackPanel
@@ -169,9 +131,21 @@ namespace WpfCyberPunk.UserControls
             foreach (var element in getEltFeature())
             {
                 stackFeature.Children.Add(element);
+                if (element is CheckBox)
+                {
+                    _featCheckBoxes.Add((CheckBox)element);
+                    
+                    _featCheckBoxes.FirstOrDefault(e=>e.Name.Replace("chBxPt_",string.Empty) == Feature.Alias).Click += chx_Click;
+                }
             }
             return stackFeature;
         }
+
+        void chx_Click(object sender, RoutedEventArgs e)
+        {
+            _featureName = _featCheckBoxes.FirstOrDefault(c=>string.IsNullOrWhiteSpace(c.Name)).Name;
+        }
+
 
         private UIElement[] getEltFeature()
         {
@@ -206,6 +180,7 @@ namespace WpfCyberPunk.UserControls
 
                 new CheckBox
                 {
+                    Name = string.Concat("chBxPt_", Feature.Alias),
                     VerticalAlignment = VerticalAlignment.Center,
                     Height = 14,
                     //Width = 14,

@@ -36,6 +36,9 @@
                 <ColumnDefinition Width="325"/>
                 <ColumnDefinition Width="325"/>
                 <ColumnDefinition Width="325"/>
+                <ColumnDefinition Width="325"/>
+                <ColumnDefinition Width="325"/>
+                <ColumnDefinition Width="190"/>
             </Grid.ColumnDefinitions>
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
@@ -67,9 +70,10 @@
             <!--Skills-->
             <!--<Grid Grid.Row="2" Grid.Column="0" Name="FeaturesGrid" Grid.ColumnSpan="3">-->
             <Grid Name="FeaturesGrid" Grid.ColumnSpan="4">
-                <uc:UserControlSkills x:Name="FeaturesTab"/>
-                <!--<Border BorderBrush="DarkGreen" BorderThickness="3" Background="Green" Opacity="0.25"/>-->
-
+                <uc:UserControlSkills x:Name="FeaturesTab"/><!--<Border BorderBrush="DarkGreen" BorderThickness="3" Background="Green" Opacity="0.25"/>-->
+            </Grid>
+            <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="3">
+                <uc:UserControlPlaying x:Name="ControlPlaying"/>
             </Grid>
         </Grid>
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Expression.Interactivity.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace WpfCyberPunk
 
         public Tab()
         {
-            //CloseCommand = new ActionCommand(c => CloseRequested?.Invoke(this, EventArgs.Empty));
+            CloseCommand = new ActionCommand(c => CloseRequested?.Invoke(this, EventArgs.Empty));
         }
     }
 }
