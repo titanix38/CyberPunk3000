@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,19 +35,30 @@ namespace WpfCyberPunk.UserControls
                 _score = value;
                 //_point = int.Parse(value);
                 //_score = _point.ToString();
-                SetValue(ScoreTextProperty, int.Parse(_score));
+
+                //ValueProperty("ScoreText");
+                SetValue(ValueProperty, _score);
             }
         }
+        public static readonly DependencyProperty ValueProperty =
+            DependencyProperty.Register("ScoreText", typeof(string), ownerType: typeof(UserControlPlaying), new PropertyMetadata(""));
+        //private static readonly DependencyProperty ScoreTextProperty =
+        //    DependencyProperty.Register("ScoreText", typeof(int), typeof(TextBox), new PropertyMetadata(0));
 
-        private static readonly DependencyProperty ScoreTextProperty =
-            DependencyProperty.Register("ScoreText", typeof(int), typeof(UserControlSkills), new PropertyMetadata(0));
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(string propName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
 
         public int Score { get; set; }
 
         public UserControlPlaying()
         {
-            _score = "0";
+            //_score = "0";
             //_point = 0;
             this.DataContext = this;
             InitializeComponent();
@@ -108,7 +120,7 @@ namespace WpfCyberPunk.UserControls
 
         private void TBx_StartPt_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var toto = "on est ici";
+            var toto = tBx_StartPt.Text;
         }
     }
 }

@@ -14,9 +14,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid Row="0" HorizontalAlignment="Left">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Name="SkPn_Score" Orientation="Horizontal">
                 <TextBlock HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" Text="Point de départ" VerticalAlignment="Center" Height="25" Width="100"/>
-                <TextBox x:Name = "tBx_StartPt" Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ScoreText,Mode=TwoWay }" TextChanged="TBx_StartPt_OnTextChanged" FontSize="10" HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="50"/>
+                <TextBox x:Name = "tBx_StartPt" Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ScoreText,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }" TextChanged="TBx_StartPt_OnTextChanged" FontSize="10" HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="50"/>
             </StackPanel>
         </Grid>
         <Grid Row="1" HorizontalAlignment="Left">
