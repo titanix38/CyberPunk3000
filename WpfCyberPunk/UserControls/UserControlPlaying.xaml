@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfCyberPunk.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="350" Width="Auto">
+             d:DesignHeight="350" Width="Auto" d:DataContext="{d:DesignData }">
     <Grid Name="PlayingGrid" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -16,7 +16,7 @@
         <Grid Row="0" HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal">
                 <TextBlock HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" Text="Point de départ" VerticalAlignment="Center" Height="25" Width="100"/>
-                <TextBox HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Height="25" Width="50" IsReadOnly="True"/>
+                <TextBox x:Name = "tBx_StartPt" Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ScoreText,Mode=TwoWay }" TextChanged="TBx_StartPt_OnTextChanged" FontSize="10" HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="50"/>
             </StackPanel>
         </Grid>
         <Grid Row="1" HorizontalAlignment="Left">
@@ -27,7 +27,7 @@
         </Grid>
         <Grid Row="0" RowSpan="2" >
             <StackPanel Orientation="Horizontal" Margin="170,0,0,0">
-                <Button Name="BtnOk" Height="80" Width="80" ToolTip="" ToolTipOpening="BtnOk_MouseOver" Click="BtnOk_Click">
+                <Button Height="80" Width="80" ToolTip="" ToolTipOpening="BtnOk_MouseOver" Click="BtnOk_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="../Pictures/Valider.png"   Width="30" Height="30" Margin="5"/>
                         <TextBlock Text="" VerticalAlignment="Center" />

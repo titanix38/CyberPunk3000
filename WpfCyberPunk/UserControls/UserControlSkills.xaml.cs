@@ -25,8 +25,11 @@ namespace WpfCyberPunk.UserControls
     {
         private const int BOTTOM = 5;
 
-        private string _featureName;
-        private List<CheckBox> _featCheckBoxes;
+        private string _point;
+
+        private readonly List<TextBox> _textBoxes;
+
+        private readonly UserControlPlaying _ucPlaying;
 
         private readonly Factory _factory;
         
@@ -38,7 +41,8 @@ namespace WpfCyberPunk.UserControls
         public UserControlSkills()
         {
             _factory = new Factory();
-            _featCheckBoxes = new List<CheckBox>();
+            _textBoxes = new List<TextBox>();
+            _ucPlaying = new UserControlPlaying();
             InitializeComponent();
             Construct();
             //SetHeader();
@@ -133,19 +137,44 @@ namespace WpfCyberPunk.UserControls
                 stackFeature.Children.Add(element);
                 if (element is CheckBox)
                 {
-                    _featCheckBoxes.Add((CheckBox)element);
-                    
-                    _featCheckBoxes.FirstOrDefault(e=>e.Name.Replace("chBxPt_",string.Empty) == Feature.Alias).Click += chx_Click;
+                    CheckBox chx = (CheckBox)element;
+
+                    chx.AddHandler(CheckBox.CheckedEvent, new RoutedEventHandler(chx_Check));
+                    chx.AddHandler(CheckBox.UncheckedEvent, new RoutedEventHandler(chx_UnCheck));
                 }
+
+                if (element is TextBox)
+                {
+                    TextBox textBox = (TextBox) element;
+                    if (textBox.Name.StartsWith("tbScore_"))
+                    {
+                        _textBoxes.Add(textBox);
+                    }
+                }
+
             }
             return stackFeature;
         }
 
-        void chx_Click(object sender, RoutedEventArgs e)
+        private void chx_Check(object sender, RoutedEventArgs e)
         {
-            _featureName = _featCheckBoxes.FirstOrDefault(c=>string.IsNullOrWhiteSpace(c.Name)).Name;
+            int score = GetScore(sender as CheckBox);
+            score += string.IsNullOrWhiteSpace(_ucPlaying.ScoreText) ? 0 : int.Parse(_ucPlaying.ScoreText);
+            _ucPlaying.ScoreText = score.ToString();
         }
 
+        private void chx_UnCheck(object sender, RoutedEventArgs e)
+        {
+            int pt = string.IsNullOrWhiteSpace(_ucPlaying.ScoreText) ? 0 : int.Parse(_ucPlaying.ScoreText);
+            pt -= GetScore(sender as CheckBox);
+            _ucPlaying.ScoreText = pt.ToString();
+        }
+
+        private int GetScore(CheckBox checkBox)
+        {
+            string name = "tbScore_" + checkBox.Name.Replace("chBxPt_", string.Empty);
+            return int.Parse(_textBoxes.FirstOrDefault(t => t.Name == name).Text);
+        }
 
         private UIElement[] getEltFeature()
         {
@@ -165,7 +194,7 @@ namespace WpfCyberPunk.UserControls
                     Name = string.Concat("tbScore_", Feature.Alias),
                     FontFamily = new FontFamily("Segoe UI"),
                     Background = Brushes.WhiteSmoke,
-                    //Text = "9",
+                    Text = GetRandom().ToString(),
                     VerticalContentAlignment = VerticalAlignment.Center,
                     Margin = new Thickness(0, 0, 5, 0),
                     Style = (Style)Application.Current.Resources["TextBoxFeature"]
@@ -263,6 +292,14 @@ namespace WpfCyberPunk.UserControls
                 },
             };
             return elements;
+        }
+
+
+        private int GetRandom()
+        {
+            Random rnd = new Random();
+
+            return rnd.Next(2, 10);
         }
 
     }

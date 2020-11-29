@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,34 @@ namespace WpfCyberPunk.UserControls
     /// </summary>
     public partial class UserControlPlaying : UserControl
     {
+        private string _score;
+        private int _point;
+
+        //public event DependencyProperty PropertyChanged;
+
+        public string ScoreText
+        {
+            get => _score;
+            set
+            {
+                _score = value;
+                //_point = int.Parse(value);
+                //_score = _point.ToString();
+                SetValue(ScoreTextProperty, int.Parse(_score));
+            }
+        }
+
+        private static readonly DependencyProperty ScoreTextProperty =
+            DependencyProperty.Register("ScoreText", typeof(int), typeof(UserControlSkills), new PropertyMetadata(0));
+
+
+        public int Score { get; set; }
+
         public UserControlPlaying()
         {
+            _score = "0";
+            //_point = 0;
+            this.DataContext = this;
             InitializeComponent();
         }
 
@@ -38,7 +65,7 @@ namespace WpfCyberPunk.UserControls
                 {
                     TextBox textBox = new TextBox()
                     {
-                        Name = "tb_Launch_r"+row.ToString()+"_c_" + column.ToString(),
+                        Name = "tb_Launch_r" + row.ToString() + "_c_" + column.ToString(),
                         Height = 24,
                         //Visibility = Visibility.Hidden,
                         IsReadOnly = true
@@ -47,7 +74,7 @@ namespace WpfCyberPunk.UserControls
                 }
 
                 PlayingGrid.Children.Add(stack);
-                Grid.SetRow(stack,row+1);
+                Grid.SetRow(stack, row + 1);
             }
         }
 
@@ -77,6 +104,11 @@ namespace WpfCyberPunk.UserControls
             //ToolTip tool = new ToolTip() { Content = contains };
             ToolTip tool = new ToolTip() { Content = "Lancement du dé 10 ou 20 selon valeur compétence", IsOpen = true, StaysOpen = true };
             if (btnDice != null) btnDice.ToolTip = tool;
+        }
+
+        private void TBx_StartPt_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var toto = "on est ici";
         }
     }
 }
