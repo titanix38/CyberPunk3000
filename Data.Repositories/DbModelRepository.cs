@@ -157,7 +157,7 @@ namespace Data.Repositories
         /// <param name="entity"></param>
         /// <param name="charac"></param>
         /// <param name="name"></param>
-        /// <param name="idFeature">Feature dependance</param>
+        /// <param name="idFeature">Features dependance</param>
         /// <param name="idSpecialAbility">Special Ability dependance</param>
         public void Create<IModel>(T entity, IModel<T> charac, string name, string alias, int factor,int idFeature, int? idSpecialAbility)
         {
@@ -233,7 +233,7 @@ namespace Data.Repositories
         {
             int idSkill = GetId<Skill>(new Skill(), skillName);
 
-            // IdSkill not found, so not associated feature
+            // IdSpecial not found, so not associated feature
             if (idSkill == 0)
             {
                 return string.Empty;
@@ -248,10 +248,10 @@ namespace Data.Repositories
 
         //    //Dictionary<object, object> setEntities = new Dictionary<object, object>()
         //    //{
-        //    //    {new Feature(),new AttributeFeature() }
+        //    //    {new Features(),new AttributeFeature() }
         //    //};
         //    object destination;
-        //    if (entity is Feature)
+        //    if (entity is Features)
         //    {
         //        destination = ToDestination<AttributeFeature>(value);
         //        DbAttributeRepository<AttributeFeature> repository = new DbAttributeRepository<AttributeFeature>(destination as AttributeFeature, _idCharacter);
@@ -303,27 +303,27 @@ namespace Data.Repositories
         ////Type objDest = null;
         ////object objDest = null;
 
-        //Character srceCharacter = new Character()
+        //Characters srceCharacter = new Characters()
         //{
         //    IdCharactere = _idCharacter
         //};
 
         //switch (entity)
         //{
-        //    case Feature f:
+        //    case Features f:
         //        AttributeFeature attribute = new AttributeFeature();
 
         //        cfgFrmEntity = new MapperConfiguration(cfg =>
         //        {
-        //            cfg.CreateMap<Feature, AttributeFeature>();
+        //            cfg.CreateMap<Features, AttributeFeature>();
         //        });
 
         //        //cfgCharacter = new MapperConfiguration(cfg =>
         //        //{
-        //        //    cfg.CreateMap<Character, AttributeSkill>();
+        //        //    cfg.CreateMap<Characters, AttributeSkill>();
         //        //});
 
-        //        Feature srceEntity = new Feature()
+        //        Features srceEntity = new Features()
         //        {
         //            Id = this.Id,
         //        };
@@ -331,9 +331,9 @@ namespace Data.Repositories
         //        IMapper mapperFrmEntity = cfgFrmEntity.CreateMapper();
         ////        IMapper mapperCharacter = cfgCharacter.CreateMapper();
 
-        //AttributeFeature destFrmEntity = mapperFrmEntity.Map<Feature, AttributeFeature>(srceEntity);
-        //        //        //destination = mapperFrmEntity.Map<Feature, AttributeFeature>(srceEntity);
-        //        //        var other = mapperCharacter.Map<Character, AttributeFeature>(srceCharacter);
+        //AttributeFeature destFrmEntity = mapperFrmEntity.Map<Features, AttributeFeature>(srceEntity);
+        //        //        //destination = mapperFrmEntity.Map<Features, AttributeFeature>(srceEntity);
+        //        //        var other = mapperCharacter.Map<Characters, AttributeFeature>(srceCharacter);
 
         //        //return attribute;
         //        break;
@@ -343,7 +343,7 @@ namespace Data.Repositories
         //}
         //return null;
         //MapperConfiguration cfgSkillToAttibute = new MapperConfiguration(cfg => cfg.CreateMap<Skill, AttributeSkill>());
-        //MapperConfiguration cfgCharactereToAttibute = new MapperConfiguration(cfg => cfg.CreateMap<Character, AttributeSkill>());
+        //MapperConfiguration cfgCharactereToAttibute = new MapperConfiguration(cfg => cfg.CreateMap<Characters, AttributeSkill>());
         //IMapper mapSkillToAtt = cfgSkillToAttibute.CreateMapper();
         //IMapper mapCharToAtt = cfgCharactereToAttibute.CreateMapper();
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Data.Entities.RelationManyToMany;
 
 namespace Data.Entities.Place
 {
@@ -19,7 +20,7 @@ namespace Data.Entities.Place
         public int Safety { get; set; }
 
         public virtual City City { get; set; }
-        public ICollection<Character> Characters { get; set; }
+        public ICollection<CharacterArea> CharacterAreas { get; set; }
         
     }
 }

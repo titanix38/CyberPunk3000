@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data.Entities.RelationManyToMany;
 
 namespace Data.Entities.Enterprise
 {
@@ -23,8 +24,7 @@ namespace Data.Entities.Enterprise
         public string Alias { get; set; }
 
         public ICollection<Character> Characters { get; set; }
-        //public ICollection<AttributeResource> AttributeResources { get; set; }
-
+        public ICollection<CharacterResourceCorporation> CharacterResourceCorporations { get; set; }
         public bool IsGang { get; set; }
         public string Color { get; set; }
 

@@ -23,7 +23,7 @@
         <Label Grid.Column="0" Grid.Row="1" Content="Grade : " Margin="5,5,5,0" Height="26" Width="Auto" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtGrade}"/>
         <Label Grid.Column="0" Grid.Row="2" Content="Ville : " Margin="5,5,5,0" Height="26" Width="Auto" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtCity}"/>
         <Label Grid.Column="0" Grid.Row="3" Content="" Margin="5,5,0,0" Height="26" Width="Auto" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtCity}"/>
-        <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Name="txtCorpo" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Corporation" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Name="txtCorpo" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Corporations" VerticalAlignment="Center"/>
         <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Name="txtGrade" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Grade" VerticalAlignment="Center"/>
         <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Name="txtCity" Margin="5,5,5,0"  HorizontalAlignment="Left" Height="18"  Width="Auto" MinWidth="240"  TextWrapping="Wrap" Text="Grade" VerticalAlignment="Center"/>
     </Grid>

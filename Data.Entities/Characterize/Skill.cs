@@ -21,7 +21,7 @@ namespace Data.Entities.Characterize
         public string Wording { get; set; }
         public string Alias { get; set; }
         public int Factor { get; set; }
-        //[ForeignKey("Feature")]
+        //[ForeignKey("Features")]
         public int IdFeature { get; set; }
         //[ForeignKey("SpecialAbility")]
         public int? IdSpecialAbility { get; set; }

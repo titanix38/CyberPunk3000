@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data.Entities.RelationManyToMany;
 
 namespace Data.Entities.Characterize
 {
@@ -24,5 +25,6 @@ namespace Data.Entities.Characterize
         /// </summary>
         //public ICollection<AttributeSpecialAbility> AttributeSpecialAbility { get; set; }
         public ICollection<Skill> Skills { get; set; }
+        public ICollection<CharacterSpecialAbility> CharacterSpecialAbilities { get; set; }
     }
 }

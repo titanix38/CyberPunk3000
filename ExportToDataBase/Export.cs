@@ -391,8 +391,7 @@ namespace ExportToDataBase
             _character = new Character()
             {
                 FirstName = named[0],
-                LastName = named[1],
-                Pseudo = named[2],
+                LastName = named[1]
 
                 //Grade = _corporation.Grade,
 

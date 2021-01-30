@@ -30,7 +30,7 @@ namespace WpfCyberPunk
         {
             //_factory = new Factory();
             //UserControlSkills uc = new UserControlSkills();
-            //uc.Feature = _factory.GetFeature("INT");
+            //uc.Features = _factory.GetFeature("INT");
             //uc.GetIHM();
             //MainGrid.Children.Add(FeaturesGrid);
 
@@ -44,7 +44,7 @@ namespace WpfCyberPunk
             Grid.SetRow(FeaturesGrid, 2);
             Grid.SetColumn(FeaturesGrid, 0);
 
-            //uc.Feature = _factory.GetFeature("REF");
+            //uc.Features = _factory.GetFeature("REF");
             //uc.GetIHM();
             //Grid.SetRow(FeaturesGrid, 2);
             //Grid.SetColumn(FeaturesGrid, 1);

@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.SqlServer;
 using Data.Entities.Person;
 using Data.Entities.Characterize;
@@ -32,6 +33,11 @@ namespace Data.Context
 
         public DbSet<CharacterFeature> CharactersFeatures { get; set; }
         public DbSet<CharacterSkill> CharactersSkills { get; set; }
+        public DbSet<CharacterArea> CharacterAreas { get; set; }
+        public DbSet<CharacterResourceCharacter> CharacterResourceCharacters { get; set; }
+        public DbSet<CharacterResourceCorporation> CharacterResourceCorporations { get; set; }
+        public DbSet<CharacterSpecialAbility> CharacterSpecialAbilities { get; set; }
+        public DbSet<CharacterProperty> PeoplePropertieses { get; set; }
 
         public CyberContext() : base("CyberPunk3000")
         {
@@ -42,6 +48,7 @@ namespace Data.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Entity<Character>()
                 .HasRequired(c => c.Ethnic)
@@ -63,16 +70,6 @@ namespace Data.Context
                 .WithMany(c => c.Characters)
                 .HasForeignKey<int?>(c => c.IdGrade);
 
-            modelBuilder.Entity<Character>()
-                .HasOptional(c => c.Area)
-                .WithMany(c => c.Characters)
-                .HasForeignKey<int?>(c => c.IdArea);
-
-            modelBuilder.Entity<Pseudo>()
-                .HasOptional(c => c.Person)
-                .WithMany(e => e.Pseudos)
-                .HasForeignKey<int?>(c => c.IdPseudo);
-
             modelBuilder.Entity<Skill>()
                 .HasRequired(s => s.Feature)
                 .WithMany(s => s.Skills)
@@ -93,33 +90,169 @@ namespace Data.Context
                 .WithMany(p => p.Patents)
                 .HasForeignKey<int?>(s => s.IdFeature);
 
-            modelBuilder.Entity<CharacterFeature>()
-                .HasKey(cf => new
+            #region <Many-To-Many> Characters <-> Area
+            modelBuilder.Entity<CharacterArea>()
+                .HasKey(area => new
                 {
-                    cf.IdFeature,
-                    cf.IdCharacter
+                    area.IdArea,
+                    area.IdCharacter
                 });
+            modelBuilder.Entity<CharacterArea>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterAreas)
+                .HasForeignKey(pc => pc.IdCharacter);
+
+            modelBuilder.Entity<CharacterArea>()
+                .HasRequired(pc => pc.Areas)
+                .WithMany(c => c.CharacterAreas)
+                .HasForeignKey(pc => pc.IdArea);
+            #endregion <Many-To-Many> Characters <-> Area
+
+            #region <Many-To-Many> Characters <-> Skills
+            modelBuilder.Entity<CharacterFeature>()
+                .HasKey(area => new
+                {
+                    area.IdCharacter,
+                    area.IdFeature,
+                });
+            modelBuilder.Entity<CharacterFeature>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterFeatures)
+                .HasForeignKey(pc => pc.IdCharacter);
+
+            modelBuilder.Entity<CharacterFeature>()
+                .HasRequired(pc => pc.Features)
+                .WithMany(c => c.CharacterFeatures)
+                .HasForeignKey(pc => pc.IdFeature);
+            #endregion <Many-To-Many> Characters <-> Skills
+
+            #region <Many-To-Many> Characters <-> Pseudo
+            modelBuilder.Entity<CharacterPseudo>()
+                .HasKey(pseudo => new
+                {
+                    pseudo.IdCharacter,
+                    pseudo.IdPseudo
+                });
+            modelBuilder.Entity<CharacterPseudo>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterPseudos)
+                .HasForeignKey(pc => pc.IdCharacter);
+
+            modelBuilder.Entity<CharacterPseudo>()
+                .HasRequired(pc => pc.Pseudos)
+                .WithMany(c => c.CharacterPseudos)
+                .HasForeignKey(pc => pc.IdPseudo);
+            #endregion <Many-To-Many> Characters <-> Pseudo
+
+            #region <Many-To-Many> Characters <-> ResourceCharacter
+            modelBuilder.Entity<CharacterResourceCharacter>()
+                .HasKey(character => new
+                {
+                    character.IdCharacter,
+                    character.IdOtherCharacter
+                });
+            modelBuilder.Entity<CharacterResourceCharacter>()
+                .HasRequired(pc => pc.OtherCharacters)
+                .WithMany(c => c.CharacterResourceCharacters)
+                .HasForeignKey(pc => pc.IdOtherCharacter)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CharacterResourceCharacter>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterResourceCharacters)
+                .HasForeignKey(pc => pc.IdCharacter)
+                .WillCascadeOnDelete(false);
+
+
+            #endregion <Many-To-Many> Characters <-> ResourceCharacter
+
+            #region <Many-To-Many> Characters <-> ResourceCorporation
+
+            modelBuilder.Entity<CharacterResourceCorporation>()
+                .HasKey(corpo => new
+                {
+                    corpo.IdCharacter,
+                    corpo.IdCorpo
+                });
+            modelBuilder.Entity<CharacterResourceCorporation>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterResourceCorporations)
+                .HasForeignKey(pc => pc.IdCharacter);
+
+            modelBuilder.Entity<CharacterResourceCorporation>()
+                .HasRequired(pc => pc.Corporations)
+                .WithMany(c => c.CharacterResourceCorporations)
+                .HasForeignKey(pc => pc.IdCorpo);
+            #endregion <Many-To-Many> Characters <-> ResourceCorporation
+
+            #region <Many-To-Many> Characters <-> Skill
+            modelBuilder.Entity<CharacterSkill>()
+                .HasKey(skill => new
+                {
+                    skill.IdSkill,
+                    skill.IdCharacter
+                });
+            modelBuilder.Entity<CharacterSkill>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterSkills)
+                .HasForeignKey(pc => pc.IdCharacter);
 
             modelBuilder.Entity<CharacterSkill>()
-                .HasKey(cf => new
-                {
-                    cf.IdSkill,
-                    cf.IdCharacter
-                });
+                .HasRequired(pc => pc.Skills)
+                .WithMany(c => c.CharacterSkills)
+                .HasForeignKey(pc => pc.IdSkill);
+            #endregion <Many-To-Many> Characters <-> Skill
 
-            //modelBuilder.Entity<Feature>()
+            #region <Many-To-Many> Characters <-> SpecialAbility
+            modelBuilder.Entity<CharacterSpecialAbility>()
+                .HasKey(special => new
+                {
+                    special.IdCharacter,
+                    special.IdSpecial
+                });
+            modelBuilder.Entity<CharacterSpecialAbility>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterSpecialAbilities)
+                .HasForeignKey(pc => pc.IdCharacter);
+
+            modelBuilder.Entity<CharacterSpecialAbility>()
+                .HasRequired(pc => pc.SpecialAbilities)
+                .WithMany(c => c.CharacterSpecialAbilities)
+                .HasForeignKey(pc => pc.IdSpecial);
+            #endregion <Many-To-Many> Characters <-> SpecialAbility
+
+            #region <Many-To-Many> Characters <-> Properties
+
+            modelBuilder.Entity<CharacterProperty>()
+                .HasKey(property => new
+                {
+                    property.IdCharacter,
+                    property.IdProperty
+                });
+            modelBuilder.Entity<CharacterProperty>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterProperties)
+                .HasForeignKey(pc => pc.IdCharacter);
+
+            modelBuilder.Entity<CharacterProperty>()
+                .HasRequired(pc => pc.Properties)
+                .WithMany(c => c.CharacterProperties)
+                .HasForeignKey(pc => pc.IdProperty);
+            #endregion <Many-To-Many> Characters <-> Properties
+
+
+            //modelBuilder.Entity<Features>()
             //    .HasRequired(f=>f.Characters)
             //    .WithMany(f=>f.Features)
             //    .
 
-            //modelBuilder.Entity<Character>()
+            //modelBuilder.Entity<Characters>()
             //    //.HasRequired(f => f.Features)
             //    //.WithRequiredDependent(c=>c.C)
             //    //.WithMany(c => c.)
             //    .HasKey(c => new
             //    {
             //        c.IdCharactere,
-            //        c.IdFeature
+            //        c.IdPseudo
             //    });
 
             //modelBuilder.Entity<AttributeFeature>().HasKey(a =>
@@ -160,19 +293,19 @@ namespace Data.Context
             //-----------------------------------------------------------------
             //  between Characteres and Features
             //modelBuilder.Entity<AttributeFeature>()
-            //    .HasRequired(t => t.Character)
+            //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeFeatures)
             //    .HasForeignKey(t => t.IdCharactere);
 
             //modelBuilder.Entity<AttributeFeature>()
-            //    .HasRequired(t => t.Feature)
+            //    .HasRequired(t => t.Features)
             //    .WithMany(t => t.AttributeFeatures)
             //    .HasForeignKey(t => t.Id);
             //-----------------------------------------------------------------
             //-----------------------------------------------------------------
             //  between Characteres and SpecialAbilities
             //modelBuilder.Entity<AttributeSpecialAbility>()
-            //    .HasRequired(t => t.Character)
+            //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeSpecialAbilities)
             //    .HasForeignKey(t => t.IdCharactere);
 
@@ -184,7 +317,7 @@ namespace Data.Context
             //-----------------------------------------------------------------
             //  between Characteres and Skills
             //modelBuilder.Entity<AttributeSkill>()
-            //    .HasRequired(t => t.Character)
+            //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeSkills)
             //    .HasForeignKey(t => t.IdCharactere);
 
@@ -195,7 +328,7 @@ namespace Data.Context
             //-----------------------------------------------------------------
             //  between Characteres and Areas
             //modelBuilder.Entity<AttributeKnowledgeArea>()
-            //    .HasRequired(t => t.Character)
+            //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeKnowledgeArea)
             //    .HasForeignKey(t => t.IdCharactere);
 
@@ -206,8 +339,8 @@ namespace Data.Context
             //-----------------------------------------------------------------
             //******************************************************************************************
 
-            //modelBuilder.Entity<Character>()
-            //    .HasMany<Feature>(f => f.Features)
+            //modelBuilder.Entity<Characters>()
+            //    .HasMany<Features>(f => f.Features)
             //    .WithMany(c => c.Characters)                
             //    .Map(cs =>
             //    {

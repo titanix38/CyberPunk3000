@@ -45,11 +45,11 @@ namespace Data.Factory
         public string FirstName { get; set; }
         public string Pseudo { get; set; }
         //public IDictionary<string, int> Features { get; set; }
-        //public Feature[] Features { get; set; }
+        //public Features[] Features { get; set; }
         //public List<Skill> Skills { get; set; }
         //public List<SpecialAbility> SpecialAbilities { get; set; }
         //public List<Patent> Patents { get; set; }
-        //public ICorporation Corporation { get; set; }
+        //public ICorporation Corporations { get; set; }
 
         public bool Success { get; set; }
         #endregion
@@ -263,7 +263,7 @@ namespace Data.Factory
         //    //Action act = new Action(act=>Action);
 
         //    MapperConfiguration cfgSkillToAttibute = new MapperConfiguration(cfg => cfg.CreateMap<Skill, AttributeSkill>());
-        //    MapperConfiguration cfgCharactereToAttibute = new MapperConfiguration(cfg => cfg.CreateMap<Character, AttributeSkill>());
+        //    MapperConfiguration cfgCharactereToAttibute = new MapperConfiguration(cfg => cfg.CreateMap<Characters, AttributeSkill>());
         //    IMapper mapSkillToAtt = cfgSkillToAttibute.CreateMapper();
         //    IMapper mapCharToAtt = cfgCharactereToAttibute.CreateMapper();
 
@@ -274,14 +274,14 @@ namespace Data.Factory
 
 
         //    //mapSkillToAtt.Map(new AttributeSkill(), new Skill());
-        //    //mapCharToAtt.Map(new AttributeSkill(), new Character());
+        //    //mapCharToAtt.Map(new AttributeSkill(), new Characters());
         //}
 
         private void Init()
         {
             _dico = new Dictionary<string, int>();
             //_features = GetEnumList(new EnumFeatures());
-            //Features = new Feature[_features.Count];
+            //Features = new Features[_features.Count];
             //SpecialAbilities = new List<SpecialAbility>();
             //Skills = new List<Skill>();
 
@@ -825,7 +825,7 @@ namespace Data.Factory
         //        }
         //        switch (t)
         //        {
-        //            case Feature f:
+        //            case Features f:
         //                requiredField = "Caracteristique";
         //                break;
         //            case Skill s:
@@ -864,7 +864,7 @@ namespace Data.Factory
             // Aucune corporation
             if (string.IsNullOrWhiteSpace(extract))
             {
-                //Corporation = null;
+                //Corporations = null;
                 return;
             }
 
@@ -1007,7 +1007,7 @@ namespace Data.Factory
                 corpo.Wording = name;
                 //corpo.Grade = grade;
 
-                //Corporation = corpo;
+                //Corporations = corpo;
             }
         }
 
