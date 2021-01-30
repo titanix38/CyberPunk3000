@@ -268,25 +268,25 @@
       "Id": "29",
       "Name": "Gouvernance",
       "Alias": "CircGouv",
-      "IdCity": "11"
+      "IdCity": "10"
     },
     {
       "Id": "30",
       "Name": "Isolante",
       "Alias": "CircIsolante",
-      "IdCity": "11"
+      "IdCity": "10"
     },
     {
       "Id": "31",
       "Name": "Trials",
       "Alias": "CircTrials",
-      "IdCity": "11"
+      "IdCity": "10"
     },
     {
       "Id": "32",
       "Name": "block zero",
       "Alias": "CircBlockZero",
-      "IdCity": "11"
+      "IdCity": "10"
     },
     {
       "Id": "33",
@@ -590,6 +590,11 @@
       "Id": "8",
       "Name": "Reflex",
       "Alias": "REF"
+    },
+    {
+      "Id": "9",
+      "Name": "Chance",
+      "Alias": "CH"
     }
   ],
   "Corporations": [

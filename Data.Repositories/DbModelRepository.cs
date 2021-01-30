@@ -98,7 +98,7 @@ namespace Data.Repositories
         {
             try
             {
-                int id = GetAll<TEntity>().FirstOrDefault(t => t.Name == name).Id;
+                int id = GetAll<TEntity>().FirstOrDefault(t => t.Wording == name).Id;
                 return id;
             }
             catch (NullReferenceException)
@@ -123,8 +123,8 @@ namespace Data.Repositories
        
         private string GetIdFeature(int idSkill)
         {
-            //int idFeature = GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Name;
-            return GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Name;
+            //int idFeature = GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Wording;
+            return GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Wording;
 
         }
 
@@ -136,7 +136,7 @@ namespace Data.Repositories
             // Not found so add it
             if (id == 0)
             {
-                entity.Name = name;
+                entity.Wording = name;
                 entity.Alias = alias;
                 
                 
@@ -170,7 +170,7 @@ namespace Data.Repositories
                 {
                     Skill skill = new Skill
                     {
-                        Name = name,
+                        Wording = name,
                         Alias = alias,
                         Factor = factor,
                         IdFeature = idFeature,
@@ -193,7 +193,7 @@ namespace Data.Repositories
                 {
                     Area area = new Area
                     {
-                        Name = name,
+                        Wording = name,
                         Alias = alias,
                         IdCity = idCity
                     };
@@ -216,7 +216,7 @@ namespace Data.Repositories
                 {
                     Corporation area = new Corporation
                     {
-                        Name = name,
+                        Wording = name,
                         Alias = alias,
                         IsGang = isGang
                     };
@@ -238,7 +238,7 @@ namespace Data.Repositories
             {
                 return string.Empty;
             }
-            return GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Name;
+            return GetAll<Skill>().FirstOrDefault(t => t.Id == idSkill).Wording;
         }
 
         //private void Mapper<TEntity>(TEntity entity, int value) where TEntity : class, ICharacteristic<TEntity>

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data.Entities.RelationManyToMany;
 
 namespace Data.Entities.Characterize
 {
@@ -17,7 +18,7 @@ namespace Data.Entities.Characterize
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Wording { get; set; }
         public string Alias { get; set; }
         public int Factor { get; set; }
         //[ForeignKey("Feature")]
@@ -29,6 +30,11 @@ namespace Data.Entities.Characterize
         /// </summary>
         public virtual Feature Feature { get; set; }
         public virtual SpecialAbility SpecialAbility { get; set; }
+
+        /// <summary>
+        /// Relationship between Characters and Skills
+        /// </summary>
+        public ICollection<CharacterSkill> CharacterSkills { get; set; }
         //public ICollection<AttributeSkill> AttributeSkills { get; set; }
 
     }

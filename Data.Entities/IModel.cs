@@ -10,9 +10,9 @@ namespace Data.Entities
     {
         int Id { get; set; }
         /// <summary>
-        /// Name : display in GUI
+        /// Wording : display in GUI
         /// </summary>
-        string Name { get; set; }
+        string Wording { get; set; }
 
         /// <summary>
         /// Alias : for build item

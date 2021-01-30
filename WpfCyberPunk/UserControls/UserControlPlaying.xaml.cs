@@ -22,72 +22,24 @@ namespace WpfCyberPunk.UserControls
     /// </summary>
     public partial class UserControlPlaying : UserControl
     {
-        private string _score;
-        private int _point;
-
-        //public event DependencyProperty PropertyChanged;
-
-        public string ScoreText
+        private TextBox _textBox;
+        public string Score
         {
-            get => _score;
-            set
-            {
-                _score = value;
-                //_point = int.Parse(value);
-                //_score = _point.ToString();
-
-                //ValueProperty("ScoreText");
-                SetValue(ValueProperty, _score);
-            }
-        }
-        public static readonly DependencyProperty ValueProperty =
-            DependencyProperty.Register("ScoreText", typeof(string), ownerType: typeof(UserControlPlaying), new PropertyMetadata(""));
-        //private static readonly DependencyProperty ScoreTextProperty =
-        //    DependencyProperty.Register("ScoreText", typeof(int), typeof(TextBox), new PropertyMetadata(0));
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
+            get => (string)GetValue(ScoreProperty);
+            set => SetValue(ScoreProperty, value);
         }
 
-        public int Score { get; set; }
+        public static readonly DependencyProperty ScoreProperty =
+            DependencyProperty.Register(
+                nameof(Score),
+                typeof(string),
+                typeof(UserControlPlaying));
 
         public UserControlPlaying()
         {
-            //_score = "0";
-            //_point = 0;
             this.DataContext = this;
+
             InitializeComponent();
-        }
-
-
-        private void Construct()
-        {
-            StackPanel stack = new StackPanel()
-            {
-                Orientation = Orientation.Horizontal
-            };
-            for (int row = 1; row <= 2; row++)
-            {
-                for (int column = 0; column < 10; column++)
-                {
-                    TextBox textBox = new TextBox()
-                    {
-                        Name = "tb_Launch_r" + row.ToString() + "_c_" + column.ToString(),
-                        Height = 24,
-                        //Visibility = Visibility.Hidden,
-                        IsReadOnly = true
-                    };
-                    stack.Children.Add(textBox);
-                }
-
-                PlayingGrid.Children.Add(stack);
-                Grid.SetRow(stack, row + 1);
-            }
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
@@ -120,7 +72,13 @@ namespace WpfCyberPunk.UserControls
 
         private void TBx_StartPt_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var toto = tBx_StartPt.Text;
+            var newScore = Score;
         }
+
+    }
+
+    internal class TextBoxPoint : TextBox
+    {
+
     }
 }

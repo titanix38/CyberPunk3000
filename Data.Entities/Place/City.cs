@@ -14,7 +14,7 @@ namespace Data.Entities.Place
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Wording { get; set; }
         public string Alias { get; set; }
 
         public ICollection<Area> Areas { get; set; }

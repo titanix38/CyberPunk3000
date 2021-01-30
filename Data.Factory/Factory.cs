@@ -130,48 +130,29 @@ namespace Data.Factory
             }
         }
 
-        public void SetJsonToDb()
+        public void SetDatasToDB(dynamic datas)
         {
-            string json = File.ReadAllText(@".\Input\CyberPunkInit.json");
-
-            //IList<Feature> features = new List<Feature>();
-            //IList<Skill> skills = new List<Skill>();
-            IList<SpecialAbility> specialAbilities = new List<SpecialAbility>();
             try
-            {
-
-                dynamic datas = JsonConvert.DeserializeObject(json, typeof(object));
-                //dynamic featureTest = JsonConvert.DeserializeObject(json, typeof(Feature));
-
+            {   
                 SetDatasToCharacteristic(new Feature(), datas.Features);
                 SetDatasToCharacteristic(new SpecialAbility(), datas.SpecialAbilities);
                 SetDatasToCharacteristic(new Skill(), datas.Skills);
                 SetDatasToCharacteristic(new Protection(), datas.Protections);
                 SetDatasToCharacteristic(new Gender(), datas.Genders);
                 SetDatasToCharacteristic(new Ethnic(), datas.Ethnics);
-
                 SetDatasToCharacteristic(new Corporation(), datas.Corporations);
                 SetDatasToCharacteristic(new City(), datas.Cities);
                 SetDatasToCharacteristic(new Area(), datas.Areas);
                 SetDatasToGrade(datas.Grades);
 
-                //SetToRepository(new Skill(), datas.Skills);
-
-                //foreach (var f in toto)
-                //{
-                //    Feature feature = new Feature()
-                //    {
-                //        Id = f.Id,
-                //        Name = f.Name
-                //    };
-                //    features.Add(feature);
-                //}
             }
             catch (Exception e)
             {
                 string error = e.Message;
             }
         }
+
+        
 
         private void SetDatasToCharacteristic<TEntity>(TEntity entity, dynamic dynamic) where TEntity : class, IModel<TEntity>
         {
@@ -235,7 +216,7 @@ namespace Data.Factory
 
                 foreach (var item in features)
                 {
-                    output.Add(item.Name);
+                    output.Add(item.Wording);
                 }
                 return output;
             }
@@ -527,7 +508,7 @@ namespace Data.Factory
             //{
             //    Patent patent = new Patent()
             //    {
-            //        Name = p
+            //        Wording = p
             //        // Voir pour les caracteristiques des brevets
             //    };
 
@@ -1023,7 +1004,7 @@ namespace Data.Factory
                 grade.Quantity = qty;
                 grade.Category = SetRank(category);
 
-                corpo.Name = name;
+                corpo.Wording = name;
                 //corpo.Grade = grade;
 
                 //Corporation = corpo;

@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:WpfCyberPunk.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="350" Width="Auto" d:DataContext="{d:DesignData }">
-    <Grid Name="PlayingGrid" Margin="0,0,0,0">
+    <!--<UserControl.DataContext>-->
+        <!--<local:UserControlPlaying/>-->
+        <Grid Name="PlayingGrid" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -16,7 +18,9 @@
         <Grid Row="0" HorizontalAlignment="Left">
             <StackPanel Name="SkPn_Score" Orientation="Horizontal">
                 <TextBlock HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" Text="Point de départ" VerticalAlignment="Center" Height="25" Width="100"/>
-                <TextBox x:Name = "tBx_StartPt" Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ScoreText,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }" TextChanged="TBx_StartPt_OnTextChanged" FontSize="10" HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="50"/>
+                <TextBox x:Name = "tBx_StartPt" Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl},
+                        Path=Score,
+                        Mode=TwoWay}" TextChanged="TBx_StartPt_OnTextChanged" FontSize="10" HorizontalAlignment="Left" Margin="10,1,0,0" TextWrapping="Wrap" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="50"/>
             </StackPanel>
         </Grid>
         <Grid Row="1" HorizontalAlignment="Left">
@@ -41,7 +45,7 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <Grid Row="4">
+        <Grid Row="3">
             <RichTextBox HorizontalAlignment="Left" Height="113" Margin="5,37,0,0" VerticalAlignment="Top" Width="550">
                 <FlowDocument>
                     <Paragraph>
@@ -51,4 +55,5 @@
             </RichTextBox>
         </Grid>
     </Grid>
+    <!--</UserControl.DataContext>-->
 </UserControl>

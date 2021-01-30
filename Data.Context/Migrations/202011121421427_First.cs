@@ -182,11 +182,11 @@
             DropForeignKey("dbo.Characters", "IdGender", "dbo.Genders");
             DropForeignKey("dbo.Characters", "IdEthnic", "dbo.Ethnics");
             DropForeignKey("dbo.Characters", "IdCorporation", "dbo.Corporations");
-            DropForeignKey("dbo.Characters", "IdArea", "dbo.Areas");
+            DropForeignKey("dbo.Characters", "Id", "dbo.Areas");
             DropIndex("dbo.Skills", new[] { "IdSpecialAbility" });
             DropIndex("dbo.Skills", new[] { "IdFeature" });
             DropIndex("dbo.Patents", new[] { "IdFeature" });
-            DropIndex("dbo.Characters", new[] { "IdArea" });
+            DropIndex("dbo.Characters", new[] { "Id" });
             DropIndex("dbo.Characters", new[] { "IdEthnic" });
             DropIndex("dbo.Characters", new[] { "IdGrade" });
             DropIndex("dbo.Characters", new[] { "IdCorporation" });

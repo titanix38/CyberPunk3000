@@ -11,6 +11,7 @@ using Data.Entities.Characterize;
 using Data.Entities.Enterprise;
 using Data.Entities.Place;
 using Data.Entities.Cyber;
+using Data.Entities.RelationManyToMany;
 
 namespace Data.Context
 {
@@ -29,6 +30,9 @@ namespace Data.Context
         public DbSet<City> Cities { get; set; }
         public DbSet<Patent> Patents { get; set; }
 
+        public DbSet<CharacterFeature> CharactersFeatures { get; set; }
+        public DbSet<CharacterSkill> CharactersSkills { get; set; }
+
         public CyberContext() : base("CyberPunk3000")
         {
             // Important : Do not delete the below line
@@ -40,14 +44,14 @@ namespace Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Character>()
-            .HasRequired(c => c.Ethnic)
-            .WithMany(e => e.Characters)
-            .HasForeignKey<int>(c => c.IdEthnic);
+                .HasRequired(c => c.Ethnic)
+                .WithMany(e => e.Characters)
+                .HasForeignKey<int>(c => c.IdEthnic);
 
             modelBuilder.Entity<Character>()
-            .HasRequired(c => c.Gender)
-            .WithMany(e => e.Characters)
-            .HasForeignKey<int>(c => c.IdGender);
+                .HasRequired(c => c.Gender)
+                .WithMany(e => e.Characters)
+                .HasForeignKey<int>(c => c.IdGender);
 
             modelBuilder.Entity<Character>()
                 .HasOptional<Corporation>(c => c.Corporation)
@@ -63,6 +67,11 @@ namespace Data.Context
                 .HasOptional(c => c.Area)
                 .WithMany(c => c.Characters)
                 .HasForeignKey<int?>(c => c.IdArea);
+
+            modelBuilder.Entity<Pseudo>()
+                .HasOptional(c => c.Person)
+                .WithMany(e => e.Pseudos)
+                .HasForeignKey<int?>(c => c.IdPseudo);
 
             modelBuilder.Entity<Skill>()
                 .HasRequired(s => s.Feature)
@@ -83,6 +92,35 @@ namespace Data.Context
                 .HasOptional(p => p.Feature)
                 .WithMany(p => p.Patents)
                 .HasForeignKey<int?>(s => s.IdFeature);
+
+            modelBuilder.Entity<CharacterFeature>()
+                .HasKey(cf => new
+                {
+                    cf.IdFeature,
+                    cf.IdCharacter
+                });
+
+            modelBuilder.Entity<CharacterSkill>()
+                .HasKey(cf => new
+                {
+                    cf.IdSkill,
+                    cf.IdCharacter
+                });
+
+            //modelBuilder.Entity<Feature>()
+            //    .HasRequired(f=>f.Characters)
+            //    .WithMany(f=>f.Features)
+            //    .
+
+            //modelBuilder.Entity<Character>()
+            //    //.HasRequired(f => f.Features)
+            //    //.WithRequiredDependent(c=>c.C)
+            //    //.WithMany(c => c.)
+            //    .HasKey(c => new
+            //    {
+            //        c.IdCharactere,
+            //        c.IdFeature
+            //    });
 
             //modelBuilder.Entity<AttributeFeature>().HasKey(a =>
             //new

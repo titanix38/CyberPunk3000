@@ -18,7 +18,7 @@ namespace Data.Entities.Enterprise
 
         public IGrade Grade { get; set; }
 
-        public string Name { get; set; }
+        public string Wording { get; set; }
 
         public string Alias { get; set; }
 

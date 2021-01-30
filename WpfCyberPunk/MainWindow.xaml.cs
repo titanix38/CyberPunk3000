@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
-
+using ViewModel;
 
 namespace WpfCyberPunk
 {
@@ -21,7 +21,7 @@ namespace WpfCyberPunk
         [DllImport("user32.dll")]
         private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
-
+        private ViewModel.ViewModel _viewModel;
         public ICommand NewTabCommand { get; }
         public ICollection<ITab> Tabs{ get; }
 
@@ -34,8 +34,16 @@ namespace WpfCyberPunk
         {
             InitializeComponent();
             this.SourceInitialized += MainWindow_SourceInitialized;
-            Factory factory = new Factory();
-            factory.SetJsonToDb();
+            //Factory factory = new Factory();
+            //factory.SetJsonToDb();
+            _viewModel = new ViewModel.ViewModel();
+            _viewModel.InitDataBase();
+            if (!_viewModel.Success)
+            {
+                MessageBox.Show( _viewModel.ErrorMessage,"Erreur", MessageBoxButton.OK, MessageBoxImage.Error,
+                    MessageBoxResult.OK);
+                Close();
+            }
 
             //Tabs = new ObservableCollection<ITab>();
         }
@@ -126,6 +134,7 @@ namespace WpfCyberPunk
             //WpfCharacterSheet sheet = new WpfCharacterSheet();
             //this.Content = sheet;
         }
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();

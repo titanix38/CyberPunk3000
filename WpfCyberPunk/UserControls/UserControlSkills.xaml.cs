@@ -156,18 +156,29 @@ namespace WpfCyberPunk.UserControls
             return stackFeature;
         }
 
+        //private void chx_Check(object sender, RoutedEventArgs e)
+        //{
+        //    int score = GetScore(sender as CheckBox);
+        //    score += string.IsNullOrWhiteSpace(_ucPlaying.Score) ? 0 : int.Parse(_ucPlaying.Score);
+        //    _ucPlaying.Score = score.ToString();
+        //}
         private void chx_Check(object sender, RoutedEventArgs e)
         {
-            int score = GetScore(sender as CheckBox);
-            score += string.IsNullOrWhiteSpace(_ucPlaying.ScoreText) ? 0 : int.Parse(_ucPlaying.ScoreText);
-            _ucPlaying.ScoreText = score.ToString();
-        }
 
+            int score = GetScore(sender as CheckBox);
+
+            CheckBox chk = sender as CheckBox;
+            string alias = chk.Name.Replace("chBxPt_", string.Empty);
+
+
+            score += string.IsNullOrWhiteSpace(_ucPlaying.Score) ? 0 : int.Parse(_ucPlaying.Score);
+            _ucPlaying.Score = score.ToString();
+        }
         private void chx_UnCheck(object sender, RoutedEventArgs e)
         {
-            int pt = string.IsNullOrWhiteSpace(_ucPlaying.ScoreText) ? 0 : int.Parse(_ucPlaying.ScoreText);
+            int pt = string.IsNullOrWhiteSpace(_ucPlaying.Score) ? 0 : int.Parse(_ucPlaying.Score);
             pt -= GetScore(sender as CheckBox);
-            _ucPlaying.ScoreText = pt.ToString();
+            _ucPlaying.Score = pt.ToString();
         }
 
         private int GetScore(CheckBox checkBox)
@@ -183,7 +194,7 @@ namespace WpfCyberPunk.UserControls
                 new TextBlock
                 {
                     Name = string.Concat("lb_", Feature.Alias),
-                    Text = Feature.Name,
+                    Text = Feature.Wording,
                     Width = 100,
                     Margin = new Thickness(5, 0, 0, 0),
                     VerticalAlignment = VerticalAlignment.Center
@@ -263,7 +274,7 @@ namespace WpfCyberPunk.UserControls
                 new TextBlock
                 {
                     Name = "TxtBlk_" + skill.Alias,
-                    Text = skill.Name,
+                    Text = skill.Wording,
                     FontSize = 10,
                     Width = 100,
                     Margin = new Thickness(15, 0, 0, BOTTOM),

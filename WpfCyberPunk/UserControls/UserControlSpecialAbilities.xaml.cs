@@ -117,7 +117,7 @@ namespace WpfCyberPunk.UserControls
                 new TextBlock
                 {
                     Name = string.Concat("tbk_", special.Alias),
-                    Text = special.Name,
+                    Text = special.Wording,
                     FontSize = 10,
                     Width = 100,
                     VerticalAlignment = VerticalAlignment.Center,

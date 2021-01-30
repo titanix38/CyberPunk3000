@@ -44,8 +44,8 @@
     <ApplicationIcon>Icone.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=6.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.6.0.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=6.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.6.1.0\lib\netstandard2.0\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -278,6 +278,10 @@
     <ProjectReference Include="..\ExportToDataBase\ExportToDataBase.csproj">
       <Project>{CBEF5A97-FE6F-4072-A654-5DD7688BC936}</Project>
       <Name>ExportToDataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
+      <Project>{EF310D3A-852A-409E-862A-5AF9BA8F497B}</Project>
+      <Name>ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

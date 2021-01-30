@@ -17,7 +17,7 @@ namespace Data.Entities.Characterize
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Wording { get; set; }
         public string Alias { get; set; }
 
         /// <summary>

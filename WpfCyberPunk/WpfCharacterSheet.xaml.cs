@@ -87,7 +87,7 @@ namespace WpfCyberPunk
                         Orientation = Orientation.Horizontal
                     };
                     
-                    SubItem(stack, item.Name, null, null,i);
+                    SubItem(stack, item.Wording, null, null,i);
 
                     SpecialAbilitiesGrid.Children.Add(stack);
 
@@ -106,7 +106,7 @@ namespace WpfCyberPunk
             string itemName = stack.Name.Replace(STACKPANELPREFIXE, string.Empty);
             //StackPanel stack = new StackPanel()
             //{
-            //    Name = "NewStack",
+            //    Wording = "NewStack",
             //    Orientation = Orientation.Horizontal
             //};
 
@@ -169,7 +169,7 @@ namespace WpfCyberPunk
                 Content = "Click Me",
                 Name = "btnClickMe"
             };
-            //grid.RegisterName(txtNumber.Name, txtNumber);
+            //grid.RegisterName(txtNumber.Wording, txtNumber);
             grid.Children.Add(btnClickMe);
 
 

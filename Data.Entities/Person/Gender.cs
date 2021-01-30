@@ -5,15 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Data.Entities.Person
 {
     [Table("Genders")]
-    public class Gender : IModel<Gender>
+    public class Gender
     {  
         /// <summary>
         /// Columns
         /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int IdGender { get; set; }
+        public string Wording { get; set; }
         public string Alias { get; set; }
 
         /// <summary>

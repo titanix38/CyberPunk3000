@@ -352,7 +352,7 @@ namespace ExportToDataBase
                 grade.Quantity = qty;
                 grade.Category = SetRank(category);
 
-                corporation.Name = name;
+                corporation.Wording = name;
                 corporation.Grade = (Grade)grade;
 
                 return corporation;
