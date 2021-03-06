@@ -1,4 +1,6 @@
-﻿namespace Data.Context.Migrations
+﻿using Data.Entities.Characterize;
+
+namespace Data.Context.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -18,6 +20,8 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+
+            //DbSet<Part>
         }
     }
 }

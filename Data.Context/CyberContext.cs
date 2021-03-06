@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.Data.Entity.Migrations.Model;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.SqlServer;
 using Data.Entities.Person;
@@ -12,6 +13,7 @@ using Data.Entities.Characterize;
 using Data.Entities.Enterprise;
 using Data.Entities.Place;
 using Data.Entities.Cyber;
+using Data.Entities.Possession;
 using Data.Entities.RelationManyToMany;
 
 namespace Data.Context
@@ -70,6 +72,11 @@ namespace Data.Context
                 .WithMany(c => c.Characters)
                 .HasForeignKey<int?>(c => c.IdGrade);
 
+            modelBuilder.Entity<Character>()
+                .HasOptional<Area>(c => c.Area)
+                .WithMany(c => c.Characters)
+                .HasForeignKey<int?>(c => c.IdArea);
+
             modelBuilder.Entity<Skill>()
                 .HasRequired(s => s.Feature)
                 .WithMany(s => s.Skills)
@@ -84,6 +91,16 @@ namespace Data.Context
                 .HasRequired(c => c.City)
                 .WithMany(s => s.Areas)
                 .HasForeignKey<int>(s => s.IdCity);
+
+            modelBuilder.Entity<Protection>()
+                .HasRequired(p => p.Part)
+                .WithMany(p => p.Protections)
+                .HasForeignKey(p => p.IdPart);
+
+            modelBuilder.Entity<Property>()
+                .HasRequired(p => p.Area)
+                .WithMany(a => a.Properties)
+                .HasForeignKey<int>(a => a.IdArea);
 
             modelBuilder.Entity<Patent>()
                 .HasOptional(p => p.Feature)
@@ -151,17 +168,16 @@ namespace Data.Context
                     character.IdCharacter,
                     character.IdOtherCharacter
                 });
-            modelBuilder.Entity<CharacterResourceCharacter>()
-                .HasRequired(pc => pc.OtherCharacters)
-                .WithMany(c => c.CharacterResourceCharacters)
-                .HasForeignKey(pc => pc.IdOtherCharacter)
-                .WillCascadeOnDelete(false);
+            
             modelBuilder.Entity<CharacterResourceCharacter>()
                 .HasRequired(pc => pc.Characters)
                 .WithMany(p => p.CharacterResourceCharacters)
-                .HasForeignKey(pc => pc.IdCharacter)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(pc => pc.IdCharacter);
 
+            //modelBuilder.Entity<CharacterResourceCharacter>()
+            //    .HasRequired(pc => pc.Characters)
+            //    .WithMany(p => p.CharacterResourceCharacters)
+            //    .HasForeignKey(pc => pc.IdOtherCharacter);
 
             #endregion <Many-To-Many> Characters <-> ResourceCharacter
 
@@ -239,7 +255,23 @@ namespace Data.Context
                 .HasForeignKey(pc => pc.IdProperty);
             #endregion <Many-To-Many> Characters <-> Properties
 
+            #region <Many-To-Many> Characters <-> Protections
+            modelBuilder.Entity<CharacterProtection>()
+                .HasKey(protection => new
+                {
+                    protection.IdCharacter,
+                    protection.IdProtection
+                });
+            modelBuilder.Entity<CharacterProtection>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterProtections)
+                .HasForeignKey(pc => pc.IdCharacter);
 
+            modelBuilder.Entity<CharacterProtection>()
+                .HasRequired(pc => pc.Protections)
+                .WithMany(c => c.CharacterProtections)
+                .HasForeignKey(pc => pc.IdProtection);
+            #endregion <Many-To-Many> Characters <-> Protections
             //modelBuilder.Entity<Features>()
             //    .HasRequired(f=>f.Characters)
             //    .WithMany(f=>f.Features)
@@ -251,41 +283,41 @@ namespace Data.Context
             //    //.WithMany(c => c.)
             //    .HasKey(c => new
             //    {
-            //        c.IdCharactere,
+            //        c.IdCharacter,
             //        c.IdPseudo
             //    });
 
             //modelBuilder.Entity<AttributeFeature>().HasKey(a =>
             //new
             //{
-            //    a.IdCharactere,
+            //    a.IdCharacter,
             //    a.Id
             //});
 
             //modelBuilder.Entity<AttributeSpecialAbility>().HasKey(a =>
             //new
             //{
-            //    a.IdCharactere,
+            //    a.IdCharacter,
             //    a.Id
             //});
 
             //modelBuilder.Entity<AttributeSkill>().HasKey(a =>
             //new
             //{
-            //    a.IdCharactere,
+            //    a.IdCharacter,
             //    a.Id
             //});
 
             //modelBuilder.Entity<AttributeResource>().HasKey(a =>
             //new
             //{
-            //    a.IdCharactere,
+            //    a.IdCharacter,
             //    a.Id
             //});
             //modelBuilder.Entity<AttributeKnowledgeArea>().HasKey(a =>
             //new
             //{
-            //    a.IdCharactere,
+            //    a.IdCharacter,
             //    a.Id
             //});
             //******************************************************************************************
@@ -295,7 +327,7 @@ namespace Data.Context
             //modelBuilder.Entity<AttributeFeature>()
             //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeFeatures)
-            //    .HasForeignKey(t => t.IdCharactere);
+            //    .HasForeignKey(t => t.IdCharacter);
 
             //modelBuilder.Entity<AttributeFeature>()
             //    .HasRequired(t => t.Features)
@@ -307,7 +339,7 @@ namespace Data.Context
             //modelBuilder.Entity<AttributeSpecialAbility>()
             //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeSpecialAbilities)
-            //    .HasForeignKey(t => t.IdCharactere);
+            //    .HasForeignKey(t => t.IdCharacter);
 
             //modelBuilder.Entity<AttributeSpecialAbility>()
             //    .HasRequired(t => t.SpecialAbility)
@@ -319,7 +351,7 @@ namespace Data.Context
             //modelBuilder.Entity<AttributeSkill>()
             //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeSkills)
-            //    .HasForeignKey(t => t.IdCharactere);
+            //    .HasForeignKey(t => t.IdCharacter);
 
             //modelBuilder.Entity<AttributeSkill>()
             //    .HasRequired(t => t.Skill)
@@ -330,7 +362,7 @@ namespace Data.Context
             //modelBuilder.Entity<AttributeKnowledgeArea>()
             //    .HasRequired(t => t.Characters)
             //    .WithMany(t => t.AttributeKnowledgeArea)
-            //    .HasForeignKey(t => t.IdCharactere);
+            //    .HasForeignKey(t => t.IdCharacter);
 
             //modelBuilder.Entity<AttributeKnowledgeArea>()
             //    .HasRequired(t => t.Area)

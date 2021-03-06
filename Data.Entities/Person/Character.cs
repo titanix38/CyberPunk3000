@@ -20,7 +20,7 @@ namespace Data.Entities.Person
         #region Properties
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid IdCharactere { get; set; }
+        public Guid IdCharacter { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
@@ -38,7 +38,6 @@ namespace Data.Entities.Person
         public virtual Grade Grade { get; set; }
         public virtual Area Area { get; set; }
 
-        public ICollection<Pseudo> Pseudos { get; set; }
         public ICollection<CharacterFeature> CharacterFeatures { get; set; }
         public ICollection<CharacterPseudo> CharacterPseudos { get; set; }
         public ICollection<CharacterSkill> CharacterSkills { get; set; }
@@ -47,6 +46,7 @@ namespace Data.Entities.Person
         public ICollection<CharacterResourceCharacter> CharacterResourceCharacters { get; set; }
         public ICollection<CharacterResourceCorporation> CharacterResourceCorporations { get; set; }
         public ICollection<CharacterProperty> CharacterProperties { get; set; }
+        public ICollection<CharacterProtection> CharacterProtections { get; set; }
         #endregion
 
         #region Constructor

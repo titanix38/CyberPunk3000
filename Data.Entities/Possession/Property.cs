@@ -14,7 +14,7 @@ namespace Data.Entities.Possession
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdProperty { get; set; } 
+        public Guid IdProperty { get; set; } 
 
         public string Style { get; set; }
         public double Price { get; set; }

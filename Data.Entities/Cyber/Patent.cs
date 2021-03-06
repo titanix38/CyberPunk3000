@@ -12,6 +12,7 @@ namespace Data.Entities.Cyber
     [Table("Patents")]
     public class Patent : IModel<Patent>
     {
+        // TODO : Manage patents
         [Key]
         public int Id { get; set; }
         public string Wording { get; set; }
@@ -25,7 +26,12 @@ namespace Data.Entities.Cyber
 
         public int? IdFeature { get; set; }
 
+        public int? IdSkill { get; set; }
+
+        public int? IdSpecialAbility { get; set; }
+
         public virtual Feature Feature { get; set; }
+        public virtual Skill Skills { get; set; }
 
     }
 }

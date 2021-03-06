@@ -85,6 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyberContext.cs" />
+    <Compile Include="Migrations\202103061746052_resources.cs" />
+    <Compile Include="Migrations\202103061746052_resources.designer.cs">
+      <DependentUpon>202103061746052_resources.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,6 +101,11 @@
       <Project>{45D91792-D789-4199-ADA0-73A2D8426253}</Project>
       <Name>Data.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103061746052_resources.resx">
+      <DependentUpon>202103061746052_resources.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

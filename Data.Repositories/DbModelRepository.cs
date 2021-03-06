@@ -305,7 +305,7 @@ namespace Data.Repositories
 
         //Characters srceCharacter = new Characters()
         //{
-        //    IdCharactere = _idCharacter
+        //    IdCharacter = _idCharacter
         //};
 
         //switch (entity)
@@ -356,7 +356,7 @@ namespace Data.Repositories
         //    var entity = Activator.CreateInstance<TEntity>();
 
         //    entity.Id = this.Id;
-        //    entity.IdCharactere = _idCharacter;
+        //    entity.IdCharacter = _idCharacter;
         //    entity.Value = value;
         //    entity.Factor = 1;
         //    entity.Acquired = 0;

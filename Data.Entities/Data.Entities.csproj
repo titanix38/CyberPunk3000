@@ -72,9 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Characterize\Feature.cs" />
+    <Compile Include="Characterize\Part.cs" />
     <Compile Include="Characterize\Protection.cs" />
     <Compile Include="Characterize\Skill.cs" />
     <Compile Include="Characterize\SpecialAbility.cs" />
+    <Compile Include="Cyber\CategoryWeapon.cs" />
+    <Compile Include="Cyber\Weapon.cs" />
+    <Compile Include="Dice.cs" />
     <Compile Include="Enterprise\Corporation.cs" />
     <Compile Include="Enterprise\Grade.cs" />
     <Compile Include="Enterprise\IGrade.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelationManyToMany\CharacterArea.cs" />
     <Compile Include="RelationManyToMany\CharacterFeature.cs" />
+    <Compile Include="RelationManyToMany\CharacterProtection.cs" />
     <Compile Include="RelationManyToMany\CharacterPseudo.cs" />
     <Compile Include="RelationManyToMany\CharacterResourceCharacter.cs" />
     <Compile Include="RelationManyToMany\CharacterResourceCorporation.cs" />
