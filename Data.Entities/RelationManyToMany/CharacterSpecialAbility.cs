@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Entities.RelationManyToMany
 {
+    [Table("CharacterSpecialAbilities")]
     public class CharacterSpecialAbility
     {
         [Key, Column(Order = 0)]

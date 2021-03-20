@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace Data.Entities.Cyber
 {
-    [Table("Categories")]
-
-    public class CategoryWeapon : IModel<CategoryWeapon>
+    /// <summary>
+    /// Body part which could hide the weapon (e.g. Pocket, Jacket, Long coat, Unconcealable)
+    /// </summary>
+    [Table("Concealments")]
+    public class Concealment : IModel<Concealment>
     {
         public int Id { get; set; }
         public string Wording { get; set; }
-        public string Alias  { get; set; }
-
+        public string Alias { get; set; }
         public ICollection<Weapon> Weapons { get; set; }
     }
 }

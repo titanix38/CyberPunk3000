@@ -5,21 +5,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data.Entities.Cyber;
 using Data.Entities.Person;
-using Data.Entities.Possession;
 
 namespace Data.Entities.RelationManyToMany
 {
-    [Table("CharacterPseudos")]
-    public class CharacterPseudo
+    /// <summary>
+    /// Weapon owned by character
+    /// </summary>
+    [Table("CharactersWeapons")]
+    public class CharacterWeapon
     {
         [Key, Column(Order = 0)]
-
         public Guid IdCharacter { get; set; }
         public virtual Character Characters { get; set; }
 
         [Key, Column(Order = 1)]
-        public Guid IdPseudo { get; set; }
-        public virtual Pseudo Pseudos { get; set; }
+        public int IdWeapon { get; set; }
+        public virtual Weapon Weapons { get; set; }
     }
 }

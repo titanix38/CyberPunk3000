@@ -10,6 +10,7 @@ using Data.Entities.Enterprise;
 
 namespace Data.Entities.RelationManyToMany
 {
+    [Table("CharacterResourceCorporations")]
     public class CharacterResourceCorporation
     {
         [Key, Column(Order = 0)]

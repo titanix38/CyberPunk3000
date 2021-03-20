@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Data.Entities.RelationManyToMany
 {
+    [Table("CharacterFeatures")]
     public class CharacterFeature
     {
         [Key, Column(Order = 0)]

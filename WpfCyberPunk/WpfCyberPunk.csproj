@@ -222,9 +222,14 @@
     <None Include="Config\Standard.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Input\Character.json" />
+    <None Include="Input\Characterize.json" />
+    <None Include="Input\City.json" />
+    <None Include="Input\Corporation.json" />
     <None Include="Input\CyberPunkInit.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Input\Weapon.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

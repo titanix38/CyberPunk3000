@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Data.Entity.Migrations.Model;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.SqlServer;
+using Data.Entities;
 using Data.Entities.Person;
 using Data.Entities.Characterize;
 using Data.Entities.Enterprise;
@@ -32,6 +33,11 @@ namespace Data.Context
         public DbSet<Area> Areas { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Patent> Patents { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
+        public DbSet<WeaponCategory> WeaponCategories { get; set; }
+        public DbSet<Concealment> Concealments { get; set; }
+        public DbSet<Place> Places { get; set; }
+        public DbSet<Dice> Dices { get; set; }
 
         public DbSet<CharacterFeature> CharactersFeatures { get; set; }
         public DbSet<CharacterSkill> CharactersSkills { get; set; }
@@ -39,7 +45,9 @@ namespace Data.Context
         public DbSet<CharacterResourceCharacter> CharacterResourceCharacters { get; set; }
         public DbSet<CharacterResourceCorporation> CharacterResourceCorporations { get; set; }
         public DbSet<CharacterSpecialAbility> CharacterSpecialAbilities { get; set; }
-        public DbSet<CharacterProperty> PeoplePropertieses { get; set; }
+        public DbSet<CharacterProperty> CharacterProperties { get; set; }
+        public DbSet<CharacterWeapon> CharacterWeapons { get; set; }
+
 
         public CyberContext() : base("CyberPunk3000")
         {
@@ -59,7 +67,7 @@ namespace Data.Context
 
             modelBuilder.Entity<Character>()
                 .HasRequired(c => c.Gender)
-                .WithMany(e => e.Characters)
+                .WithMany(g => g.Characters)
                 .HasForeignKey<int>(c => c.IdGender);
 
             modelBuilder.Entity<Character>()
@@ -106,6 +114,26 @@ namespace Data.Context
                 .HasOptional(p => p.Feature)
                 .WithMany(p => p.Patents)
                 .HasForeignKey<int?>(s => s.IdFeature);
+
+            modelBuilder.Entity<Weapon>()
+                .HasRequired(w => w.WeaponCategory)
+                .WithMany(wc => wc.Weapons)
+                .HasForeignKey<int>(w => w.IdCategory);
+
+            modelBuilder.Entity<Weapon>()
+                .HasRequired(w => w.Concealment)
+                .WithMany(c => c.Weapons)
+                .HasForeignKey<int>(w => w.IdConcealment);
+
+            modelBuilder.Entity<Weapon>()
+                .HasRequired(w => w.Place)
+                .WithMany(p => p.Weapons)
+                .HasForeignKey<int>(w => w.IdPlace);
+
+            modelBuilder.Entity<Weapon>()
+                .HasRequired(w => w.Dice)
+                .WithMany(d => d.Weapons)
+                .HasForeignKey<int>(w => w.IdPlace);
 
             #region <Many-To-Many> Characters <-> Area
             modelBuilder.Entity<CharacterArea>()
@@ -272,114 +300,24 @@ namespace Data.Context
                 .WithMany(c => c.CharacterProtections)
                 .HasForeignKey(pc => pc.IdProtection);
             #endregion <Many-To-Many> Characters <-> Protections
-            //modelBuilder.Entity<Features>()
-            //    .HasRequired(f=>f.Characters)
-            //    .WithMany(f=>f.Features)
-            //    .
 
-            //modelBuilder.Entity<Characters>()
-            //    //.HasRequired(f => f.Features)
-            //    //.WithRequiredDependent(c=>c.C)
-            //    //.WithMany(c => c.)
-            //    .HasKey(c => new
-            //    {
-            //        c.IdCharacter,
-            //        c.IdPseudo
-            //    });
+            #region <Many-To-Many> Characters <-> Weapons
+            modelBuilder.Entity<CharacterWeapon>()
+                .HasKey(w => new
+                {
+                    w.IdCharacter,
+                    w.IdWeapon
+                });
+            modelBuilder.Entity<CharacterWeapon>()
+                .HasRequired(pc => pc.Characters)
+                .WithMany(p => p.CharacterWeapons)
+                .HasForeignKey(pc => pc.IdCharacter);
 
-            //modelBuilder.Entity<AttributeFeature>().HasKey(a =>
-            //new
-            //{
-            //    a.IdCharacter,
-            //    a.Id
-            //});
-
-            //modelBuilder.Entity<AttributeSpecialAbility>().HasKey(a =>
-            //new
-            //{
-            //    a.IdCharacter,
-            //    a.Id
-            //});
-
-            //modelBuilder.Entity<AttributeSkill>().HasKey(a =>
-            //new
-            //{
-            //    a.IdCharacter,
-            //    a.Id
-            //});
-
-            //modelBuilder.Entity<AttributeResource>().HasKey(a =>
-            //new
-            //{
-            //    a.IdCharacter,
-            //    a.Id
-            //});
-            //modelBuilder.Entity<AttributeKnowledgeArea>().HasKey(a =>
-            //new
-            //{
-            //    a.IdCharacter,
-            //    a.Id
-            //});
-            //******************************************************************************************
-            // Relationships 
-            //-----------------------------------------------------------------
-            //  between Characteres and Features
-            //modelBuilder.Entity<AttributeFeature>()
-            //    .HasRequired(t => t.Characters)
-            //    .WithMany(t => t.AttributeFeatures)
-            //    .HasForeignKey(t => t.IdCharacter);
-
-            //modelBuilder.Entity<AttributeFeature>()
-            //    .HasRequired(t => t.Features)
-            //    .WithMany(t => t.AttributeFeatures)
-            //    .HasForeignKey(t => t.Id);
-            //-----------------------------------------------------------------
-            //-----------------------------------------------------------------
-            //  between Characteres and SpecialAbilities
-            //modelBuilder.Entity<AttributeSpecialAbility>()
-            //    .HasRequired(t => t.Characters)
-            //    .WithMany(t => t.AttributeSpecialAbilities)
-            //    .HasForeignKey(t => t.IdCharacter);
-
-            //modelBuilder.Entity<AttributeSpecialAbility>()
-            //    .HasRequired(t => t.SpecialAbility)
-            //    .WithMany(t => t.AttributeSpecialAbility)
-            //    .HasForeignKey(t => t.Id);
-            //-----------------------------------------------------------------
-            //-----------------------------------------------------------------
-            //  between Characteres and Skills
-            //modelBuilder.Entity<AttributeSkill>()
-            //    .HasRequired(t => t.Characters)
-            //    .WithMany(t => t.AttributeSkills)
-            //    .HasForeignKey(t => t.IdCharacter);
-
-            //modelBuilder.Entity<AttributeSkill>()
-            //    .HasRequired(t => t.Skill)
-            //    .WithMany(t => t.AttributeSkills)
-            //    .HasForeignKey(t => t.Id);
-            //-----------------------------------------------------------------
-            //  between Characteres and Areas
-            //modelBuilder.Entity<AttributeKnowledgeArea>()
-            //    .HasRequired(t => t.Characters)
-            //    .WithMany(t => t.AttributeKnowledgeArea)
-            //    .HasForeignKey(t => t.IdCharacter);
-
-            //modelBuilder.Entity<AttributeKnowledgeArea>()
-            //    .HasRequired(t => t.Area)
-            //    .WithMany(t => t.AttributeKnowledgeArea)
-            //    .HasForeignKey(t => t.Id);
-            //-----------------------------------------------------------------
-            //******************************************************************************************
-
-            //modelBuilder.Entity<Characters>()
-            //    .HasMany<Features>(f => f.Features)
-            //    .WithMany(c => c.Characters)                
-            //    .Map(cs =>
-            //    {
-            //        cs.MapLeftKey("CharacterRefId");
-            //        cs.MapRightKey("FeatureRefId");
-            //        cs.ToTable("AttributesFeatures");                    
-            //    });
+            modelBuilder.Entity<CharacterWeapon>()
+                .HasRequired(pc => pc.Weapons)
+                .WithMany(c => c.CharacterWeapons)
+                .HasForeignKey(pc => pc.IdWeapon);
+            #endregion <Many-To-Many> Characters <-> Protections
         }
     }
 }

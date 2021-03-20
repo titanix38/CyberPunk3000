@@ -10,6 +10,7 @@ using Data.Entities.Person;
 
 namespace Data.Entities.RelationManyToMany
 {
+    [Table("CharacterSkills")]
     public class CharacterSkill
     {
         [Key, Column(Order = 0)]

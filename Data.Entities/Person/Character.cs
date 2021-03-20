@@ -24,9 +24,13 @@ namespace Data.Entities.Person
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public int IdGender { get; set; }
         public int Chance { get; set; }
         public bool Alive { get; set; }
+        public int? Slash { get; set; }
+        public int? Cross { get; set; }
+        public bool? Stabilized { get; set; }
+
+        public int IdGender { get; set; }
         public int? IdCorporation { get; set; }
         public int? IdGrade { get; set; }
         public int IdEthnic { get; set; }
@@ -47,6 +51,7 @@ namespace Data.Entities.Person
         public ICollection<CharacterResourceCorporation> CharacterResourceCorporations { get; set; }
         public ICollection<CharacterProperty> CharacterProperties { get; set; }
         public ICollection<CharacterProtection> CharacterProtections { get; set; }
+        public ICollection<CharacterWeapon> CharacterWeapons { get; set; }
         #endregion
 
         #region Constructor

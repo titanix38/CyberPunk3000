@@ -10,6 +10,10 @@ using Data.Entities.Place;
 
 namespace Data.Entities.RelationManyToMany
 {
+    /// <summary>
+    /// Knowledge of an area
+    /// </summary>
+    [Table("CharacterAreas")]
     public class CharacterArea
     {
         [Key, Column(Order = 0)]

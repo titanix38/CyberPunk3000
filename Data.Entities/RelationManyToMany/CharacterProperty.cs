@@ -11,6 +11,7 @@ using Data.Entities.Possession;
 
 namespace Data.Entities.RelationManyToMany
 {
+    [Table("CharacterProperties")]
     public class CharacterProperty
     {
         [Key, Column(Order = 0)]

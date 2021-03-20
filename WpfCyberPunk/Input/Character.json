@@ -1,0 +1,98 @@
+{
+  "Protections": [
+    {
+      "Id": "1",
+      "Name": "Body",
+      "Alias": "Body"
+    },
+    {
+      "Id": "2",
+      "Name": "Head",
+      "Alias": "Head"
+    },
+    {
+      "Id": "3",
+      "Name": "Arms",
+      "Alias": "Arms"
+    },
+    {
+      "Id": "4",
+      "Name": "Hands",
+      "Alias": "Hands"
+    },
+    {
+      "Id": "5",
+      "Name": "Legs",
+      "Alias": "Legs"
+    },
+    {
+      "Id": "6",
+      "Name": "Feet",
+      "Alias": "Feet"
+    }
+  ],
+  "Genders": [
+    {
+      "Id": "1",
+      "Name": "Male",
+      "Alias": "M"
+    },
+    {
+      "Id": "2",
+      "Name": "Female",
+      "Alias": "F"
+    }
+  ],
+  "Ethnics": [
+    {
+      "Id": "1",
+      "Name": "American English",
+      "Alias": "US_English"
+    },
+    {
+      "Id": "2",
+      "Name": "African",
+      "Alias": "African"
+    },
+    {
+      "Id": "3",
+      "Name": "Japanese Korean",
+      "Alias": "Jap_Kor"
+    },
+    {
+      "Id": "4",
+      "Name": "Central European",
+      "Alias": "CentEuro"
+    },
+    {
+      "Id": "5",
+      "Name": "Pacific Island",
+      "Alias": "Pacific_Island"
+    },
+    {
+      "Id": "6",
+      "Name": "Chinese",
+      "Alias": "Chinese"
+    },
+    {
+      "Id": "7",
+      "Name": "Black American",
+      "Alias": "Black_US"
+    },
+    {
+      "Id": "8",
+      "Name": "Spanish American",
+      "Alias": "Spanish_US"
+    },
+    {
+      "Id": "9",
+      "Name": "South American",
+      "Alias": "South_American"
+    },
+    {
+      "Id": "10",
+      "Name": "European",
+      "Alias": "European"
+    }
+  ]
+}

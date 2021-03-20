@@ -76,7 +76,9 @@
     <Compile Include="Characterize\Protection.cs" />
     <Compile Include="Characterize\Skill.cs" />
     <Compile Include="Characterize\SpecialAbility.cs" />
-    <Compile Include="Cyber\CategoryWeapon.cs" />
+    <Compile Include="Cyber\WeaponCategory.cs" />
+    <Compile Include="Cyber\Concealment.cs" />
+    <Compile Include="Cyber\Place.cs" />
     <Compile Include="Cyber\Weapon.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="Enterprise\Corporation.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="RelationManyToMany\CharacterSkill.cs" />
     <Compile Include="RelationManyToMany\CharacterSpecialAbility.cs" />
     <Compile Include="RelationManyToMany\CharacterProperty.cs" />
+    <Compile Include="RelationManyToMany\CharacterWeapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

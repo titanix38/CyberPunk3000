@@ -1000,7 +1000,7 @@ namespace Data.Factory
                 IModel<Corporation> corpo = scope.Resolve<IModel<Corporation>>();
                 IGrade grade = scope.Resolve<IGrade>();
 
-                //grade.Category = category;
+                //grade.WeaponCategory = category;
                 grade.Quantity = qty;
                 grade.Category = SetRank(category);
 

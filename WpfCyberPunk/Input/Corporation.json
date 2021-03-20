@@ -1,0 +1,328 @@
+{
+  "Grades": [
+    {
+      "Id": "1",
+      "Category": "\\u25CF",
+      "Quantity": "1",
+      "Resource": "1",
+      "Salary": "7000"
+    },
+    {
+      "Id": "2",
+      "Category": "\\u25CF",
+      "Quantity": "2",
+      "Resource": "1",
+      "Salary": "8000"
+    },
+    {
+      "Id": "3",
+      "Category": "\\u25CF",
+      "Quantity": "3",
+      "Resource": "2",
+      "Salary": "9000"
+    },
+    {
+      "Id": "4",
+      "Category": "\\u25CF",
+      "Quantity": "4",
+      "Resource": "2",
+      "Salary": "10000"
+    },
+    {
+      "Id": "5",
+      "Category": "\\u25CF",
+      "Quantity": "5",
+      "Resource": "3",
+      "Salary": "11000"
+    },
+    {
+      "Id": "6",
+      "Category": "\\u25BC",
+      "Quantity": "1",
+      "Resource": "4",
+      "Salary": "20000"
+    },
+    {
+      "Id": "7",
+      "Category": "\\u25BC",
+      "Quantity": "2",
+      "Resource": "4",
+      "Salary": "22000"
+    },
+    {
+      "Id": "8",
+      "Category": "\\u25BC",
+      "Quantity": "3",
+      "Resource": "5",
+      "Salary": "24000"
+    },
+    {
+      "Id": "9",
+      "Category": "\\u25BC",
+      "Quantity": "4",
+      "Resource": "6",
+      "Salary": "26000"
+    },
+    {
+      "Id": "10",
+      "Category": "\\u25BC",
+      "Quantity": "5",
+      "Resource": "6",
+      "Salary": "28000"
+    },
+    {
+      "Id": "11",
+      "Category": "\\u2605",
+      "Quantity": "1",
+      "Resource": "7",
+      "Salary": "50000"
+    },
+    {
+      "Id": "12",
+      "Category": "\\u2606",
+      "Quantity": "2",
+      "Resource": "7",
+      "Salary": "54000"
+    },
+    {
+      "Id": "13",
+      "Category": "\\u2607",
+      "Quantity": "3",
+      "Resource": "8",
+      "Salary": "56000"
+    },
+    {
+      "Id": "14",
+      "Category": "\\u2608",
+      "Quantity": "4",
+      "Resource": "8",
+      "Salary": "58000"
+    },
+    {
+      "Id": "15",
+      "Category": "\\u2609",
+      "Quantity": "5",
+      "Resource": "8",
+      "Salary": "60000"
+    }
+  ],
+  "Corporations": [
+    {
+      "Id": "1",
+      "Name": "I.M.F.",
+      "Alias": "IMF",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "2",
+      "Name": "Security First",
+      "Alias": "SF",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "3",
+      "Name": "Arasaka",
+      "Alias": "Arasaka",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "4",
+      "Name": "Ectasing Image",
+      "Alias": "Ectasing",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "5",
+      "Name": "Technotronic",
+      "Alias": "Techno",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "6",
+      "Name": "Galaxy 500",
+      "Alias": "G500",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "7",
+      "Name": "Sentinels",
+      "Alias": "Sents",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "8",
+      "Name": "Remedial",
+      "Alias": "Remed",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "9",
+      "Name": "State In State",
+      "Alias": "StInSt",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "10",
+      "Name": "Mayfair",
+      "Alias": "Mayfair",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "11",
+      "Name": "L.E.S.T.",
+      "Alias": "LEST",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "12",
+      "Name": "Agent Orange",
+      "Alias": "AgtOrange",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "13",
+      "Name": "Elite Team",
+      "Alias": "EliteTeam",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "14",
+      "Name": "Seltridge",
+      "Alias": "Selt",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "15",
+      "Name": "Pimlico",
+      "Alias": "Pim",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "16",
+      "Name": "D Alpha",
+      "Alias": "D_Alpha",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "17",
+      "Name": "D.M.I.",
+      "Alias": "DMI",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "18",
+      "Name": "Sins",
+      "Alias": "Sins",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "19",
+      "Name": "Skylax",
+      "Alias": "Skylax",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "20",
+      "Name": "White Shadow",
+      "Alias": "W_S",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "21",
+      "Name": "Paracohn",
+      "Alias": "Para",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "22",
+      "Name": "Majestic 12",
+      "Alias": "Maj_12",
+      "Gang": "true",
+      "Color": null
+    },
+    {
+      "Id": "23",
+      "Name": "Rivers",
+      "Alias": "Rivers",
+      "Gang": "true",
+      "Color": null
+    },
+    {
+      "Id": "24",
+      "Name": "Palais Conf",
+      "Alias": "PalConf",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "25",
+      "Name": "Empire Calypso",
+      "Alias": "EmpCalypso",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "26",
+      "Name": "Int-Falls",
+      "Alias": "IntFalls",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "27",
+      "Name": "Infinity",
+      "Alias": "Infi",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "28",
+      "Name": "Korsador",
+      "Alias": "Korsa",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "29",
+      "Name": "Plasmatics",
+      "Alias": "Plasma",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "30",
+      "Name": "Rushwell",
+      "Alias": "Rush",
+      "Gang": "false",
+      "Color": null
+    },
+    {
+      "Id": "31",
+      "Name": "Dayladay",
+      "Alias": "Day",
+      "Gang": "false",
+      "Color": null
+    }
+  ]
+}

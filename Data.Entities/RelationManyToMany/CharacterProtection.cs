@@ -10,6 +10,7 @@ using Data.Entities.Characterize;
 
 namespace Data.Entities.RelationManyToMany
 {
+    [Table("CharacterProtections")]
     public class CharacterProtection
     {
         [Key, Column(Order = 0)]
