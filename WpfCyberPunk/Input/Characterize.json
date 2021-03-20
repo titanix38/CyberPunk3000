@@ -1,727 +1,727 @@
 {
   "Features": [
     {
-      "Id": "1",
+      "Id": 1,
       "Name": "Beaute",
       "Alias": "BT"
     },
     {
-      "Id": "2",
+      "Id": 2,
       "Name": "Constitution",
       "Alias": "CON"
     },
     {
-      "Id": "3",
+      "Id": 3,
       "Name": "Empathie",
       "Alias": "EMP"
     },
     {
-      "Id": "4",
+      "Id": 4,
       "Name": "Mouvement",
       "Alias": "MVT"
     },
     {
-      "Id": "5",
+      "Id": 5,
       "Name": "Sang Froid",
       "Alias": "SF"
     },
     {
-      "Id": "6",
+      "Id": 6,
       "Name": "Technique",
       "Alias": "TECH"
     },
     {
-      "Id": "7",
+      "Id": 7,
       "Name": "Intelligence",
       "Alias": "INT"
     },
     {
-      "Id": "8",
+      "Id": 8,
       "Name": "Reflex",
       "Alias": "REF"
     },
     {
-      "Id": "9",
+      "Id": 9,
       "Name": "Chance",
       "Alias": "CH"
     }
   ],
   "Skills": [
     {
-      "Id": "1",
+      "Id": 1,
       "Name": "Look",
       "Alias": "Look",
-      "IdFeature": "1",
+      "IdFeature": 1,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "2",
+      "Id": 2,
       "Name": "Endurance",
       "Alias": "Endu",
-      "IdFeature": "2",
+      "IdFeature": 2,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "3",
+      "Id": 3,
       "Name": "Force",
       "Alias": "Force",
-      "IdFeature": "2",
+      "IdFeature": 2,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "4",
+      "Id": 4,
       "Name": "Perception Humaine",
       "Alias": "PercHum",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "5",
+      "Id": 5,
       "Name": "Baratin & Persuasion",
       "Alias": "BarPersu",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "6",
+      "Id": 6,
       "Name": "Performance",
       "Alias": "Perform",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "7",
+      "Id": 7,
       "Name": "Social",
       "Alias": "Social",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "8",
+      "Id": 8,
       "Name": "Meditation",
       "Alias": "Medit",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "9",
+      "Id": 9,
       "Name": "Commandement",
       "Alias": "Cmdent",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "10",
+      "Id": 10,
       "Name": "Interview",
       "Alias": "Intervw",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "11",
+      "Id": 11,
       "Name": "Negociation",
       "Alias": "Nego",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "2"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 2
     },
     {
-      "Id": "12",
+      "Id": 12,
       "Name": "Seduction",
       "Alias": "Seduc",
-      "IdFeature": "3",
-      "IdSpecialAbility": "11",
-      "Factor": "1"
+      "IdFeature": 3,
+      "IdSpecialAbility": 11,
+      "Factor": 1
     },
     {
-      "Id": "13",
+      "Id": 13,
       "Name": "Athletisme",
       "Alias": "Athle",
-      "IdFeature": "4",
+      "IdFeature": 4,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "14",
+      "Id": 14,
       "Name": "Natation",
       "Alias": "Nata",
-      "IdFeature": "4",
+      "IdFeature": 4,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "15",
+      "Id": 15,
       "Name": "Escalade",
       "Alias": "Escal",
-      "IdFeature": "4",
+      "IdFeature": 4,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "16",
+      "Id": 16,
       "Name": "Intimidation",
       "Alias": "Intim",
-      "IdFeature": "5",
+      "IdFeature": 5,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "17",
+      "Id": 17,
       "Name": "Conn. de la rue",
       "Alias": "ConnaiRue",
-      "IdFeature": "5",
+      "IdFeature": 5,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "18",
+      "Id": 18,
       "Name": "Interrogatoire",
       "Alias": "Interro",
-      "IdFeature": "5",
+      "IdFeature": 5,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "19",
+      "Id": 19,
       "Name": "Resister t&d",
       "Alias": "RTD",
-      "IdFeature": "5",
+      "IdFeature": 5,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "20",
+      "Id": 20,
       "Name": "Sang froid au combat",
       "Alias": "SFCombat",
-      "IdFeature": "5",
+      "IdFeature": 5,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "21",
+      "Id": 21,
       "Name": "Eloquence",
       "Alias": "Eloq",
-      "IdFeature": "5",
+      "IdFeature": 5,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "22",
+      "Id": 22,
       "Name": "Deguisement",
       "Alias": "Deguis",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 1
     },
     {
-      "Id": "23",
+      "Id": 23,
       "Name": "Contrefacon",
       "Alias": "Contref",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 1
     },
     {
-      "Id": "24",
+      "Id": 24,
       "Name": "Crochetage",
       "Alias": "Croch",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 1
     },
     {
-      "Id": "25",
+      "Id": 25,
       "Name": "Securite electronique",
       "Alias": "SecuElectro",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "2"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 2
     },
     {
-      "Id": "26",
+      "Id": 26,
       "Name": "Armurerie",
       "Alias": "Armu",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 1
     },
     {
-      "Id": "27",
+      "Id": 27,
       "Name": "Photo&films",
       "Alias": "PhFilm",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 1
     },
     {
-      "Id": "28",
+      "Id": 28,
       "Name": "Explosifs",
       "Alias": "Explos",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 1
     },
     {
-      "Id": "29",
+      "Id": 29,
       "Name": "Premier soins",
       "Alias": "PremSoin",
-      "IdFeature": "6",
-      "IdSpecialAbility": "8",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 8,
+      "Factor": 1
     },
     {
-      "Id": "30",
+      "Id": 30,
       "Name": "Pharmacologie",
       "Alias": "Pharma",
-      "IdFeature": "6",
-      "IdSpecialAbility": "8",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 8,
+      "Factor": 1
     },
     {
-      "Id": "31",
+      "Id": 31,
       "Name": "Electronique  ",
       "Alias": "Electro",
-      "IdFeature": "6",
-      "IdSpecialAbility": "10",
-      "Factor": "1"
+      "IdFeature": 6,
+      "IdSpecialAbility": 10,
+      "Factor": 1
     },
     {
-      "Id": "32",
+      "Id": 32,
       "Name": "Gentech",
       "Alias": "Gentech",
-      "IdFeature": "6",
+      "IdFeature": 6,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "33",
+      "Id": 33,
       "Name": "Perception",
       "Alias": "Perc",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "34",
+      "Id": 34,
       "Name": "Se cacher/semer",
       "Alias": "SeCacher",
-      "IdFeature": "7",
-      "IdSpecialAbility": "2",
-      "Factor": "1"
+      "IdFeature": 7,
+      "IdSpecialAbility": 2,
+      "Factor": 1
     },
     {
-      "Id": "35",
+      "Id": 35,
       "Name": "Suivre pister",
       "Alias": "Pister",
-      "IdFeature": "7",
-      "IdSpecialAbility": "2",
-      "Factor": "1"
+      "IdFeature": 7,
+      "IdSpecialAbility": 2,
+      "Factor": 1
     },
     {
-      "Id": "36",
+      "Id": 36,
       "Name": "Survie milieu hostile",
       "Alias": "SurvieHost",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "37",
+      "Id": 37,
       "Name": "Tactique militaire",
       "Alias": "TactiMili",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "38",
+      "Id": 38,
       "Name": "Evaluation du risque",
       "Alias": "EvalRisq",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "39",
+      "Id": 39,
       "Name": "Gestion",
       "Alias": "Gestion",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "40",
+      "Id": 40,
       "Name": "Bibliotheque",
       "Alias": "Biblio",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "41",
+      "Id": 41,
       "Name": "Education",
       "Alias": "Edu",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "42",
+      "Id": 42,
       "Name": "Biologie",
       "Alias": "Biolo",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "43",
+      "Id": 43,
       "Name": "Maths",
       "Alias": "Maths",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "44",
+      "Id": 44,
       "Name": "Penal",
       "Alias": "Penal",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "45",
+      "Id": 45,
       "Name": "Enseignement",
       "Alias": "Enseign",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "46",
+      "Id": 46,
       "Name": "Jeu",
       "Alias": "Jeu",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "47",
+      "Id": 47,
       "Name": "Anatomie",
       "Alias": "Anat",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "48",
+      "Id": 48,
       "Name": "Diagnostique",
       "Alias": "Diag",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "49",
+      "Id": 49,
       "Name": "Chimie",
       "Alias": "Chimie",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "50",
+      "Id": 50,
       "Name": "Investissement",
       "Alias": "Invest",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "51",
+      "Id": 51,
       "Name": "Zoologie",
       "Alias": "Zool",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "52",
+      "Id": 52,
       "Name": "Botanique",
       "Alias": "Bota",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "53",
+      "Id": 53,
       "Name": "Conn. de la merde",
       "Alias": "ConnMerde",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "54",
+      "Id": 54,
       "Name": "Conn. des systemes",
       "Alias": "ConnDesSyst",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "55",
+      "Id": 55,
       "Name": "Conn. du systeme",
       "Alias": "ConnDuSyst",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "3"
+      "Factor": 3
     },
     {
-      "Id": "56",
+      "Id": 56,
       "Name": "Armes auto",
       "Alias": "ArmAuto",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "57",
+      "Id": 57,
       "Name": "Pistolet",
       "Alias": "Pisto",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "58",
+      "Id": 58,
       "Name": "Armes lourdes",
       "Alias": "ArmLrd",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "59",
+      "Id": 59,
       "Name": "Fusil",
       "Alias": "Fusil",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "60",
+      "Id": 60,
       "Name": "Grenade",
       "Alias": "Grenade",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "61",
+      "Id": 61,
       "Name": "Melee",
       "Alias": "Melee",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "62",
+      "Id": 62,
       "Name": "Esquive",
       "Alias": "Esqui",
-      "IdFeature": "8",
-      "IdSpecialAbility": "2",
-      "Factor": "1"
+      "IdFeature": 8,
+      "IdSpecialAbility": 2,
+      "Factor": 1
     },
     {
-      "Id": "63",
+      "Id": 63,
       "Name": "Discretion",
       "Alias": "Discret",
-      "IdFeature": "8",
-      "IdSpecialAbility": "2",
-      "Factor": "2"
+      "IdFeature": 8,
+      "IdSpecialAbility": 2,
+      "Factor": 2
     },
     {
-      "Id": "64",
+      "Id": 64,
       "Name": "Pickpocket",
       "Alias": "Ppocket",
-      "IdFeature": "8",
-      "IdSpecialAbility": "2",
-      "Factor": "1"
+      "IdFeature": 8,
+      "IdSpecialAbility": 2,
+      "Factor": 1
     },
     {
-      "Id": "65",
+      "Id": 65,
       "Name": "Danse",
       "Alias": "Danse",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "66",
+      "Id": 66,
       "Name": "Automobile",
       "Alias": "Auto",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "67",
+      "Id": 67,
       "Name": "Moto",
       "Alias": "Moto",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "68",
+      "Id": 68,
       "Name": "Av",
       "Alias": "Av",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "69",
+      "Id": 69,
       "Name": "Engin lourds",
       "Alias": "EnginLrd",
-      "IdFeature": "8",
+      "IdFeature": 8,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "70",
+      "Id": 70,
       "Name": "Aikido",
       "Alias": "Aikido",
-      "IdFeature": "8",
-      "IdSpecialAbility": "1",
-      "Factor": "3"
+      "IdFeature": 8,
+      "IdSpecialAbility": 1,
+      "Factor": 3
     },
     {
-      "Id": "71",
+      "Id": 71,
       "Name": "Judo",
       "Alias": "Judo",
-      "IdFeature": "8",
-      "IdSpecialAbility": "1",
-      "Factor": "1"
+      "IdFeature": 8,
+      "IdSpecialAbility": 1,
+      "Factor": 1
     },
     {
-      "Id": "72",
+      "Id": 72,
       "Name": "Karate",
       "Alias": "Karate",
-      "IdFeature": "8",
-      "IdSpecialAbility": "1",
-      "Factor": "1"
+      "IdFeature": 8,
+      "IdSpecialAbility": 1,
+      "Factor": 1
     },
     {
-      "Id": "73",
+      "Id": 73,
       "Name": "Contorsionniste",
       "Alias": "Contor",
-      "IdFeature": "8",
-      "IdSpecialAbility": "1",
-      "Factor": "1"
+      "IdFeature": 8,
+      "IdSpecialAbility": 1,
+      "Factor": 1
     },
     {
-      "Id": "74",
+      "Id": 74,
       "Name": "Capoiera",
       "Alias": "Capoiera",
-      "IdFeature": "8",
-      "IdSpecialAbility": "1",
-      "Factor": "1"
+      "IdFeature": 8,
+      "IdSpecialAbility": 1,
+      "Factor": 1
     },
     {
-      "Id": "75",
+      "Id": 75,
       "Name": "Lutte",
       "Alias": "Lutte",
-      "IdFeature": "8",
-      "IdSpecialAbility": "1",
-      "Factor": "1"
+      "IdFeature": 8,
+      "IdSpecialAbility": 1,
+      "Factor": 1
     },
     {
-      "Id": "76",
+      "Id": 76,
       "Name": "Cuisine",
       "Alias": "Cuisine",
-      "IdFeature": "7",
+      "IdFeature": 7,
       "IdSpecialAbility": null,
-      "Factor": "1"
+      "Factor": 1
     },
     {
-      "Id": "77",
+      "Id": 77,
       "Name": "Programmation",
       "Alias": "Progr",
-      "IdFeature": "7",
-      "IdSpecialAbility": "12",
-      "Factor": "1"
+      "IdFeature": 7,
+      "IdSpecialAbility": 12,
+      "Factor": 1
     }
   ],
   "SpecialAbilities": [
     {
-      "Id": "1",
+      "Id": 1,
       "Name": "Sens du combat",
       "Alias": "Sdc"
     },
     {
-      "Id": "2",
+      "Id": 2,
       "Name": "Furtivite",
       "Alias": "Furtif"
     },
     {
-      "Id": "3",
+      "Id": 3,
       "Name": "Systeme d",
       "Alias": "SystD"
     },
     {
-      "Id": "4",
+      "Id": 4,
       "Name": "Interface",
       "Alias": "Inter"
     },
     {
-      "Id": "5",
+      "Id": 5,
       "Name": "Autorite",
       "Alias": "Autor"
     },
     {
-      "Id": "6",
+      "Id": 6,
       "Name": "Charisme",
       "Alias": "Char"
     },
     {
-      "Id": "7",
+      "Id": 7,
       "Name": "Fixer",
       "Alias": "Fixer"
     },
     {
-      "Id": "8",
+      "Id": 8,
       "Name": "Medtech",
       "Alias": "MedTech"
     },
     {
-      "Id": "9",
+      "Id": 9,
       "Name": "Media",
       "Alias": "Media"
     },
     {
-      "Id": "10",
+      "Id": 10,
       "Name": "Techi",
       "Alias": "Techi"
     },
     {
-      "Id": "11",
+      "Id": 11,
       "Name": "Persuader",
       "Alias": "Persu"
     },
     {
-      "Id": "12",
+      "Id": 12,
       "Name": "Hacker",
       "Alias": "Hacker"
     }

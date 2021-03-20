@@ -1,348 +1,348 @@
 {
   "Areas": [
     {
-      "Id": "1",
+      "Id": 1,
       "Name": "ZONE 1",
       "Alias": "DiaCityZ1",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "2",
+      "Id": 2,
       "Name": "ZONE 2",
       "Alias": "DiaCityZ2",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "3",
+      "Id": 3,
       "Name": "ZONE 3",
       "Alias": "DiaCityZ3",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "4",
+      "Id": 4,
       "Name": "ZONE 4",
       "Alias": "DiaCityZ4",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "5",
+      "Id": 5,
       "Name": "ZONE 5",
       "Alias": "DiaCityZ5",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "6",
+      "Id": 6,
       "Name": "ZONE 6",
       "Alias": "DiaCityZ6",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "7",
+      "Id": 7,
       "Name": "ZONE 7",
       "Alias": "DiaCityZ7",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "8",
+      "Id": 8,
       "Name": "ZONE 8",
       "Alias": "DiaCityZ8",
-      "IdCity": "4"
+      "IdCity": 4
     },
     {
-      "Id": "9",
+      "Id": 9,
       "Name": "A1",
       "Alias": "StJamesA1",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "10",
+      "Id": 10,
       "Name": "A2",
       "Alias": "StJamesA2",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "11",
+      "Id": 11,
       "Name": "A3",
       "Alias": "StJamesA3",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "12",
+      "Id": 12,
       "Name": "A4",
       "Alias": "StJamesA4",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "13",
+      "Id": 13,
       "Name": "A5",
       "Alias": "StJamesA5",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "14",
+      "Id": 14,
       "Name": "A6",
       "Alias": "StJamesA6",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "15",
+      "Id": 15,
       "Name": "A7",
       "Alias": "StJamesA7",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "16",
+      "Id": 16,
       "Name": "A8",
       "Alias": "StJamesA8",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "17",
+      "Id": 17,
       "Name": "A9",
       "Alias": "StJamesA9",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "18",
+      "Id": 18,
       "Name": "A10",
       "Alias": "StJamesA10",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "19",
+      "Id": 19,
       "Name": "A11",
       "Alias": "StJamesA11",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "20",
+      "Id": 20,
       "Name": "A12",
       "Alias": "StJamesA12",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "21",
+      "Id": 21,
       "Name": "A13",
       "Alias": "StJamesA13",
-      "IdCity": "7"
+      "IdCity": 7
     },
     {
-      "Id": "22",
+      "Id": 22,
       "Name": "Osiris",
       "Alias": "BelOsiris",
-      "IdCity": "2"
+      "IdCity": 2
     },
     {
-      "Id": "23",
+      "Id": 23,
       "Name": "Geo-Center",
       "Alias": "BelGeoCenter",
-      "IdCity": "2"
+      "IdCity": 2
     },
     {
-      "Id": "24",
+      "Id": 24,
       "Name": "Ring nord",
       "Alias": "BelRingBelnord",
-      "IdCity": "2"
+      "IdCity": 2
     },
     {
-      "Id": "25",
+      "Id": 25,
       "Name": "Alpha -Genzler Zone",
       "Alias": "BelAlphaBel",
-      "IdCity": "2"
+      "IdCity": 2
     },
     {
-      "Id": "26",
+      "Id": 26,
       "Name": "Diva's",
       "Alias": "BelDiva",
-      "IdCity": "2"
+      "IdCity": 2
     },
     {
-      "Id": "27",
+      "Id": 27,
       "Name": "Ruben's",
       "Alias": "BelRuben",
-      "IdCity": "2"
+      "IdCity": 2
     },
     {
-      "Id": "28",
+      "Id": 28,
       "Name": "Road Meritt",
       "Alias": "BelRdMeritt",
-      "IdCity": "2"
+      "IdCity": 2
     },
     {
-      "Id": "29",
+      "Id": 29,
       "Name": "Gouvernance",
       "Alias": "CircGouv",
-      "IdCity": "10"
+      "IdCity": 10
     },
     {
-      "Id": "30",
+      "Id": 30,
       "Name": "Isolante",
       "Alias": "CircIsolante",
-      "IdCity": "10"
+      "IdCity": 10
     },
     {
-      "Id": "31",
+      "Id": 31,
       "Name": "Trials",
       "Alias": "CircTrials",
-      "IdCity": "10"
+      "IdCity": 10
     },
     {
-      "Id": "32",
+      "Id": 32,
       "Name": "block zero",
       "Alias": "CircBlockZero",
-      "IdCity": "10"
+      "IdCity": 10
     },
     {
-      "Id": "33",
+      "Id": 33,
       "Name": "Orange-Field",
       "Alias": "ParOrange",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "34",
+      "Id": 34,
       "Name": "Millfield",
       "Alias": "ParMill",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "35",
+      "Id": 35,
       "Name": "Ross-Bambou",
       "Alias": "ParRoss",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "36",
+      "Id": 36,
       "Name": "Botanie",
       "Alias": "ParBotanie",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "37",
+      "Id": 37,
       "Name": "Alamo",
       "Alias": "ParAlamo",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "38",
+      "Id": 38,
       "Name": "Les Cabanes",
       "Alias": "ParCabanes",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "39",
+      "Id": 39,
       "Name": "Valfleury",
       "Alias": "ParVal",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "40",
+      "Id": 40,
       "Name": "Voltigeurs",
       "Alias": "ParVolt",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "41",
+      "Id": 41,
       "Name": "Raven's",
       "Alias": "ParRaven",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "42",
+      "Id": 42,
       "Name": "La Source",
       "Alias": "ParSource",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "43",
+      "Id": 43,
       "Name": "HauteVille",
       "Alias": "ParHteVille",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "44",
+      "Id": 44,
       "Name": "Les Toiny's",
       "Alias": "ParToinys",
-      "IdCity": "6"
+      "IdCity": 6
     },
     {
-      "Id": "45",
+      "Id": 45,
       "Name": "InterContinentale",
       "Alias": "ZurInterCont",
-      "IdCity": "9"
+      "IdCity": 9
     },
     {
-      "Id": "46",
+      "Id": 46,
       "Name": "Maltritz",
       "Alias": "ZurMaltritz",
-      "IdCity": "9"
+      "IdCity": 9
     },
     {
-      "Id": "47",
+      "Id": 47,
       "Name": "Park-avenue Katy",
       "Alias": "ZurParkAve",
-      "IdCity": "9"
+      "IdCity": 9
     },
     {
-      "Id": "48",
+      "Id": 48,
       "Name": "Scirocco",
       "Alias": "ZurScirocco",
-      "IdCity": "9"
+      "IdCity": 9
     },
     {
-      "Id": "49",
+      "Id": 49,
       "Name": "Metallist",
       "Alias": "ZurMetallist",
-      "IdCity": "9"
+      "IdCity": 9
     }
   ],
   "Cities": [
     {
-      "Id": "1",
+      "Id": 1,
       "Name": "Aphton City",
       "Alias": "Aphton"
     },
     {
-      "Id": "2",
+      "Id": 2,
       "Name": "Belmare",
       "Alias": "Belmare"
     },
     {
-      "Id": "3",
+      "Id": 3,
       "Name": "Camp Famagusta",
       "Alias": "Famagusta"
     },
     {
-      "Id": "4",
+      "Id": 4,
       "Name": "Diamond City",
       "Alias": "DiamCity"
     },
     {
-      "Id": "5",
+      "Id": 5,
       "Name": "Interlakes",
       "Alias": "Interlakes"
     },
     {
-      "Id": "6",
+      "Id": 6,
       "Name": "Paris",
       "Alias": "Paris"
     },
     {
-      "Id": "7",
+      "Id": 7,
       "Name": "Saint James",
       "Alias": "StJames"
     },
     {
-      "Id": "8",
+      "Id": 8,
       "Name": "Villa Auror",
       "Alias": "VilAuror"
     },
     {
-      "Id": "9",
+      "Id": 9,
       "Name": "Zurich",
       "Alias": "Zurich"
     },
     {
-      "Id": "10",
+      "Id": 10,
       "Name": "100 Circles",
       "Alias": "100Circ"
     }
