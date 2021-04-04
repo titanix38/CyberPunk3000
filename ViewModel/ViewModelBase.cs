@@ -16,6 +16,7 @@ namespace ViewModel
         protected const string JsonInitFile = @".\Input\CyberPunkInit.json";
 
 
+
         public string ErrorMessage { get; protected set; }
 
         public bool Success { get; protected set; }

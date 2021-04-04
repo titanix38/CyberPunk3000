@@ -37,7 +37,7 @@ namespace WpfCyberPunk
             //Factory factory = new Factory();
             //factory.SetJsonToDb();
             _viewModel = new ViewModel.ViewModel();
-            _viewModel.InitDataBase();
+            _viewModel.ExtractDatasFromInit();
             if (!_viewModel.Success)
             {
                 MessageBox.Show( _viewModel.ErrorMessage,"Erreur", MessageBoxButton.OK, MessageBoxImage.Error,

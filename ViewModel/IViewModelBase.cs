@@ -10,5 +10,6 @@ namespace ViewModel
     interface IViewModelBase
     {
         List<string> GetNames<T>(T t);
+
     }
 }

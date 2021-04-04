@@ -11,16 +11,34 @@ using Newtonsoft.Json;
 namespace ViewModel
 {
     public class ViewModel : ViewModelBase
-    {   
-        public void InitDataBase()
+    {
+        private dynamic _datas;
+
+        private string _json;
+
+        private string[] _initFiles = Directory.GetFiles((@".\Input")).Where(f => Path.GetExtension(f) == ".json").ToArray();
+
+        public string[] InitFiles => _initFiles;
+        public dynamic Datas => _datas;
+
+        public string Json => _json;
+
+
+        public void ExtractDatasFromInit()
         {
             string message = string.Empty;
             try
             {
                 _factory = new Factory();
-                string json = File.ReadAllText(JsonInitFile, Encoding.UTF8);
-                dynamic datas = JsonConvert.DeserializeObject(json, typeof(object));
-                _factory.SetDatasToDB(datas);
+
+                foreach (var jsonFile in InitFiles)
+                {
+                    _json = File.ReadAllText(jsonFile, Encoding.UTF8);
+                    _datas = JsonConvert.DeserializeObject(Json, typeof(object));
+                    //_factory.SetDatasToDB(Datas);
+                }
+
+                //string json = File.ReadAllText(JsonInitFile, Encoding.UTF8);
                 Success = true;
             }
             catch (Exception e)
