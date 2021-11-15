@@ -85,9 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CyberContext.cs" />
-    <Compile Include="Migrations\202103061746052_resources.cs" />
-    <Compile Include="Migrations\202103061746052_resources.designer.cs">
-      <DependentUpon>202103061746052_resources.cs</DependentUpon>
+    <Compile Include="Migrations\202111151958210_CyberPunk.cs" />
+    <Compile Include="Migrations\202111151958210_CyberPunk.designer.cs">
+      <DependentUpon>202111151958210_CyberPunk.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,8 +103,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103061746052_resources.resx">
-      <DependentUpon>202103061746052_resources.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111151958210_CyberPunk.resx">
+      <DependentUpon>202111151958210_CyberPunk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

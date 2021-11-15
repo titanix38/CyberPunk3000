@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class resources : DbMigration
+    public partial class CyberPunk : DbMigration
     {
         public override void Up()
         {
@@ -22,7 +22,7 @@
                 .Index(t => t.IdCity);
             
             CreateTable(
-                "dbo.CharacterArea",
+                "dbo.CharacterAreas",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -39,18 +39,21 @@
                 "dbo.Characters",
                 c => new
                     {
-                        IdCharactere = c.Guid(nullable: false, identity: true),
+                        IdCharacter = c.Guid(nullable: false, identity: true),
                         FirstName = c.String(),
                         LastName = c.String(),
-                        IdGender = c.Int(nullable: false),
                         Chance = c.Int(nullable: false),
                         Alive = c.Boolean(nullable: false),
+                        Slash = c.Int(),
+                        Cross = c.Int(),
+                        Stabilized = c.Boolean(),
+                        IdGender = c.Int(nullable: false),
                         IdCorporation = c.Int(),
                         IdGrade = c.Int(),
                         IdEthnic = c.Int(nullable: false),
                         IdArea = c.Int(),
                     })
-                .PrimaryKey(t => t.IdCharactere)
+                .PrimaryKey(t => t.IdCharacter)
                 .ForeignKey("dbo.Areas", t => t.IdArea)
                 .ForeignKey("dbo.Corporations", t => t.IdCorporation)
                 .ForeignKey("dbo.Ethnics", t => t.IdEthnic, cascadeDelete: true)
@@ -63,7 +66,7 @@
                 .Index(t => t.IdArea);
             
             CreateTable(
-                "dbo.CharacterFeature",
+                "dbo.CharacterFeatures",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -100,10 +103,15 @@
                         ChanceToDie = c.Decimal(nullable: false, precision: 18, scale: 2),
                         ChanceToBeMad = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IdFeature = c.Int(),
+                        IdSkill = c.Int(),
+                        IdSpecialAbility = c.Int(),
+                        Skills_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Features", t => t.IdFeature)
-                .Index(t => t.IdFeature);
+                .ForeignKey("dbo.Skills", t => t.Skills_Id)
+                .Index(t => t.IdFeature)
+                .Index(t => t.Skills_Id);
             
             CreateTable(
                 "dbo.Skills",
@@ -123,7 +131,7 @@
                 .Index(t => t.IdSpecialAbility);
             
             CreateTable(
-                "dbo.CharacterSkill",
+                "dbo.CharacterSkills",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -148,7 +156,7 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.CharacterSpecialAbility",
+                "dbo.CharacterSpecialAbilities",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -163,7 +171,7 @@
                 .Index(t => t.IdSpecial);
             
             CreateTable(
-                "dbo.CharacterProperty",
+                "dbo.CharacterProperties",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -189,7 +197,7 @@
                 .Index(t => t.IdArea);
             
             CreateTable(
-                "dbo.CharacterProtection",
+                "dbo.CharacterProtections",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -226,7 +234,7 @@
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.CharacterPseudo",
+                "dbo.CharacterPseudos",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -248,21 +256,22 @@
                 .PrimaryKey(t => t.IdPseudo);
             
             CreateTable(
-                "dbo.CharacterResourceCharacter",
+                "dbo.CharacterResourceCharacters",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
                         IdOtherCharacter = c.Guid(nullable: false),
                         Value = c.Int(nullable: false),
+                        OtherCharacters_IdCharacter = c.Guid(),
                     })
                 .PrimaryKey(t => new { t.IdCharacter, t.IdOtherCharacter })
                 .ForeignKey("dbo.Characters", t => t.IdCharacter, cascadeDelete: true)
-                .ForeignKey("dbo.Characters", t => t.IdOtherCharacter)
+                .ForeignKey("dbo.Characters", t => t.OtherCharacters_IdCharacter)
                 .Index(t => t.IdCharacter)
-                .Index(t => t.IdOtherCharacter);
+                .Index(t => t.OtherCharacters_IdCharacter);
             
             CreateTable(
-                "dbo.CharacterResourceCorporation",
+                "dbo.CharacterResourceCorporations",
                 c => new
                     {
                         IdCharacter = c.Guid(nullable: false),
@@ -284,6 +293,87 @@
                         Alias = c.String(),
                         IsGang = c.Boolean(nullable: false),
                         Color = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.CharactersWeapons",
+                c => new
+                    {
+                        IdCharacter = c.Guid(nullable: false),
+                        IdWeapon = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.IdCharacter, t.IdWeapon })
+                .ForeignKey("dbo.Characters", t => t.IdCharacter, cascadeDelete: true)
+                .ForeignKey("dbo.Weapons", t => t.IdWeapon, cascadeDelete: true)
+                .Index(t => t.IdCharacter)
+                .Index(t => t.IdWeapon);
+            
+            CreateTable(
+                "dbo.Weapons",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Wording = c.String(),
+                        Alias = c.String(),
+                        Magazine = c.Int(),
+                        Range = c.Int(),
+                        AccuracyBonus = c.Int(nullable: false),
+                        Silencer = c.Boolean(nullable: false),
+                        DamageMultiplier = c.Int(nullable: false),
+                        DamageBonus = c.Int(nullable: false),
+                        IdDice = c.Int(nullable: false),
+                        IdCategory = c.Int(nullable: false),
+                        IdConcealment = c.Int(nullable: false),
+                        IdPlace = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Concealments", t => t.IdConcealment, cascadeDelete: true)
+                .ForeignKey("dbo.Dices", t => t.IdPlace, cascadeDelete: true)
+                .ForeignKey("dbo.Places", t => t.IdPlace, cascadeDelete: true)
+                .ForeignKey("dbo.Categories", t => t.IdCategory, cascadeDelete: true)
+                .Index(t => t.IdCategory)
+                .Index(t => t.IdConcealment)
+                .Index(t => t.IdPlace);
+            
+            CreateTable(
+                "dbo.Concealments",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Wording = c.String(),
+                        Alias = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Dices",
+                c => new
+                    {
+                        IdDice = c.Int(nullable: false, identity: true),
+                        Face = c.Int(nullable: false),
+                        Bonus = c.Int(),
+                        Malus = c.Int(),
+                    })
+                .PrimaryKey(t => t.IdDice);
+            
+            CreateTable(
+                "dbo.Places",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Wording = c.String(),
+                        Alias = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Categories",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Wording = c.String(),
+                        Alias = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -335,86 +425,105 @@
         public override void Down()
         {
             DropForeignKey("dbo.Areas", "IdCity", "dbo.Cities");
-            DropForeignKey("dbo.CharacterArea", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterAreas", "IdCharacter", "dbo.Characters");
             DropForeignKey("dbo.Characters", "IdGrade", "dbo.Grades");
             DropForeignKey("dbo.Characters", "IdGender", "dbo.Genders");
             DropForeignKey("dbo.Characters", "IdEthnic", "dbo.Ethnics");
             DropForeignKey("dbo.Characters", "IdCorporation", "dbo.Corporations");
-            DropForeignKey("dbo.CharacterResourceCorporation", "IdCorpo", "dbo.Corporations");
-            DropForeignKey("dbo.CharacterResourceCorporation", "IdCharacter", "dbo.Characters");
-            DropForeignKey("dbo.CharacterResourceCharacter", "OtherCharacters_IdCharactere", "dbo.Characters");
-            DropForeignKey("dbo.CharacterResourceCharacter", "IdCharacter", "dbo.Characters");
-            DropForeignKey("dbo.CharacterPseudo", "IdPseudo", "dbo.Pseudo");
-            DropForeignKey("dbo.CharacterPseudo", "IdCharacter", "dbo.Characters");
-            DropForeignKey("dbo.CharacterProtection", "IdProtection", "dbo.Protections");
+            DropForeignKey("dbo.CharactersWeapons", "IdWeapon", "dbo.Weapons");
+            DropForeignKey("dbo.Weapons", "IdCategory", "dbo.Categories");
+            DropForeignKey("dbo.Weapons", "IdPlace", "dbo.Places");
+            DropForeignKey("dbo.Weapons", "IdPlace", "dbo.Dices");
+            DropForeignKey("dbo.Weapons", "IdConcealment", "dbo.Concealments");
+            DropForeignKey("dbo.CharactersWeapons", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterResourceCorporations", "IdCorpo", "dbo.Corporations");
+            DropForeignKey("dbo.CharacterResourceCorporations", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterResourceCharacters", "OtherCharacters_IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterResourceCharacters", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterPseudos", "IdPseudo", "dbo.Pseudo");
+            DropForeignKey("dbo.CharacterPseudos", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterProtections", "IdProtection", "dbo.Protections");
             DropForeignKey("dbo.Protections", "IdPart", "dbo.Parts");
-            DropForeignKey("dbo.CharacterProtection", "IdCharacter", "dbo.Characters");
-            DropForeignKey("dbo.CharacterProperty", "IdProperty", "dbo.Property");
+            DropForeignKey("dbo.CharacterProtections", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterProperties", "IdProperty", "dbo.Property");
             DropForeignKey("dbo.Property", "IdArea", "dbo.Areas");
-            DropForeignKey("dbo.CharacterProperty", "IdCharacter", "dbo.Characters");
-            DropForeignKey("dbo.CharacterFeature", "IdFeature", "dbo.Features");
+            DropForeignKey("dbo.CharacterProperties", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterFeatures", "IdFeature", "dbo.Features");
+            DropForeignKey("dbo.Patents", "Skills_Id", "dbo.Skills");
             DropForeignKey("dbo.Skills", "IdSpecialAbility", "dbo.SpecialAbilities");
-            DropForeignKey("dbo.CharacterSpecialAbility", "IdSpecial", "dbo.SpecialAbilities");
-            DropForeignKey("dbo.CharacterSpecialAbility", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterSpecialAbilities", "IdSpecial", "dbo.SpecialAbilities");
+            DropForeignKey("dbo.CharacterSpecialAbilities", "IdCharacter", "dbo.Characters");
             DropForeignKey("dbo.Skills", "IdFeature", "dbo.Features");
-            DropForeignKey("dbo.CharacterSkill", "IdSkill", "dbo.Skills");
-            DropForeignKey("dbo.CharacterSkill", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterSkills", "IdSkill", "dbo.Skills");
+            DropForeignKey("dbo.CharacterSkills", "IdCharacter", "dbo.Characters");
             DropForeignKey("dbo.Patents", "IdFeature", "dbo.Features");
-            DropForeignKey("dbo.CharacterFeature", "IdCharacter", "dbo.Characters");
+            DropForeignKey("dbo.CharacterFeatures", "IdCharacter", "dbo.Characters");
             DropForeignKey("dbo.Characters", "IdArea", "dbo.Areas");
-            DropForeignKey("dbo.CharacterArea", "IdArea", "dbo.Areas");
-            DropIndex("dbo.CharacterResourceCorporation", new[] { "IdCorpo" });
-            DropIndex("dbo.CharacterResourceCorporation", new[] { "IdCharacter" });
-            DropIndex("dbo.CharacterResourceCharacter", new[] { "OtherCharacters_IdCharactere" });
-            DropIndex("dbo.CharacterResourceCharacter", new[] { "IdCharacter" });
-            DropIndex("dbo.CharacterPseudo", new[] { "IdPseudo" });
-            DropIndex("dbo.CharacterPseudo", new[] { "IdCharacter" });
+            DropForeignKey("dbo.CharacterAreas", "IdArea", "dbo.Areas");
+            DropIndex("dbo.Weapons", new[] { "IdPlace" });
+            DropIndex("dbo.Weapons", new[] { "IdConcealment" });
+            DropIndex("dbo.Weapons", new[] { "IdCategory" });
+            DropIndex("dbo.CharactersWeapons", new[] { "IdWeapon" });
+            DropIndex("dbo.CharactersWeapons", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterResourceCorporations", new[] { "IdCorpo" });
+            DropIndex("dbo.CharacterResourceCorporations", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterResourceCharacters", new[] { "OtherCharacters_IdCharacter" });
+            DropIndex("dbo.CharacterResourceCharacters", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterPseudos", new[] { "IdPseudo" });
+            DropIndex("dbo.CharacterPseudos", new[] { "IdCharacter" });
             DropIndex("dbo.Protections", new[] { "IdPart" });
-            DropIndex("dbo.CharacterProtection", new[] { "IdProtection" });
-            DropIndex("dbo.CharacterProtection", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterProtections", new[] { "IdProtection" });
+            DropIndex("dbo.CharacterProtections", new[] { "IdCharacter" });
             DropIndex("dbo.Property", new[] { "IdArea" });
-            DropIndex("dbo.CharacterProperty", new[] { "IdProperty" });
-            DropIndex("dbo.CharacterProperty", new[] { "IdCharacter" });
-            DropIndex("dbo.CharacterSpecialAbility", new[] { "IdSpecial" });
-            DropIndex("dbo.CharacterSpecialAbility", new[] { "IdCharacter" });
-            DropIndex("dbo.CharacterSkill", new[] { "IdSkill" });
-            DropIndex("dbo.CharacterSkill", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterProperties", new[] { "IdProperty" });
+            DropIndex("dbo.CharacterProperties", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterSpecialAbilities", new[] { "IdSpecial" });
+            DropIndex("dbo.CharacterSpecialAbilities", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterSkills", new[] { "IdSkill" });
+            DropIndex("dbo.CharacterSkills", new[] { "IdCharacter" });
             DropIndex("dbo.Skills", new[] { "IdSpecialAbility" });
             DropIndex("dbo.Skills", new[] { "IdFeature" });
+            DropIndex("dbo.Patents", new[] { "Skills_Id" });
             DropIndex("dbo.Patents", new[] { "IdFeature" });
-            DropIndex("dbo.CharacterFeature", new[] { "IdFeature" });
-            DropIndex("dbo.CharacterFeature", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterFeatures", new[] { "IdFeature" });
+            DropIndex("dbo.CharacterFeatures", new[] { "IdCharacter" });
             DropIndex("dbo.Characters", new[] { "IdArea" });
             DropIndex("dbo.Characters", new[] { "IdEthnic" });
             DropIndex("dbo.Characters", new[] { "IdGrade" });
             DropIndex("dbo.Characters", new[] { "IdCorporation" });
             DropIndex("dbo.Characters", new[] { "IdGender" });
-            DropIndex("dbo.CharacterArea", new[] { "IdArea" });
-            DropIndex("dbo.CharacterArea", new[] { "IdCharacter" });
+            DropIndex("dbo.CharacterAreas", new[] { "IdArea" });
+            DropIndex("dbo.CharacterAreas", new[] { "IdCharacter" });
             DropIndex("dbo.Areas", new[] { "IdCity" });
             DropTable("dbo.Cities");
             DropTable("dbo.Grades");
             DropTable("dbo.Genders");
             DropTable("dbo.Ethnics");
+            DropTable("dbo.Categories");
+            DropTable("dbo.Places");
+            DropTable("dbo.Dices");
+            DropTable("dbo.Concealments");
+            DropTable("dbo.Weapons");
+            DropTable("dbo.CharactersWeapons");
             DropTable("dbo.Corporations");
-            DropTable("dbo.CharacterResourceCorporation");
-            DropTable("dbo.CharacterResourceCharacter");
+            DropTable("dbo.CharacterResourceCorporations");
+            DropTable("dbo.CharacterResourceCharacters");
             DropTable("dbo.Pseudo");
-            DropTable("dbo.CharacterPseudo");
+            DropTable("dbo.CharacterPseudos");
             DropTable("dbo.Parts");
             DropTable("dbo.Protections");
-            DropTable("dbo.CharacterProtection");
+            DropTable("dbo.CharacterProtections");
             DropTable("dbo.Property");
-            DropTable("dbo.CharacterProperty");
-            DropTable("dbo.CharacterSpecialAbility");
+            DropTable("dbo.CharacterProperties");
+            DropTable("dbo.CharacterSpecialAbilities");
             DropTable("dbo.SpecialAbilities");
-            DropTable("dbo.CharacterSkill");
+            DropTable("dbo.CharacterSkills");
             DropTable("dbo.Skills");
             DropTable("dbo.Patents");
             DropTable("dbo.Features");
-            DropTable("dbo.CharacterFeature");
+            DropTable("dbo.CharacterFeatures");
             DropTable("dbo.Characters");
-            DropTable("dbo.CharacterArea");
+            DropTable("dbo.CharacterAreas");
             DropTable("dbo.Areas");
         }
     }

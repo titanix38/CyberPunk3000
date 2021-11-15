@@ -30,7 +30,7 @@ namespace ViewModel.Test
             string json = view.Json;
             dynamic data = view.Datas;
 
-
+            Assert.IsNotNull(data);
         }
     }
 }
