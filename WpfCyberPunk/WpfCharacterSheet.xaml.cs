@@ -41,8 +41,8 @@ namespace WpfCyberPunk
             //FeaturesGrid.ColumnDefinitions.Add(new ColumnDefinition());
 
 
-            Grid.SetRow(FeaturesGrid, 2);
-            Grid.SetColumn(FeaturesGrid, 0);
+            //Grid.SetRow(FeaturesGrid, 2);
+            //Grid.SetColumn(FeaturesGrid, 0);
 
             //uc.Features = _factory.GetFeature("REF");
             //uc.GetIHM();
@@ -72,30 +72,30 @@ namespace WpfCyberPunk
                 //    Height = new GridLength(10),                    
                 //};
 
-                foreach (SpecialAbility item in entities)
-                {
-                    SpecialAbilitiesGrid.RowDefinitions.Add(new RowDefinition()
-                    {
-                        Height = new GridLength(16),
-                    });
+                //foreach (SpecialAbility item in entities)
+                //{
+                //    SpecialAbilitiesGrid.RowDefinitions.Add(new RowDefinition()
+                //    {
+                //        Height = new GridLength(16),
+                //    });
 
-                    item.Alias = item.Alias.Replace(" ", "_");
+                //    item.Alias = item.Alias.Replace(" ", "_");
 
-                    StackPanel stack = new StackPanel()
-                    {
-                        Name = string.Concat(STACKPANELPREFIXE, SPECIALPREFIXE, item.Alias),
-                        Orientation = Orientation.Horizontal
-                    };
+                //    StackPanel stack = new StackPanel()
+                //    {
+                //        Name = string.Concat(STACKPANELPREFIXE, SPECIALPREFIXE, item.Alias),
+                //        Orientation = Orientation.Horizontal
+                //    };
                     
-                    SubItem(stack, item.Wording, null, null,i);
+                //    SubItem(stack, item.Wording, null, null,i);
 
-                    SpecialAbilitiesGrid.Children.Add(stack);
+                //    SpecialAbilitiesGrid.Children.Add(stack);
 
-                    Grid.SetRow(stack, i);
-                    Grid.SetColumn(stack, 0);
+                //    Grid.SetRow(stack, i);
+                //    Grid.SetColumn(stack, 0);
 
-                    i++;
-                }
+                //    i++;
+                //}
 
             }
         }
@@ -177,6 +177,9 @@ namespace WpfCyberPunk
             TextBox textBox = new TextBox();
         }
 
+        private void SpecialAbilitiesTab_Loaded(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

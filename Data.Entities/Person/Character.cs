@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Data.Entities.Enterprise;
+using Data.Entities.Injury;
 using Data.Entities.Place;
 using Data.Entities.RelationManyToMany;
 
@@ -23,19 +24,33 @@ namespace Data.Entities.Person
         public Guid IdCharacter { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public bool IsNpc { get; set; }
+        public int IdGender { get; set; }
+        public int IdEthnic { get; set; }
+
+        public Guid IdPlayer { get; set; }
 
         public int Chance { get; set; }
-        public bool Alive { get; set; }
-        public int? Slash { get; set; }
-        public int? Cross { get; set; }
-        public bool? Stabilized { get; set; }
 
-        public int IdGender { get; set; }
+        // ------------------------------------------
+        //              Injuries
+        public int IdDamage { get; set; }
+        public int? DamageSlash { get; set; }
+        public int? DamageCross { get; set; }
+        public bool? Stabilized { get; set; }
+        public bool Alive { get; set; }
+        // ------------------------------------------
+        // ------------------------------------------
+        //              Affiliate
         public int? IdCorporation { get; set; }
         public int? IdGrade { get; set; }
-        public int IdEthnic { get; set; }
+        // ------------------------------------------
+        // ------------------------------------------
+        //  Localization
         public int? IdArea { get; set; }
-        
+        // ------------------------------------------
+        public virtual Damage Damage { get; set; }
+        public virtual Player Player { get; set; }
         public virtual Ethnic Ethnic { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual Corporation Corporation { get; set; }
@@ -59,7 +74,7 @@ namespace Data.Entities.Person
 
         public Character()
         {
-           
+
         }
         #endregion
     }

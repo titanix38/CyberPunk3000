@@ -7,13 +7,13 @@ namespace Data.Context.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class CyberPunk : IMigrationMetadata
+    public sealed partial class AddUrl : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CyberPunk));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUrl));
         
         string IMigrationMetadata.Id
         {
-            get { return "202111151958210_CyberPunk"; }
+            get { return "202301292208392_AddUrl"; }
         }
         
         string IMigrationMetadata.Source

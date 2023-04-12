@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfCyberPunk"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="450" d:DesignWidth="1000"
+      d:DesignHeight="250" d:DesignWidth="1000"
       xmlns:uc="clr-namespace:WpfCyberPunk.UserControls"
       Title="WpfCharacterSheet">
     <Grid Name="MainGrid">
@@ -45,33 +45,33 @@
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <Border Grid.Row="0" Grid.Column="3" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <!--Pic-->
-            <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture">
-                <uc:UserControlPicture Height="120" Width="105" x:Name="PicTab"/>
+            <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture" Background="Black">
+                <uc:UserControlPicture Height="150" Width="105" x:Name="PicTab" Background="Black"/>
             </Grid>
             <!--Name-->
-            <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName">
-                <uc:UserControlDescription Height="120" Width="325" x:Name="NameTab"/>
+            <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName" Background="Black">
+                <uc:UserControlDescription Height="150" Width="325" x:Name="NameTab" VerticalAlignment="Top"/>
             </Grid>
             <!--Job-->
-            <Grid Grid.Row="0" Grid.Column="2" Name="GridJob">
-                <uc:UserControlJob Height="120" Width="325" x:Name="JobTab"/>
+            <Grid Grid.Row="0" Grid.Column="2" Name="GridJob" Background="Black">
+                <uc:UserControlJob Height="150" Width="325" x:Name="JobTab" VerticalAlignment="Top"/>
             </Grid>
             <!--Space-time-->
-            <Grid Grid.Row="0" Grid.Column="3" Name="GridSpaceTime">
+            <Grid Grid.Row="0" Grid.Column="3" Name="GridSpaceTime" Background="Black">
                 <Grid>
-                    <uc:UserControlSpaceTime Height="120" Width="325" x:Name="SpaceTimeTab"/>
+                    <uc:UserControlSpaceTime Height="150" Width="325" x:Name="SpaceTimeTab" VerticalAlignment="Top"/>
                 </Grid>
             </Grid>
             <!--Special Abilities-->
-            <Grid Grid.Row="1" Grid.Column="0" Name="SpecialAbilitiesGrid" Grid.ColumnSpan="4">
+            <!--<Grid Grid.Row="1" Grid.Column="0" Name="SpecialAbilitiesGrid" Grid.ColumnSpan="4">
                 <Border BorderBrush="Brown" BorderThickness="3" Background="Transparent" />
-                <uc:UserControlSpecialAbilities x:Name="SpecialAbilitiesTab"/>
-            </Grid>
+                <uc:UserControlSpecialAbilities x:Name="SpecialAbilitiesTab" Loaded="SpecialAbilitiesTab_Loaded"/>
+            </Grid>-->
             <!--Skills-->
             <!--<Grid Grid.Row="2" Grid.Column="0" Name="FeaturesGrid" Grid.ColumnSpan="3">-->
-            <Grid Name="FeaturesGrid" Grid.ColumnSpan="4">
-                <uc:UserControlSkills x:Name="FeaturesTab"/><!--<Border BorderBrush="DarkGreen" BorderThickness="3" Background="Green" Opacity="0.25"/>-->
-            </Grid>
+            <!--<Grid Name="FeaturesGrid" Grid.ColumnSpan="4">
+                <uc:UserControlSkills x:Name="FeaturesTab"/>--><!--<Border BorderBrush="DarkGreen" BorderThickness="3" Background="Green" Opacity="0.25"/>--><!--
+            </Grid>-->
             <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="3">
                 <uc:UserControlPlaying x:Name="ControlPlaying"/>
             </Grid>

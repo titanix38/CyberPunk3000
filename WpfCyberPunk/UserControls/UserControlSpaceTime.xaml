@@ -15,16 +15,16 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MinWidth="70" SharedSizeGroup="sharedLabel"/>
-                <ColumnDefinition Width="Auto" MinWidth="125" SharedSizeGroup="sharedTxtBox"/>
+                <ColumnDefinition Width="Auto" MinWidth="80" SharedSizeGroup="sharedLabel"/>
+                <ColumnDefinition Width="Auto" MinWidth="115" SharedSizeGroup="sharedTxtBox"/>
                 <ColumnDefinition Width="Auto" MinWidth="125" SharedSizeGroup="sharedTxtBox"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Content="Lieu : " Margin="5,5,0,0" Height="26" Width="41" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtCorpo}"/>
-            <Label Grid.Column="0" Grid.Row="1" Content="Date : " Margin="5,5,0,0" Height="26" Width="44" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtGrade}"/>
-            <Label Grid.Column="0" Grid.Row="2" Content="Heure : " Margin="5,5,0,0" Height="26" Width="44" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Target="{Binding ElementName=txtGrade}"/>
-            <TextBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Name="txtPlace" Margin="5,5,0,0"  HorizontalAlignment="Left" Height="18" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="à" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Name="txtDate" Margin="5,5,0,0"  HorizontalAlignment="Left" Height="18" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Le" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Name="txtTime" Margin="5,5,0,0"  HorizontalAlignment="Left" Height="18" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Le" VerticalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Lieu : " Target="{Binding ElementName=txtPlace}"/>
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Date : " Target="{Binding ElementName=txtFirstName}"/>
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Heure : " Target="{Binding ElementName=txtPseudo}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtPlace" Width="Auto" MinWidth="240" Text="Lieu"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtDate" Width="Auto" MinWidth="240" Text="Date"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtTime" Width="Auto" MinWidth="240" Text="Heure" />
         </Grid>
     </Grid>
 </UserControl>

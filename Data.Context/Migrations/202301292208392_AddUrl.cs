@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CyberPunk : DbMigration
+    public partial class AddUrl : DbMigration
     {
         public override void Up()
         {

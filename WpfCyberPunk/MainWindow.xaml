@@ -18,42 +18,10 @@
             <ColumnDefinition Width="1920" SharedSizeGroup="Page"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0">
-            <Button Name="BtnCreate" ToolTip="" ToolTipOpening="BtnCreate_MouseOver" Click="BtnCreate_Click" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Ajout_Personnage.png" Width="60" Height="60"/>
-                    <TextBlock Text="" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button x:Name="BtnImport" ToolTip="" ToolTipOpening="BtnImport_MouseOver" Click="BtnImport_Click" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Import_Personnage.png" Width="60" Height="60"/>
-                    <TextBlock Text="" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Name="BtnOpen" ToolTip="" ToolTipOpening="BtnOpen_MouseOver" Click="BtnOpen_Click" HorizontalAlignment="Left" Margin="350,20,0,0" VerticalAlignment="Top" Width="100">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Feuille_Personnage.png" Width="60" Height="60"/>
-                    <TextBlock Text="" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Name="BtnPlay" ToolTip="" ToolTipOpening="BtnPlay_MouseOver" Click="BtnPlay_Click" HorizontalAlignment="Left" Margin="530,20,0,0" VerticalAlignment="Top" Width="100">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Dice20Sides.png" Width="60" Height="60"/>
-                    <TextBlock Text="" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Name="BtnStop" ToolTip="" ToolTipOpening="BtnStop_MouseOver" Click="BtnStop_Click" HorizontalAlignment="Left" Margin="680,20,0,0" VerticalAlignment="Top" Width="100">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Stop.png" Width="60" Height="60"/>
-                    <TextBlock Text="" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Name="BtnClose" ToolTip="" ToolTipOpening="BtnClose_MouseOver" Click="BtnClose_Click" HorizontalAlignment="Left" Margin="1800,20,0,0" VerticalAlignment="Top" Height="100" Width="100">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/Fermer.png" Width="60" Height="60"/>
-                    <TextBlock Text="" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
+            <Frame Source="WpfMenu.xaml"/>
+            <!--<Button Style="{StaticResource ButtonStyle}" Content="Toto" Width="100"/>-->
+
+
         </Grid>
         <Grid Grid.Row="1">
             <!--<Frame Source="WpfCharacterSheet.xaml"></Frame>-->

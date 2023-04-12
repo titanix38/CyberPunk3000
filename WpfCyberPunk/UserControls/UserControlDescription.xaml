@@ -4,36 +4,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
-             d:DesignHeight="120" d:DesignWidth="325">
+             d:DesignHeight="150" d:DesignWidth="325" Background="Black">
     <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto" SharedSizeGroup="Bottom"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70" Name="GrpCharacter" SharedSizeGroup="sharedLabel"/>
-                <ColumnDefinition Width="125" MinWidth="50" SharedSizeGroup="sharedTxtBox"/>
-                <ColumnDefinition Width="125" MinWidth="50" SharedSizeGroup="sharedTxtBox"/>
+                <ColumnDefinition Width="Auto" MinWidth="80" SharedSizeGroup="sharedLabel"/>
+                <ColumnDefinition Width="Auto" MinWidth="115" SharedSizeGroup="sharedTxtBox"/>
+                <ColumnDefinition Width="Auto" MinWidth="125" SharedSizeGroup="sharedTxtBox"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Nom : " Margin="5,5,0,0" Height="25" Width="46" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Target="{Binding ElementName=txtName}"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="Prénom : " Margin="5,5,0,0" Height="25" Width="60" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Target="{Binding ElementName=txtFirstName}"/>
-            <Label Grid.Row="2" Grid.Column="0" Content="Pseudo : " Margin="5,5,0,0" Height="25" Width="58" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Target="{Binding ElementName=txtPseudo}"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Name="txtName" HorizontalAlignment="Left" Margin="5,5,0,0"  Height="18"  Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Nom du personnage" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Name="txtFirstName" HorizontalAlignment="Left" Margin="5,5,0,0"  Height="18"  Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Prénom du personnage" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Name="txtPseudo" HorizontalAlignment="Left"  Margin="5,5,0,0" Height="18"  Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Pseudo" VerticalAlignment="Center"/>
-            <RadioButton Grid.Column="1" Grid.Row="3" Margin="0,5,0,0" Background="Transparent" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="../Pictures/Genre_Femme.png" Width="20" Height="20" />
-                    <TextBlock Text="Femme" Foreground="Gray" />
+            <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Nom : " Target="{Binding ElementName=txtName}"/>
+            <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Prénom : " Target="{Binding ElementName=txtFirstName}"/>
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Pseudo : " Target="{Binding ElementName=txtPseudo}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtName" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Nom du personnage"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtFirstName" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Prénom du personnage" />
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtPseudo" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Pseudo"/>
+            <RadioButton Grid.Column="1" Grid.Row="3" Margin="0,5,0,0" Background="Black" Foreground="#818181" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="40">
+                <StackPanel Orientation="Horizontal" Background="Black">
+                    <Image Source="../Pictures/V_Female.png" Width="40" Height="40" />
                 </StackPanel>
             </RadioButton>
-            <RadioButton Grid.Column="2" Grid.Row="3" Margin="0,5,0,0" IsChecked="True" Background="Transparent" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="20">
+            <RadioButton Grid.Column="2" Grid.Row="3" Margin="0,5,0,0" IsChecked="True" Background="Transparent" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="40">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Pictures/Genre_Homme.png" Width="20" Height="20" />
-                    <TextBlock Text="Homme" Foreground="Gray" />
+                    <Image Source="../Pictures/V_Male.png" Width="40" Height="40" />
                 </StackPanel>
             </RadioButton>
         </Grid>
