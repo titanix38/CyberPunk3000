@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="325" Background="Black">
+             d:DesignHeight="125" d:DesignWidth="325" Background="Black">
     <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName">
         <Grid>
             <Grid.RowDefinitions>
@@ -24,12 +24,12 @@
             <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtName" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Nom du personnage"/>
             <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtFirstName" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Prénom du personnage" />
             <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource TextBoxDescription}" Name="txtPseudo" Width="Auto" MinWidth="240" TextWrapping="Wrap" Text="Pseudo"/>
-            <RadioButton Grid.Column="1" Grid.Row="3" Margin="0,5,0,0" Background="Black" Foreground="#818181" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="40">
+            <RadioButton Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" Background="Black" Foreground="#818181" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="40">
                 <StackPanel Orientation="Horizontal" Background="Black">
                     <Image Source="../Pictures/V_Female.png" Width="40" Height="40" />
                 </StackPanel>
             </RadioButton>
-            <RadioButton Grid.Column="2" Grid.Row="3" Margin="0,5,0,0" IsChecked="True" Background="Transparent" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="40">
+            <RadioButton Grid.Column="2" Grid.Row="3" Margin="0,0,0,0" IsChecked="True" Background="Transparent" GroupName="Genre" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="Auto" Height="40">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="../Pictures/V_Male.png" Width="40" Height="40" />
                 </StackPanel>

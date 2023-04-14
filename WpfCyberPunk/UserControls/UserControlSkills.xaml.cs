@@ -44,7 +44,7 @@ namespace WpfCyberPunk.UserControls
             _textBoxes = new List<TextBox>();
             _ucPlaying = new UserControlPlaying();
             InitializeComponent();
-            Construct();
+            //Construct();
             //SetHeader();
         }
 
@@ -75,9 +75,9 @@ namespace WpfCyberPunk.UserControls
                 }
             }
 
-            FeatureGrid.Children.Add(mGrid);
-            Grid.SetRow(FeatureGrid, 2);
-            Grid.SetColumn(FeatureGrid, 0);
+            //FeatureGrid.Children.Add(mGrid);
+            //Grid.SetRow(FeatureGrid, 2);
+            //Grid.SetColumn(FeatureGrid, 0);
         }
 
         // TODO : Voir comment optimiser cela

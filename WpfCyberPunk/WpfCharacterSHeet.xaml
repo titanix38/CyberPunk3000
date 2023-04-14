@@ -11,24 +11,21 @@
       Title="WpfCharacterSheet">
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="238"/>
+            <RowDefinition Height="24"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1920" SharedSizeGroup="Page"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent"/>
-        <Border Grid.Row="1" Grid.Column="0" BorderBrush="DarkGreen" BorderThickness="3" Background="Transparent"/>
-        <Border Grid.Row="2" Grid.Column="0" BorderBrush="DarkSalmon" BorderThickness="3" Background="Transparent"/>
-        <Border Grid.Row="3" Grid.Column="0" BorderBrush="DarkGoldenrod" BorderThickness="3" Background="Transparent"/>
-        <Border Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent"/>
+
         <!--Character-->
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Grid.RowSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" MinHeight="125"/>
+                <RowDefinition Height="Auto" MinHeight="48"/>
+                <RowDefinition Height="Auto" MinHeight="32"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -40,10 +37,6 @@
                 <ColumnDefinition Width="325"/>
                 <ColumnDefinition Width="190"/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Row="0" Grid.Column="0" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
-            <Border Grid.Row="0" Grid.Column="1" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
-            <Border Grid.Row="0" Grid.Column="2" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
-            <Border Grid.Row="0" Grid.Column="3" BorderBrush="DarkBlue" BorderThickness="3" Background="Transparent" />
             <!--Pic-->
             <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture" Background="Black">
                 <uc:UserControlPicture Height="150" Width="105" x:Name="PicTab" Background="Black"/>
@@ -62,6 +55,16 @@
                     <uc:UserControlSpaceTime Height="150" Width="325" x:Name="SpaceTimeTab" VerticalAlignment="Top"/>
                 </Grid>
             </Grid>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="GridSkill" Background="Black">
+                <Grid>
+                    <uc:UserControlSkills Width="450" x:Name="SkillTab" Margin="0"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Name="GridFeature" Background="Black">
+                <Grid>
+                    <uc:UserControlFeatures Width="450" x:Name="FeatureTab" Margin="0"/>
+                </Grid>
+            </Grid>
             <!--Special Abilities-->
             <!--<Grid Grid.Row="1" Grid.Column="0" Name="SpecialAbilitiesGrid" Grid.ColumnSpan="4">
                 <Border BorderBrush="Brown" BorderThickness="3" Background="Transparent" />
@@ -70,7 +73,9 @@
             <!--Skills-->
             <!--<Grid Grid.Row="2" Grid.Column="0" Name="FeaturesGrid" Grid.ColumnSpan="3">-->
             <!--<Grid Name="FeaturesGrid" Grid.ColumnSpan="4">
-                <uc:UserControlSkills x:Name="FeaturesTab"/>--><!--<Border BorderBrush="DarkGreen" BorderThickness="3" Background="Green" Opacity="0.25"/>--><!--
+                <uc:UserControlSkills x:Name="FeaturesTab"/>-->
+            <!--<Border BorderBrush="DarkGreen" BorderThickness="3" Background="Green" Opacity="0.25"/>-->
+            <!--
             </Grid>-->
             <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" Grid.ColumnSpan="3">
                 <uc:UserControlPlaying x:Name="ControlPlaying"/>

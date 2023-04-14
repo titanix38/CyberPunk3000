@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfCyberPunk.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="325">
+             d:DesignHeight="125" d:DesignWidth="325">
     <Grid Grid.Row="0" Grid.Column="2" Name="GridJob">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

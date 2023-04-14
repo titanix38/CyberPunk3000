@@ -33,11 +33,19 @@
 
         <Color x:Key="GlyphColor">#FF444444</Color>
         <Color x:Key="GlyphMouseOver">sc#1, 0.004391443, 0.002428215, 0.242281124</Color>
+        <Color x:Key="GlyphYellowColor">#FFFDEE07</Color>
+
 
         <!--Border colors-->
         <Color x:Key="BorderLightColor">#FFCCCCCC</Color>
         <Color x:Key="BorderMediumColor">#FF888888</Color>
         <Color x:Key="BorderDarkColor">#FF444444</Color>
+
+        <Color x:Key="BorderYellowColor">#FFFFFF80</Color>
+        <Color x:Key="BorderYellowDarkColor">#FFFDEE07</Color>
+
+        <Color x:Key="PressedBorderYellowColor">#FFFFFF80</Color>
+        <Color x:Key="PressedBorderYellowDarkColor">#FFFDEE07</Color>
 
         <Color x:Key="PressedBorderLightColor">#FF888888</Color>
         <Color x:Key="PressedBorderDarkColor">#FF444444</Color>
@@ -122,38 +130,114 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style TargetType="{x:Type CheckBox}" >
+        <Style TargetType="{x:Type CheckBox}" x:Key="CheckBoxStyle">
+            <Setter Property="SnapsToDevicePixels"
+          Value="true" />
+            <Setter Property="OverridesDefaultStyle"
+          Value="true" />
+            <Setter Property="FocusVisualStyle"
+          Value="{DynamicResource CheckBoxFocusVisual}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type CheckBox}">
-                        <BulletDecorator Background="White" Cursor="Hand">
+                        <BulletDecorator Background="#111111">
                             <BulletDecorator.Bullet>
-                                <Grid Height="14" Width="14">
-                                    <!--Define size of the Bullet-->
-                                    <!--The two borders-->
-                                    <Border Name="RadioOuter" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="2" />
-                                    <Border CornerRadius="0" Margin="4" Name="RadioMark" Background="#FFADADAD" Visibility="Hidden" />
-                                </Grid>
+                                <Border x:Name="Border" Width="13" Height="13" CornerRadius="0" BorderThickness="1" >
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStopCollection>
+                                                    <GradientStop Color="{DynamicResource BorderYellowColor}" Offset="0.0" />
+                                                    <GradientStop Color="{DynamicResource BorderYellowDarkColor}" Offset="1.0" />
+                                                </GradientStopCollection>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStopCollection>
+                                                    <GradientStop Color="#111111" />
+                                                    <GradientStop Color="#818181" Offset="1.0" />
+                                                </GradientStopCollection>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Grid>
+                                        <Path Visibility="Collapsed" Width="7" Height="7" x:Name="CheckMark" SnapsToDevicePixels="False" StrokeThickness="2" Data="M 0 0 L 7 7 M 0 7 L 7 0">
+                                            <Path.Stroke>
+                                                <SolidColorBrush Color="{DynamicResource GlyphYellowColor}" />
+                                            </Path.Stroke>
+                                        </Path>
+                                        <Path Visibility="Collapsed" Width="7" Height="7" x:Name="InderminateMark" SnapsToDevicePixels="False" StrokeThickness="2" Data="M 0 7 L 7 0">
+                                            <Path.Stroke>
+                                                <SolidColorBrush Color="{DynamicResource GlyphYellowColor}" />
+                                            </Path.Stroke>
+                                        </Path>
+                                    </Grid>
+                                </Border>
                             </BulletDecorator.Bullet>
-                            <!--Text element-->
-                            <TextBlock Margin="3,1,0,0" Foreground="Black" FontFamily="Calibri" FontSize="12">
-                                <ContentPresenter />
-                            </TextBlock>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="{StaticResource ControlMouseOverColor}" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                <EasingColorKeyFrame KeyTime="0" Value="{StaticResource ControlPressedColor}" />
+                                            </ColorAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                                <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource BorderYellowDarkColor}" />
+                                            </ColorAnimationUsingKeyFrames>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Border.BorderBrush).
+                      (GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                <EasingColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource BorderYellowColor}" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="CheckStates">
+                                    <VisualState x:Name="Checked">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                 Storyboard.TargetName="CheckMark">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                            Value="{x:Static Visibility.Visible}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked" />
+                                    <VisualState x:Name="Indeterminate">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                 Storyboard.TargetName="InderminateMark">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                            Value="{x:Static Visibility.Visible}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter Margin="4,0,0,0"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            RecognizesAccessKey="True" />
                         </BulletDecorator>
-
-                        <!--If item is checked, trigger the visibility of the mark-->
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsChecked" Value="true">
-                                <!--If item is checked, trigger the visibility of the mark and change the color of the selected bullet into a darker gray for better highlighting-->
-                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
-                                <Setter TargetName="RadioOuter" Property="BorderBrush" Value="#FFADADAD" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">            
+        <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
             <Setter Property="Foreground" Value="#111111"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontSize" Value="10"/>
@@ -179,7 +263,7 @@
                                 </Polygon.Points>
                             </Polygon>
                             <ContentPresenter HorizontalAlignment="Center"/>
-                        </Grid>                        
+                        </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -334,7 +418,7 @@
         </Style>
         <Style TargetType="Label" x:Key="LabelStyle">
             <Setter Property="Foreground" Value="#818181"/>
-            <Setter Property="Margin"  Value="5,5,0,0"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -350,7 +434,7 @@
             <Setter Property="FontSize" Value="10"/>
             <Setter Property="MinHeight" Value="20"/>
             <Setter Property="MinWidth" Value="50"/>
-            <Setter Property="Margin" Value="5,5,5,0"/>
+            <Setter Property="Margin" Value="5,0,5,0"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
