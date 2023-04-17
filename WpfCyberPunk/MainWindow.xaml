@@ -11,14 +11,14 @@
         Title="Cyperpunk 3000">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="140"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="940"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1920" SharedSizeGroup="Page"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0">
-            <Frame Source="WpfMenu.xaml"/>
+            <Frame Source="Pages/PageMenu.xaml"/>
             <!--<Button Style="{StaticResource ButtonStyle}" Content="Toto" Width="100"/>-->
 
 
@@ -41,6 +41,9 @@
                 </TabControl.ItemTemplate>-->
             <!--<Frame Source="WpfCharacterSheet.xaml"></Frame>-->
 
+        </Grid>
+        <Grid Grid.Row="2">
+            <Frame Source="Pages/PageCharacterize.xaml"/>
         </Grid>
     </Grid>
 </Window>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfCyberPunk"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="250" d:DesignWidth="1000"
+      d:DesignHeight="150" d:DesignWidth="1080"
       xmlns:uc="clr-namespace:WpfCyberPunk.UserControls"
       Title="WpfCharacterSheet">
     <Grid Name="MainGrid">
@@ -39,7 +39,7 @@
             </Grid.ColumnDefinitions>
             <!--Pic-->
             <Grid Grid.Row="0" Grid.Column="0" Name="GridPicture" Background="Black">
-                <uc:UserControlPicture Height="150" Width="105" x:Name="PicTab" Background="Black"/>
+                <uc:UCPicture Height="150" Width="105" x:Name="PicTab" Background="Black"/>
             </Grid>
             <!--Name-->
             <Grid Grid.Row="0" Grid.Column="1" Name="GridPersonName" Background="Black">
@@ -55,16 +55,16 @@
                     <uc:UserControlSpaceTime Height="150" Width="325" x:Name="SpaceTimeTab" VerticalAlignment="Top"/>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="GridSkill" Background="Black">
+            <!--<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" x:Name="GridSkill" Background="Black">
                 <Grid>
                     <uc:UserControlSkills Width="450" x:Name="SkillTab" Margin="0"/>
                 </Grid>
-            </Grid>
-            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Name="GridFeature" Background="Black">
+            </Grid>-->
+            <!--<Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Name="GridFeature" Background="Black">
                 <Grid>
                     <uc:UserControlFeatures Width="450" x:Name="FeatureTab" Margin="0"/>
                 </Grid>
-            </Grid>
+            </Grid>-->
             <!--Special Abilities-->
             <!--<Grid Grid.Row="1" Grid.Column="0" Name="SpecialAbilitiesGrid" Grid.ColumnSpan="4">
                 <Border BorderBrush="Brown" BorderThickness="3" Background="Transparent" />

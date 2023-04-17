@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WpfCyberPunk.UserControls.UserControlDamage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCyberPunk.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="64" d:DesignWidth="128">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition Width="32"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0" Style="{StaticResource TextBoxDamage}"/>
+        <TextBox Grid.Column="1" Style="{StaticResource TextBoxDamage}"/>
+        <TextBox Grid.Column="2" Style="{StaticResource TextBoxDamage}"/>
+        <TextBox Grid.Column="3" Style="{StaticResource TextBoxDamage}"/>
+        <Label Grid.Row="1" Grid.ColumnSpan="4" Style="{StaticResource LabelStyle}" Content="Légere"/>
+    </Grid>
+</UserControl>

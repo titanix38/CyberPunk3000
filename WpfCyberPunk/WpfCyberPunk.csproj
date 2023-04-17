@@ -107,9 +107,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ITab.cs" />
+    <Compile Include="Pages\PageCharacterize.xaml.cs">
+      <DependentUpon>PageCharacterize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMenu.xaml.cs">
+      <DependentUpon>PageMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tab.cs" />
-    <Compile Include="UserControls\UserControl.Picture.xaml.cs">
-      <DependentUpon>UserControl.Picture.xaml</DependentUpon>
+    <Compile Include="UserControls\UCPicture.xaml.cs">
+      <DependentUpon>UCPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlDamage.xaml.cs">
+      <DependentUpon>UserControlDamage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlDescription.xaml.cs">
       <DependentUpon>UserControlDescription.xaml</DependentUpon>
@@ -159,11 +168,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageCharacterize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Templates\Dictionary_Theme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\UserControl.Picture.xaml">
+    <Page Include="UserControls\UCPicture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlDamage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -353,6 +374,9 @@
   <ItemGroup>
     <Resource Include="Pictures\V_Female.png" />
     <Resource Include="Pictures\V_Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Example_Pic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

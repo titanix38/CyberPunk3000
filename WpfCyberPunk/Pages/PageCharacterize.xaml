@@ -1,0 +1,15 @@
+﻿<Page x:Class="WpfCyberPunk.Pages.PageCharacterize"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfCyberPunk.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="776" d:DesignWidth="1080"
+      Title="PageCharacterize">
+    <Grid>
+        <Label Style="{StaticResource LabelStyle}" Content="CAPACITES SPECIALES" Width="150" FontWeight="Bold">
+            
+        </Label>
+    </Grid>
+</Page>

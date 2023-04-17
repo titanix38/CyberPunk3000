@@ -18,9 +18,9 @@ namespace WpfCyberPunk.UserControls
     /// <summary>
     /// Interaction logic for UserControl.xaml
     /// </summary>
-    public partial class UserControlPicture : UserControl
+    public partial class UCPicture : UserControl
     {
-        public UserControlPicture()
+        public UCPicture()
         {
             InitializeComponent();
         }

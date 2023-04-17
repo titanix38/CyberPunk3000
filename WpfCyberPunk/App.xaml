@@ -515,6 +515,48 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="TextBox" x:Key="TextBoxDamage">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" Background="Transparent">
+                            <Grid>
+                                <Polygon Stroke="#FDEE07" HorizontalAlignment="Left" VerticalAlignment="Top" StrokeThickness = "2">
+                                    <Polygon.Points>
+                                        <Point X="1" Y="1"/>
+                                        <Point X="1" Y="31"/>
+                                        <Point X="31" Y="31"/>
+                                        <Point X="31" Y="1"/>
+                                    </Polygon.Points>
+                                </Polygon>
+                                <Polygon Stroke="#FDEE07" HorizontalAlignment="Left" VerticalAlignment="Top" StrokeThickness = "2" x:Name="PolygonSlash" Visibility="Collapsed">
+                                    <Polygon.Points>
+                                        <Point X="1" Y="31"/>
+                                        <Point X="31" Y="1"/>
+                                    </Polygon.Points>
+                                </Polygon>
+                                <Polygon Stroke="#FDEE07" HorizontalAlignment="Left" VerticalAlignment="Top" StrokeThickness = "2" x:Name="PolygonCross" Visibility="Collapsed">
+                                    <Polygon.Points>
+                                        <Point X="1" Y="1"/>
+                                        <Point X="31" Y="31"/>
+                                    </Polygon.Points>
+                                </Polygon>
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="false"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <!--<Style TargetType="{x:Type TabControl}">            
             <Setter Property="Template">
                 <Setter.Value>

@@ -22,13 +22,13 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="border" Background="Transparent" >
                         <Grid>
-                            <Polygon Stroke="#FDEE07" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness = "2">
+                            <Polygon Stroke="#FDEE07" HorizontalAlignment="Center" VerticalAlignment="Top" StrokeThickness = "2">
                                 <Polygon.Points>
                                     <Point X="2" Y="2"/>
                                     <Point X="2" Y="30"/>
-                                    <Point X="50" Y="30"/>
-                                    <Point X="50" Y="7"/>
-                                    <Point X="40" Y="2"/>
+                                    <Point X="68" Y="30"/>
+                                    <Point X="68" Y="7"/>
+                                    <Point X="58" Y="2"/>
                                 </Polygon.Points>
                             </Polygon>
                             <ScrollViewer x:Name="PART_ContentHost"

@@ -56,7 +56,7 @@ namespace WpfCyberPunk
         private void SetPicture() 
         {
             //MainTab.Items.Clear(); //Clear previous Items in the user controls which is my tabItems    
-            var userControls = new UserControlPicture();
+            var userControls = new UCPicture();
             TabItem _tabUserPage = new TabItem { Content = userControls };
         }
         private void SetGridAbilities()
