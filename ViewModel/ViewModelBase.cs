@@ -7,15 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Factory;
 using Data.Entities;
+using System.ComponentModel;
 
 namespace ViewModel
 {
-    public abstract class ViewModelBase : IViewModelBase
+    public abstract class ViewModelBase : IViewModelBase, INotifyPropertyChanged
     {
         protected Factory _factory;
         protected const string JsonInitFile = @".\Input\CyberPunkInit.json";
 
-
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public string ErrorMessage { get; protected set; }
 

@@ -13,8 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Data.Entities.Characterize;
-using Data.Factory;
 
 namespace WpfCyberPunk.UserControls
 {
@@ -31,16 +29,16 @@ namespace WpfCyberPunk.UserControls
 
         private readonly UserControlPlaying _ucPlaying;
 
-        private readonly Factory _factory;
+        //private readonly Factory _factory;
         
 
-        public Feature Feature { get; set; }
+        //public Feature Feature { get; set; }
 
         //public FeatureIHM FeatureIHM { get; private set; }
 
         public UserControlSkills()
         {
-            _factory = new Factory();
+            //_factory = new Factory();
             _textBoxes = new List<TextBox>();
             _ucPlaying = new UserControlPlaying();
             InitializeComponent();
@@ -50,30 +48,30 @@ namespace WpfCyberPunk.UserControls
 
         private void Construct()
         {
-            Grid mGrid = new Grid()
-            {
-                VerticalAlignment = VerticalAlignment.Center,
-            };
+            //Grid mGrid = new Grid()
+            //{
+            //    VerticalAlignment = VerticalAlignment.Center,
+            //};
 
-            for (int i = 0; i < GetPositions().Count/2; i++)
-            {
-                mGrid.ColumnDefinitions.Add(new ColumnDefinition());
-                mGrid.RowDefinitions.Add(new RowDefinition());
-            }
+            //for (int i = 0; i < GetPositions().Count/2; i++)
+            //{
+            //    mGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            //    mGrid.RowDefinitions.Add(new RowDefinition());
+            //}
 
-            foreach (Feature feature in _factory.GetFeatures())
-            {
+            //foreach (Feature feature in _factory.GetFeatures())
+            //{
 
-                if (GetPositions().ContainsKey(feature.Alias))
-                {
-                    StackPanel stack = GetIHM(feature);
-                    mGrid.Children.Add(stack);
+            //    if (GetPositions().ContainsKey(feature.Alias))
+            //    {
+            //        StackPanel stack = GetIHM(feature);
+            //        mGrid.Children.Add(stack);
 
-                    Grid.SetRow(stack, GetPositions()[feature.Alias].X);
-                    Grid.SetColumn(stack, GetPositions()[feature.Alias].Y);
-                    Grid.SetRowSpan(stack, GetPositions()[feature.Alias].RowSpan);
-                }
-            }
+            //        Grid.SetRow(stack, GetPositions()[feature.Alias].X);
+            //        Grid.SetColumn(stack, GetPositions()[feature.Alias].Y);
+            //        Grid.SetRowSpan(stack, GetPositions()[feature.Alias].RowSpan);
+            //    }
+            //}
 
             //FeatureGrid.Children.Add(mGrid);
             //Grid.SetRow(FeatureGrid, 2);
@@ -81,79 +79,80 @@ namespace WpfCyberPunk.UserControls
         }
 
         // TODO : Voir comment optimiser cela
-        private Dictionary<string, Position> GetPositions()
-        {
-            Dictionary<string, Position> item = new Dictionary<string, Position>()
-            {
-                {"INT",new Position(){X=0,Y=0,RowSpan = 3}},
-                {"REF",new Position(){X=0,Y=1,RowSpan = 2}},
-                {"TECH",new Position(){X=0,Y=2,RowSpan = 1}},
-                {"MVT",new Position(){X=2,Y=1,RowSpan = 1}},
-                {"CON",new Position(){X=2,Y=2,RowSpan = 1}},
-                {"SF",new Position(){X=1,Y=2,RowSpan = 1}},
-                {"EMP",new Position(){X=0,Y=3,RowSpan = 1}},
-                {"BT",new Position(){X=1,Y=3,RowSpan = 1}},
-            };
+        //private Dictionary<string, Position> GetPositions()
+        //{
+        //    Dictionary<string, Position> item = new Dictionary<string, Position>()
+        //    {
+        //        {"INT",new Position(){X=0,Y=0,RowSpan = 3}},
+        //        {"REF",new Position(){X=0,Y=1,RowSpan = 2}},
+        //        {"TECH",new Position(){X=0,Y=2,RowSpan = 1}},
+        //        {"MVT",new Position(){X=2,Y=1,RowSpan = 1}},
+        //        {"CON",new Position(){X=2,Y=2,RowSpan = 1}},
+        //        {"SF",new Position(){X=1,Y=2,RowSpan = 1}},
+        //        {"EMP",new Position(){X=0,Y=3,RowSpan = 1}},
+        //        {"BT",new Position(){X=1,Y=3,RowSpan = 1}},
+        //    };
 
-            return item;
-        }
+        //    return item;
+        //}
 
-        private StackPanel GetIHM(Feature feature)
-        {
-            StackPanel panel = new StackPanel()
-            {
-                //Height = 100,
-                Name = "StkPan_Features",
-                Orientation = Orientation.Vertical,
-            };
+        //private StackPanel GetIHM(Feature feature)
+        //{
+        //    StackPanel panel = new StackPanel()
+        //    {
+        //        //Height = 100,
+        //        Name = "StkPan_Features",
+        //        Orientation = Orientation.Vertical,
+        //    };
 
-            StackPanel stkPanFeature = GetStkPanFeature(feature.Alias);
-            StackPanel stkPanSkill = GetStkPanSkill();
+        //    StackPanel stkPanFeature = GetStkPanFeature(feature.Alias);
+        //    StackPanel stkPanSkill = GetStkPanSkill();
 
-            panel.Children.Add(stkPanFeature);
-            panel.Children.Add(stkPanSkill);
+        //    panel.Children.Add(stkPanFeature);
+        //    panel.Children.Add(stkPanSkill);
 
-            //Grid.SetRow(stkPanFeature, 0);
-            //Grid.SetRow(stkPanSkill, 1);
-            return panel;
+        //    //Grid.SetRow(stkPanFeature, 0);
+        //    //Grid.SetRow(stkPanSkill, 1);
+        //    return panel;
 
             
-            //Grid.SetRow(stkPanFeature, 2);
-            //Grid.SetColumn(stkPanFeature, 0);
-        }
+        //    //Grid.SetRow(stkPanFeature, 2);
+        //    //Grid.SetColumn(stkPanFeature, 0);
+        //}
 
         private StackPanel GetStkPanFeature(string alias)
         {
-            StackPanel stackFeature = new StackPanel
-            {
-                Name = "StkPan_Features",
-                Orientation = Orientation.Horizontal,
-            };
+            //StackPanel stackFeature = new StackPanel
+            //{
+            //    Name = "StkPan_Features",
+            //    Orientation = Orientation.Horizontal,
+            //};
 
-            Feature = _factory.GetFeature(alias);
+            //Feature = _factory.GetFeature(alias);
 
-            foreach (var element in getEltFeature())
-            {
-                stackFeature.Children.Add(element);
-                if (element is CheckBox)
-                {
-                    CheckBox chx = (CheckBox)element;
+            //foreach (var element in getEltFeature())
+            //{
+            //    stackFeature.Children.Add(element);
+            //    if (element is CheckBox)
+            //    {
+            //        CheckBox chx = (CheckBox)element;
 
-                    chx.AddHandler(CheckBox.CheckedEvent, new RoutedEventHandler(chx_Check));
-                    chx.AddHandler(CheckBox.UncheckedEvent, new RoutedEventHandler(chx_UnCheck));
-                }
+            //        chx.AddHandler(CheckBox.CheckedEvent, new RoutedEventHandler(chx_Check));
+            //        chx.AddHandler(CheckBox.UncheckedEvent, new RoutedEventHandler(chx_UnCheck));
+            //    }
 
-                if (element is TextBox)
-                {
-                    TextBox textBox = (TextBox) element;
-                    if (textBox.Name.StartsWith("tbScore_"))
-                    {
-                        _textBoxes.Add(textBox);
-                    }
-                }
+            //    if (element is TextBox)
+            //    {
+            //        TextBox textBox = (TextBox) element;
+            //        if (textBox.Name.StartsWith("tbScore_"))
+            //        {
+            //            _textBoxes.Add(textBox);
+            //        }
+            //    }
 
-            }
-            return stackFeature;
+            //}
+            //return stackFeature;
+            throw new NotImplementedException();
         }
 
         //private void chx_Check(object sender, RoutedEventArgs e)
@@ -189,129 +188,130 @@ namespace WpfCyberPunk.UserControls
 
         private UIElement[] getEltFeature()
         {
-            UIElement[] elements =
-            {
-                new TextBlock
-                {
-                    Name = string.Concat("lb_", Feature.Alias),
-                    Text = Feature.Wording,
-                    Width = 100,
-                    Margin = new Thickness(5, 0, 0, 0),
-                    VerticalAlignment = VerticalAlignment.Center
-                },
+            //UIElement[] elements =
+            //{
+            //    new TextBlock
+            //    {
+            //        Name = string.Concat("lb_", Feature.Alias),
+            //        Text = Feature.Wording,
+            //        Width = 100,
+            //        Margin = new Thickness(5, 0, 0, 0),
+            //        VerticalAlignment = VerticalAlignment.Center
+            //    },
 
-                new TextBox
-                {
-                    Name = string.Concat("tbScore_", Feature.Alias),
-                    FontFamily = new FontFamily("Segoe UI"),
-                    Background = Brushes.WhiteSmoke,
-                    Text = GetRandom().ToString(),
-                    VerticalContentAlignment = VerticalAlignment.Center,
-                    Margin = new Thickness(0, 0, 5, 0),
-                    Style = (Style)Application.Current.Resources["TextBoxFeature"]
-                },
+            //    new TextBox
+            //    {
+            //        Name = string.Concat("tbScore_", Feature.Alias),
+            //        FontFamily = new FontFamily("Segoe UI"),
+            //        Background = Brushes.WhiteSmoke,
+            //        Text = GetRandom().ToString(),
+            //        VerticalContentAlignment = VerticalAlignment.Center,
+            //        Margin = new Thickness(0, 0, 5, 0),
+            //        Style = (Style)Application.Current.Resources["TextBoxFeature"]
+            //    },
 
-                new TextBox
-                {
-                    Name = string.Concat("tbPoint_", Feature.Alias),
-                    //Text = "10",
-                    Style = (Style)Application.Current.Resources["TextBoxFeature"]
-                },
+            //    new TextBox
+            //    {
+            //        Name = string.Concat("tbPoint_", Feature.Alias),
+            //        //Text = "10",
+            //        Style = (Style)Application.Current.Resources["TextBoxFeature"]
+            //    },
 
-                new CheckBox
-                {
-                    Name = string.Concat("chBxPt_", Feature.Alias),
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Height = 14,
-                    //Width = 14,
-                    Margin = new Thickness(10, 0, 10, 0),
-                }
-            };
-            return elements;
+            //    new CheckBox
+            //    {
+            //        Name = string.Concat("chBxPt_", Feature.Alias),
+            //        VerticalAlignment = VerticalAlignment.Center,
+            //        Height = 14,
+            //        //Width = 14,
+            //        Margin = new Thickness(10, 0, 10, 0),
+            //    }
+            //};
+            //return elements;
+            throw new NotImplementedException();
         }
 
 
-        private StackPanel GetStkPanSkill()
-        {
-            StackPanel mainPanel = new StackPanel()
-            {
-                Name = "StkPan_MainSkill",
-                Orientation = Orientation.Vertical,
-            };
+        //private StackPanel GetStkPanSkill()
+        //{
+        //    StackPanel mainPanel = new StackPanel()
+        //    {
+        //        Name = "StkPan_MainSkill",
+        //        Orientation = Orientation.Vertical,
+        //    };
 
-            List<Skill> skills = _factory.GetSkills(Feature);
-
-
-            foreach (var skill in skills)
-            {
-                mainPanel.Children.Add(getStacks(skill));
-            }
-
-            return mainPanel;
-        }
-
-        private StackPanel getStacks(Skill skill)
-        {
-            StackPanel stackSkill = new StackPanel
-            {
-                Name = "StkPan_Skill",
-                Orientation = Orientation.Horizontal,
-            };
+        //    List<Skill> skills = _factory.GetSkills(Feature);
 
 
-            foreach (var element in GetEltsSkill(skill))
-            {
-                stackSkill.Children.Add(element);
-            }
+        //    foreach (var skill in skills)
+        //    {
+        //        mainPanel.Children.Add(getStacks(skill));
+        //    }
 
-            return stackSkill;
-        }
+        //    return mainPanel;
+        //}
 
-        private UIElement[] GetEltsSkill(Skill skill)
-        {
-            UIElement[] elements =
-            {
-                new TextBlock
-                {
-                    Name = "TxtBlk_" + skill.Alias,
-                    Text = skill.Wording,
-                    FontSize = 10,
-                    Width = 100,
-                    Margin = new Thickness(15, 0, 0, BOTTOM),
-                },
-                new TextBox
-                {
-                    Name = string.Concat("tbScore_",  skill.Alias),
-                    //Text = "9",
-                    Margin = new Thickness(10, 0,0,BOTTOM),
-                    //Margin = new Thickness(0),
-                    Style = (Style)Application.Current.Resources["TextBoxSkill"]
-                },
-                new TextBox
-                {
-                    Name = string.Concat("tbPoint_", skill.Alias),
-                    //Text = "10",
-                    Margin = new Thickness(10, 0, 5, BOTTOM),
-                    Style = (Style)Application.Current.Resources["TextBoxSkill"]
-                },
-                new CheckBox
-                {
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Height = 14,
-                    //Width = 14,
-                    Margin = new Thickness(10, 0, 10, BOTTOM),
-                },
-            };
-            return elements;
-        }
+        //private StackPanel getStacks(Skill skill)
+        //{
+        //    StackPanel stackSkill = new StackPanel
+        //    {
+        //        Name = "StkPan_Skill",
+        //        Orientation = Orientation.Horizontal,
+        //    };
 
 
-        private int GetRandom()
-        {
-            Random rnd = new Random();
+        //    foreach (var element in GetEltsSkill(skill))
+        //    {
+        //        stackSkill.Children.Add(element);
+        //    }
 
-            return rnd.Next(2, 10);
-        }
+        //    return stackSkill;
+        //}
+
+        //private UIElement[] GetEltsSkill(Skill skill)
+        //{
+        //    UIElement[] elements =
+        //    {
+        //        new TextBlock
+        //        {
+        //            Name = "TxtBlk_" + skill.Alias,
+        //            Text = skill.Wording,
+        //            FontSize = 10,
+        //            Width = 100,
+        //            Margin = new Thickness(15, 0, 0, BOTTOM),
+        //        },
+        //        new TextBox
+        //        {
+        //            Name = string.Concat("tbScore_",  skill.Alias),
+        //            //Text = "9",
+        //            Margin = new Thickness(10, 0,0,BOTTOM),
+        //            //Margin = new Thickness(0),
+        //            Style = (Style)Application.Current.Resources["TextBoxSkill"]
+        //        },
+        //        new TextBox
+        //        {
+        //            Name = string.Concat("tbPoint_", skill.Alias),
+        //            //Text = "10",
+        //            Margin = new Thickness(10, 0, 5, BOTTOM),
+        //            Style = (Style)Application.Current.Resources["TextBoxSkill"]
+        //        },
+        //        new CheckBox
+        //        {
+        //            VerticalAlignment = VerticalAlignment.Center,
+        //            Height = 14,
+        //            //Width = 14,
+        //            Margin = new Thickness(10, 0, 10, BOTTOM),
+        //        },
+        //    };
+        //    return elements;
+        //}
+
+
+        //private int GetRandom()
+        //{
+        //    Random rnd = new Random();
+
+        //    return rnd.Next(2, 10);
+        //}
 
     }
 

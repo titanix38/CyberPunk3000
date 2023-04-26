@@ -76,6 +76,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="ViewModel.cs" />
+    <Compile Include="ViewModelSkills.cs" />
+    <Compile Include="ViewModelSpecialAbilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data.Entities\Data.Entities.csproj">

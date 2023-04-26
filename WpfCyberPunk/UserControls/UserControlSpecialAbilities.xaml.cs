@@ -1,6 +1,4 @@
-﻿using Data.Entities.Characterize;
-using Data.Factory;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace WpfCyberPunk.UserControls
 {
@@ -30,6 +29,13 @@ namespace WpfCyberPunk.UserControls
         /****************************************************************************************************************/
         /****************************************************************************************************************/
         /*                                    ATTRIBUTES                                                                 */
+
+        private ViewModelSkills _viewModel;
+
+        private string _name;
+        private int _value;
+        private int _skillPt;
+        
         private int _itemCount;
         private Grid _grid;
         private int _posRow;
@@ -43,8 +49,54 @@ namespace WpfCyberPunk.UserControls
         public UserControlSpecialAbilities()
         {
             InitializeComponent();
-            SetHeader();
+            this.DataContext = new ViewModelSpecialAbilities();
+            //SetHeader();
         }
+
+        public UserControlSpecialAbilities(string name)
+        {
+            _name = name;
+        }
+
+        public UserControlSpecialAbilities(string name,int value)
+        {
+            _name = name;
+            _value = value;
+        }
+
+        public UserControlSpecialAbilities(string name, int value, int skillPt)
+        {
+            _name = name;
+            _value = value;
+            _skillPt = skillPt;
+        }
+
+        private void FillSpecial() 
+        {
+
+        }
+
+        private void Construct() 
+        {
+            _viewModel = new ViewModelSkills();
+
+            //_viewModel.Special;
+
+            UserControlSkills control = new UserControlSkills();
+            Grid mGrid = new Grid()
+            {
+                //Height = 100,
+                HorizontalAlignment = HorizontalAlignment.Left
+            };
+
+            foreach (var special in _viewModel.Special) 
+            {
+
+            }
+
+            //mGrid.Children.Add(UserControlSkills)
+        }
+
 
         private void SetHeader()
         {
@@ -54,7 +106,7 @@ namespace WpfCyberPunk.UserControls
                 HorizontalAlignment = HorizontalAlignment.Left
             };
             _itemCount = 10;
-            getStkPanSpecAbilities();
+            //getStkPanSpecAbilities();
 
             grid.Children.Add(_grid);
             Grid.SetRow(_grid, 0);
@@ -66,90 +118,90 @@ namespace WpfCyberPunk.UserControls
             Grid.SetColumn(grid, 0);
         }
 
-        private void getStkPanSpecAbilities()
-        {
-            Factory factory = new Factory();
-            List<SpecialAbility> specials = factory.GetSpecial();
-            _itemCount = specials.Count();
-            InitGrid();
+        //private void getStkPanSpecAbilities()
+        //{
+        //    Factory factory = new Factory();
+        //    List<SpecialAbility> specials = factory.GetSpecial();
+        //    _itemCount = specials.Count();
+        //    InitGrid();
 
-            _posRow = 0;
-            _posCol = 0;
+        //    _posRow = 0;
+        //    _posCol = 0;
 
-            foreach (var special in specials)
-            {
-                SetGrid(special);
-            }
-        }
+        //    foreach (var special in specials)
+        //    {
+        //        SetGrid(special);
+        //    }
+        //}
 
-        public void SetGrid(SpecialAbility special)
-        {
-            StackPanel subStack = new StackPanel
-            {
-                Name = "StkPan_SubItems",
-                Orientation = Orientation.Horizontal,
-            };
+        //public void SetGrid(SpecialAbility special)
+        //{
+        //    StackPanel subStack = new StackPanel
+        //    {
+        //        Name = "StkPan_SubItems",
+        //        Orientation = Orientation.Horizontal,
+        //    };
 
             
 
-            foreach (var element in getEltSpecial(special))
-            {
-                subStack.Children.Add(element);
-            }
+        //    foreach (var element in getEltSpecial(special))
+        //    {
+        //        subStack.Children.Add(element);
+        //    }
 
-            if (_posRow == _itemCount / COLUMNS)
-            {
-                _posRow = 0;
-                _posCol++;
-            }
+        //    if (_posRow == _itemCount / COLUMNS)
+        //    {
+        //        _posRow = 0;
+        //        _posCol++;
+        //    }
 
-            _grid.Children.Add(subStack);
+        //    _grid.Children.Add(subStack);
 
-            Grid.SetRow(subStack, _posRow);
-            Grid.SetColumn(subStack, _posCol);
-            _posRow++;
-        }
+        //    Grid.SetRow(subStack, _posRow);
+        //    Grid.SetColumn(subStack, _posCol);
+        //    _posRow++;
+        //}
 
-        private UIElement[] getEltSpecial(SpecialAbility special)
-        {
-            UIElement[] elements =
-            {
-                new TextBlock
-                {
-                    Name = string.Concat("tbk_", special.Alias),
-                    Text = special.Wording,
-                    FontSize = 10,
-                    Width = 100,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Margin = _thicknessTxtBlk,
-                },
-                new TextBox
-                {
-                    Name = string.Concat("tbScore_", special.Alias),
-                    FontSize = 10,
-                    Height = 14,
-                    Width = 25,
-                    //Margin = _thicknessTxtBox,
-                    Style = (Style)Application.Current.Resources["TextBoxSkill"],
-                },
-                new TextBox
-                {
-                    Name = string.Concat("tbPoint_", special.Alias),
-                    FontSize = 10,
-                    Height = 14,
-                    Width = 25,
-                    Style = (Style)Application.Current.Resources["TextBoxSkill"],
-                },
-                new CheckBox
-                {
-                    Name = string.Concat("Chk_",special.Alias),
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Height = 14,
-                    Margin = _thicknessChkBox,
-                }
-            };
-            return elements;
-        }
+        //private UIElement[] getEltSpecial(SpecialAbility special)
+        //{
+        //    UIElement[] elements =
+        //    {
+        //        new TextBlock
+        //        {
+        //            Name = string.Concat("tbk_", special.Alias),
+        //            Text = special.Wording,
+        //            FontSize = 10,
+        //            Width = 100,
+        //            VerticalAlignment = VerticalAlignment.Center,
+        //            Margin = _thicknessTxtBlk,
+        //        },
+        //        new TextBox
+        //        {
+        //            Name = string.Concat("tbScore_", special.Alias),
+        //            FontSize = 10,
+        //            Height = 14,
+        //            Width = 25,
+        //            //Margin = _thicknessTxtBox,
+        //            Style = (Style)Application.Current.Resources["TextBoxSkill"],
+        //        },
+        //        new TextBox
+        //        {
+        //            Name = string.Concat("tbPoint_", special.Alias),
+        //            FontSize = 10,
+        //            Height = 14,
+        //            Width = 25,
+        //            Style = (Style)Application.Current.Resources["TextBoxSkill"],
+        //        },
+        //        new CheckBox
+        //        {
+        //            Name = string.Concat("Chk_",special.Alias),
+        //            VerticalAlignment = VerticalAlignment.Center,
+        //            Height = 14,
+        //            Margin = _thicknessChkBox,
+        //        }
+        //    };
+        //    return elements;
+        //}
 
         private void InitGrid()
         {
