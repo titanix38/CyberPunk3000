@@ -114,6 +114,9 @@
       <DependentUpon>PageMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tab.cs" />
+    <Compile Include="UserControls\UCFeature.xaml.cs">
+      <DependentUpon>UCFeature.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCPicture.xaml.cs">
       <DependentUpon>UCPicture.xaml</DependentUpon>
     </Compile>
@@ -132,14 +135,11 @@
     <Compile Include="UserControls\UserControlPlaying.xaml.cs">
       <DependentUpon>UserControlPlaying.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlSkills.xaml.cs">
-      <DependentUpon>UserControlSkills.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlSpaceTime.xaml.cs">
       <DependentUpon>UserControlSpaceTime.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlSpecialAbilities.xaml.cs">
-      <DependentUpon>UserControlSpecialAbilities.xaml</DependentUpon>
+    <Compile Include="UserControls\UCSpecialAbilities.xaml.cs">
+      <DependentUpon>UCSpecialAbilities.xaml</DependentUpon>
     </Compile>
     <Compile Include="WpfCharacterSheet.xaml.cs">
       <DependentUpon>WpfCharacterSheet.xaml</DependentUpon>
@@ -180,6 +180,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UCFeature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UCPicture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,15 +208,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\UserControlSkills.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControls\UserControlSpaceTime.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\UserControlSpecialAbilities.xaml">
+    <Page Include="UserControls\UCSpecialAbilities.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

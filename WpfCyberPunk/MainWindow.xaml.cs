@@ -1,5 +1,4 @@
-﻿using Data.Factory;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.InteropServices;
@@ -166,6 +165,15 @@ namespace WpfCyberPunk
             //ToolTip tool = new ToolTip() { Content = contains };
             ToolTip tool = new ToolTip() { Content = "Au revoir !!!", IsOpen = true, StaysOpen = true };
             close.ToolTip = tool;
+        }
+
+        private void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            //MVVMDemo.ViewModel.StudentViewModel studentViewModelObject =
+            //   new MVVMDemo.ViewModel.StudentViewModel();
+            //studentViewModelObject.LoadStudents();
+
+            //StudentViewControl.DataContext = studentViewModelObject;
         }
     }
 }

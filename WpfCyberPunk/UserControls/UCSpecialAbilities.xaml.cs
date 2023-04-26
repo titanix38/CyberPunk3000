@@ -19,7 +19,7 @@ namespace WpfCyberPunk.UserControls
     /// <summary>
     /// Interaction logic for UserControlSpecialAbilities.xaml
     /// </summary>
-    public partial class UserControlSpecialAbilities : UserControl
+    public partial class UCSpecialAbilities : UserControl
     {
         /****************************************************************************************************************/
         /*                                    CONSTANTES                                                                */
@@ -46,25 +46,25 @@ namespace WpfCyberPunk.UserControls
         /****************************************************************************************************************/
 
 
-        public UserControlSpecialAbilities()
+        public UCSpecialAbilities()
         {
             InitializeComponent();
-            this.DataContext = new ViewModelSpecialAbilities();
+            this.DataContext = new SpecialAbilitiesViewModel();
             //SetHeader();
         }
 
-        public UserControlSpecialAbilities(string name)
+        public UCSpecialAbilities(string name)
         {
             _name = name;
         }
 
-        public UserControlSpecialAbilities(string name,int value)
+        public UCSpecialAbilities(string name,int value)
         {
             _name = name;
             _value = value;
         }
 
-        public UserControlSpecialAbilities(string name, int value, int skillPt)
+        public UCSpecialAbilities(string name, int value, int skillPt)
         {
             _name = name;
             _value = value;
@@ -82,17 +82,17 @@ namespace WpfCyberPunk.UserControls
 
             //_viewModel.Special;
 
-            UserControlSkills control = new UserControlSkills();
+            //UserControlSkills control = new UserControlSkills();
             Grid mGrid = new Grid()
             {
                 //Height = 100,
                 HorizontalAlignment = HorizontalAlignment.Left
             };
 
-            foreach (var special in _viewModel.Special) 
-            {
+            //foreach (var special in _viewModel.Special) 
+            //{
 
-            }
+            //}
 
             //mGrid.Children.Add(UserControlSkills)
         }

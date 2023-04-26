@@ -1,9 +1,6 @@
-﻿using Data.Entities.Characterize;
-using Data.Repositories;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using Data.Factory;
 using WpfCyberPunk.UserControls;
 
 namespace WpfCyberPunk
@@ -63,9 +60,9 @@ namespace WpfCyberPunk
         {
             //SpecialAbilitiesGrid.RowDefinitions.Add(new RowDefinition());
             int i = 2;
-            using (DbModelRepository<SpecialAbility> dbModel = new DbModelRepository<SpecialAbility>(new SpecialAbility()))
-            {
-                IQueryable<SpecialAbility> entities = dbModel.GetAll<SpecialAbility>();
+            //using (DbModelRepository<SpecialAbility> dbModel = new DbModelRepository<SpecialAbility>(new SpecialAbility()))
+            //{
+            //    IQueryable<SpecialAbility> entities = dbModel.GetAll<SpecialAbility>();
 
                 //RowDefinition newRow = new RowDefinition()
                 //{
@@ -97,7 +94,7 @@ namespace WpfCyberPunk
                 //    i++;
                 //}
 
-            }
+            //}
         }
 
         private void SubItem(StackPanel stack, string name, int? score, int? point, int pos)

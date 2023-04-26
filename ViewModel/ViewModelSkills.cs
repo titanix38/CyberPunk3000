@@ -12,8 +12,8 @@ namespace ViewModel
     public class ViewModelSkills
     {
 #if DEBUG
-        private FakeSpecialAbility _specialAbility;
-        public List<FakeSpecialAbility> Special { get; private set; }
+        //private FakeSpecialAbility _specialAbility;
+        //public List<FakeSpecialAbility> Special { get; private set; }
 
 #else
         private SpecialAbility _specialAbility;
@@ -25,8 +25,8 @@ namespace ViewModel
         public ViewModelSkills()
         {
 #if DEBUG
-            _specialAbility = new FakeSpecialAbility();
-            Special = _specialAbility.Fakes;
+            //_specialAbility = new FakeSpecialAbility();
+            //Special = _specialAbility.Fakes;
 #else
 
 #endif

@@ -3,13 +3,13 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:uc="clr-namespace:WpfCyberPunk.UserControls"
       xmlns:local="clr-namespace:WpfCyberPunk.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="776" d:DesignWidth="1080"
-      Title="PageCharacterize">
+      Title="PageCharacterize" Background="Black">
     <Grid>
-        <Label Style="{StaticResource LabelStyle}" Content="CAPACITES SPECIALES" Width="150" FontWeight="Bold">
-            
-        </Label>
+        <Label Style="{StaticResource LabelStyle}" Content="CAPACITES SPECIALES" Width="150" FontWeight="Bold"/>
+        <uc:UCSpecialAbilities x:Name="SpecialsViewControl" Loaded="SpecialsViewControl_Loaded"/>
     </Grid>
 </Page>

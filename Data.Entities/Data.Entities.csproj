@@ -71,7 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Characterize\FakeSpecialAbility.cs" />
     <Compile Include="Characterize\Feature.cs" />
     <Compile Include="Characterize\Part.cs" />
     <Compile Include="Characterize\Protection.cs" />

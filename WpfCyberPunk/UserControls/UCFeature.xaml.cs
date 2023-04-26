@@ -12,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ViewModel;
 
-namespace WpfCyberPunk.Pages
+namespace WpfCyberPunk.UserControls
 {
     /// <summary>
-    /// Interaction logic for PageCharacterize.xaml
+    /// Interaction logic for UCFeature.xaml
     /// </summary>
-    public partial class PageCharacterize : Page
+    public partial class UCFeature : UserControl
     {
-        public PageCharacterize()
+        public UCFeature()
         {
             InitializeComponent();
         }
-
-        private void SpecialsViewControl_Loaded(object sender, RoutedEventArgs e) 
-        {
-            SpecialAbilitiesViewModel vmSpecials = new SpecialAbilitiesViewModel();
-            vmSpecials.LoadItems();
-            SpecialsViewControl.DataContext = vmSpecials;
-        }
-
     }
 }

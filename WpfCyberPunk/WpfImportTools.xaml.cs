@@ -1,5 +1,4 @@
-﻿using Data.Factory;
-using ExportToDataBase;
+﻿using ExportToDataBase;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows;

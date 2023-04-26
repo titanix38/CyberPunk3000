@@ -10,10 +10,10 @@ using Newtonsoft.Json;
 
 namespace ViewModel
 {
-    public class ViewModel : ViewModelBase
+    public class ViewModel
     {
         private dynamic _datas;
-
+        private Factory _factory;
         private string _json;
 
         private string[] _initFiles = Directory.GetFiles((@".\Input")).Where(f => Path.GetExtension(f) == ".json").ToArray();
@@ -23,6 +23,8 @@ namespace ViewModel
 
         public string Json => _json;
 
+        public string ErrorMessage { get; private set; }
+        public bool Success { get; private set; }
 
         public void ExtractDatasFromInit()
         {
