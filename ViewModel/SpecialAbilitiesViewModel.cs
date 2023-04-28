@@ -24,11 +24,7 @@ namespace ViewModel
         public void LoadItems()
         {
 #if DEBUG
-
-            List<SpecialAbility> fakes = GetFakeSpecials();
-
-
-            Specials = ParseListToObservable(fakes);
+            Specials = GetFakeSpecials();
 #else
             // TODO : Read from DataBase
             _factory = new Factory();
@@ -52,7 +48,7 @@ namespace ViewModel
         /// This method is used only in debug mode, create Stub list
         /// </summary>
         /// <returns></returns>
-        private List<SpecialAbility> GetFakeSpecials()
+        private ObservableCollection<SpecialAbility> GetFakeSpecials()
         {
             Dictionary<string, string> dico = new Dictionary<string, string>()
             {
@@ -70,7 +66,7 @@ namespace ViewModel
 
             };
 
-            List<SpecialAbility> Fakes = new List<SpecialAbility>();
+            ObservableCollection<SpecialAbility> Fakes = new ObservableCollection<SpecialAbility>();
             int i = 1;
             foreach (var item in dico)
             {

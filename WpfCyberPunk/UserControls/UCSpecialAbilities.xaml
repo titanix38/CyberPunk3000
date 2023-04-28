@@ -23,7 +23,7 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <Label x:Name="LabelUCSkills" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="{Binding Path=Wording,Mode=OneWay}" FontWeight="Bold" FontSize="8" Height="24" Width="150" BorderBrush="#FDEE07" BorderThickness="2"/>
+                            <Label x:Name="LabelUCSpecials" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="{Binding Path=Wording,Mode=OneWay}" FontWeight="Bold" FontSize="8" Height="24" Width="150" BorderBrush="#FDEE07" BorderThickness="2"/>
                             <TextBox x:Name="TxBxValueSpecial" Grid.Column="1" Text="10" Foreground="#818181" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12" FontWeight="Bold">
                                 <TextBox.Template>
                                     <ControlTemplate TargetType="{x:Type TextBox}">

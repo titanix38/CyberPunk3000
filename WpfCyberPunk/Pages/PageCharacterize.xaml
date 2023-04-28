@@ -8,8 +8,20 @@
       mc:Ignorable="d" 
       d:DesignHeight="776" d:DesignWidth="1080"
       Title="PageCharacterize" Background="Black">
+    <Page.Resources>
+        
+    </Page.Resources>
     <Grid>
-        <Label Style="{StaticResource LabelStyle}" Content="CAPACITES SPECIALES" Width="150" FontWeight="Bold"/>
-        <uc:UCSpecialAbilities x:Name="SpecialsViewControl" Loaded="SpecialsViewControl_Loaded"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>        
+        <uc:UCSpecialAbilities Grid.Row="0" Grid.Column="0" x:Name="SpecialsViewControl" Loaded="SpecialsViewControl_Loaded"/>
+        <uc:UCFeatureSkills Grid.Row="1" Grid.Column="0" x:Name="FeatureSkillsViewControl" Loaded="FeatureSkillsViewControl_Loaded"/>
     </Grid>
 </Page>

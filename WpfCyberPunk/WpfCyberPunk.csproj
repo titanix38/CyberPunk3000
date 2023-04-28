@@ -114,11 +114,18 @@
       <DependentUpon>PageMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tab.cs" />
+    <Compile Include="Tools\NullVisibilityConverter.cs" />
     <Compile Include="UserControls\UCFeature.xaml.cs">
       <DependentUpon>UCFeature.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCFeatureSkills.xaml.cs">
+      <DependentUpon>UCFeatureSkills.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCPicture.xaml.cs">
       <DependentUpon>UCPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSkill.xaml.cs">
+      <DependentUpon>UCSkill.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlDamage.xaml.cs">
       <DependentUpon>UserControlDamage.xaml</DependentUpon>
@@ -184,7 +191,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UCFeatureSkills.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UCPicture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSkill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

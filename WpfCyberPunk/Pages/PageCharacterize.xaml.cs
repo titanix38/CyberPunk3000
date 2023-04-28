@@ -32,6 +32,11 @@ namespace WpfCyberPunk.Pages
             vmSpecials.LoadItems();
             SpecialsViewControl.DataContext = vmSpecials;
         }
-
+        private void FeatureSkillsViewControl_Loaded(object sender, RoutedEventArgs e) 
+        {
+            SkillsViewModel vmSkills = new SkillsViewModel();
+            vmSkills.LoadItems();
+            FeatureSkillsViewControl.DataContext = vmSkills;
+        }
     }
 }
